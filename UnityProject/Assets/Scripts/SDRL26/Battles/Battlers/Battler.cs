@@ -31,6 +31,8 @@ namespace SDRL26.Battles.Battlers
       public BattlerTeam Team { get; set; }
       public BattlerTeam OtherTeam { get; set; }
       public IReadOnlyCollection<Battler> Targets { get; private set; }
+      public ActionTarget Target => _target;
+
       public static UnityEvent<Battler> OnTargetsChanged { get; } = new();
       public static UnityEvent<Battler> OnTargetsEvaluated { get; } = new();
       public static UnityEvent<Battler> OnActionsPerformed { get; } = new();
@@ -96,6 +98,8 @@ namespace SDRL26.Battles.Battlers
                ActionTarget.LastEnemy => OtherTeam.GetLast(t => t._health.IsAlive),
                ActionTarget.AllyWithLowestHealth => Team.GetFirst(t => t.Health.CurrentHealth == Team.LowestAliveHealth),
                ActionTarget.EnemyWithLowestHealth => OtherTeam.GetFirst(t => t.Health.CurrentHealth == OtherTeam.LowestAliveHealth),
+               ActionTarget.RandomAlly => Team.GetRandom(t => t.Health.IsAlive),
+               ActionTarget.RandomEnemy => OtherTeam.GetRandom(t => t.Health.IsAlive),
                _ => throw new ArgumentOutOfRangeException()
             }
          );
