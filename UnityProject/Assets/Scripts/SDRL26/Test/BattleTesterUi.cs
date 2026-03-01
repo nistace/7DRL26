@@ -46,7 +46,7 @@ namespace SDRL26
         private void ObserveBattle()
         {
             _battleTester.Battle.OnStarted.AddListener(HandleBattleStarted);
-            Battler.OnTargetsEvaluated.AddListener(HandleBattlerTargetsEvaluated);
+            Battler.OnTargetsChanged.AddListener(HandleBattlerTargetsEvaluated);
             Battler.OnActionsPerformed.AddListener(HandleActionPerformed);
         }
 
@@ -59,7 +59,7 @@ namespace SDRL26
 
         private void HandleBattlerTargetsEvaluated(Battler battler)
         {
-            AddText($"{battler.DisplayName} chose targets: {string.Join(", ", battler.Targets.Select(t => t.DisplayName))}",
+            AddText($"{battler.DisplayName}'s targets changed: {string.Join(", ", battler.Targets.Select(t => t.DisplayName))}",
                 _battleTester.Battle.IsInPlayerTeam(battler) ? Color.green : Color.red);
         }
 

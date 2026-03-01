@@ -480,8 +480,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.BattleTester
   _playerBattlers:
+  - {fileID: 2301385055571929859, guid: 459c49b30c397f4459885b5edc479792, type: 3}
   - {fileID: 2301385055571929859, guid: 1a81d9646ea778540b620c6b19d478c1, type: 3}
+  - {fileID: 2301385055571929859, guid: 5b50d6083577568459054cca7ddaa9cd, type: 3}
   _opponentBattlers:
+  - {fileID: 2301385055571929859, guid: 29cc9ccaf48852d428842856c234fc18, type: 3}
+  - {fileID: 2301385055571929859, guid: 8f4b027e79516c24a97b47bfd57ae6df, type: 3}
+  - {fileID: 2301385055571929859, guid: 29cc9ccaf48852d428842856c234fc18, type: 3}
   - {fileID: 2301385055571929859, guid: 8f4b027e79516c24a97b47bfd57ae6df, type: 3}
 --- !u!4 &637050129
 Transform:
@@ -1174,7 +1179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.00003931202, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1350738901

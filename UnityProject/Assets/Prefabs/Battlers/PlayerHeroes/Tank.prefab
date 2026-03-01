@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _displayName
-      value: Attacker
+      value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _health._maxHealth
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
-      value: Attacker
+      value: Tank
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62,14 +66,17 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4154366079223272370}
+      addedObject: {fileID: 8189354025374109223}
+    - targetCorrespondingSourceObject: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5750748181284711160}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
 --- !u!1 &8232931795561852271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
   m_PrefabInstance: {fileID: 399325408705782464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4154366079223272370
+--- !u!114 &8189354025374109223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,4 +88,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
-  _damage: 2
+  _damage: 1
+--- !u!114 &5750748181284711160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232931795561852271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e0e2626e7d408ca3417429ffdc5c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.TauntBattleAction

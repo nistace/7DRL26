@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SDRL26.Battlers;
 using UnityEngine;
 
 namespace SDRL26
@@ -16,6 +17,7 @@ namespace SDRL26
         }
 
         public IReadOnlyList<Battler> Battlers => _battlers;
+        public int LowestAliveHealth => _battlers.Where(t => t.Health.IsAlive).Min(t => t.Health.CurrentHealth);
 
         public void ContinueBattle(float deltaTime)
         {

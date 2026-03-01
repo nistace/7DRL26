@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using SDRL26;
 using SDRL26.Battlers;
 using SDRL26.Battlers.Actions;
@@ -17,12 +18,12 @@ public class Battler : MonoBehaviour
 
     [SerializeField] private string _displayName = "Battler";
     [SerializeField] private Health _health = new();
-    [SerializeField] private ActionTarget _target = ActionTarget.EnemyAliveFirst;
+    [SerializeField] private ActionTarget _target = ActionTarget.FirstEnemy;
     [SerializeField] private float _chargeActionTime = 1;
     [SerializeField] private float _restTime = 2;
 
     public string DisplayName => _displayName;
-    public BattleAction[] Actions { get; set; }
+    public BattleAction[] Actions { get; private set; }
     public Health Health => _health;
     private Phase CurrentPhase { get; set; }
     private float CurrentPhaseLoadUpTime { get; set; }
@@ -30,7 +31,7 @@ public class Battler : MonoBehaviour
     public BattlerTeam Team { get; set; }
     public BattlerTeam OtherTeam { get; set; }
     public IReadOnlyCollection<Battler> Targets { get; private set; }
-
+    public static UnityEvent<Battler> OnTargetsChanged { get; } = new();
     public static UnityEvent<Battler> OnTargetsEvaluated { get; } = new();
     public static UnityEvent<Battler> OnActionsPerformed { get; } = new();
 
@@ -84,18 +85,29 @@ public class Battler : MonoBehaviour
 
     private void RefreshTargets()
     {
-        Targets = _target switch
+        SetTargets(_target switch
         {
             ActionTarget.Self => new[] { this },
-            ActionTarget.AllyAliveFirst => Team.GetFirst(t => t._health.IsAlive),
-            ActionTarget.AllyAliveLast => Team.GetLast(t => t._health.IsAlive),
-            ActionTarget.EnemyAliveFirst => OtherTeam.GetFirst(t => t._health.IsAlive),
-            ActionTarget.EnemyAliveLast => OtherTeam.GetLast(t => t._health.IsAlive),
+            ActionTarget.FirstAlly => Team.GetFirst(t => t._health.IsAlive),
+            ActionTarget.LastAlly => Team.GetLast(t => t._health.IsAlive),
+            ActionTarget.FirstEnemy => OtherTeam.GetFirst(t => t._health.IsAlive),
+            ActionTarget.LastEnemy => OtherTeam.GetLast(t => t._health.IsAlive),
+            ActionTarget.AllyWithLowestHealth => Team.GetFirst(t => t.Health.CurrentHealth == Team.LowestAliveHealth),
+            ActionTarget.EnemyWithLowestHealth => OtherTeam.GetFirst(t => t.Health.CurrentHealth == OtherTeam.LowestAliveHealth),
             _ => throw new ArgumentOutOfRangeException()
-        };
+        });
 
         OnTargetsEvaluated.Invoke(this);
     }
 
+    public void SetTargets(IReadOnlyCollection<Battler> battlers)
+    {
+        Targets = battlers.ToArray();
+
+        OnTargetsChanged.Invoke(this);
+    }
+
     public int Damage(int damage) => _health.Damage(damage);
+    public int Heal(int points) => _health.Heal(points);
+    public int Shield(int points) => _health.Shield(points);
 }

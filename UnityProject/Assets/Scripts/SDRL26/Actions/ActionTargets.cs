@@ -5,9 +5,11 @@ namespace SDRL26.Battlers.Actions
     public enum ActionTarget
     {
         Self = 0,
-        AllyAliveFirst = 10,
-        AllyAliveLast = 11,
-        EnemyAliveFirst = 50,
-        EnemyAliveLast = 51,
+        FirstAlly = 10,
+        LastAlly = 11,
+        AllyWithLowestHealth = 12,
+        FirstEnemy = 50,
+        LastEnemy = 51,
+        EnemyWithLowestHealth = 52
     }
 }
