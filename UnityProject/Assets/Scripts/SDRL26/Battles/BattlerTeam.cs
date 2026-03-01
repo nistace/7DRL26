@@ -45,6 +45,15 @@ namespace SDRL26.Battles
          return new List<Battler> { battler };
       }
 
+      public List<Battler> GetRandom(Func<Battler, bool> condition)
+      {
+         var battler = _battlers.Where(condition).OrderBy(_ => UnityEngine.Random.value).ToList().FirstOrDefault();
+
+         if (battler == null) return new List<Battler>();
+
+         return new List<Battler> { battler };
+      }
+
       public bool IsInTeam(Battler battler) => battler.Team == this;
    }
 }
