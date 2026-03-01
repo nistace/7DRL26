@@ -1,4 +1,5 @@
-﻿using SDRL26.GameControllers;
+﻿using SDRL26.Battles.Battlers;
+using SDRL26.GameControllers;
 using SDRL26.GameControllers.GameStates;
 using UnityEngine;
 
@@ -43,5 +44,7 @@ namespace SDRL26.Rendering.Battleground
          _playerTeam.SetTokensDisplayMode(mode);
          _otherTeam.SetTokensDisplayMode(mode);
       }
+
+      public BattlerTokenUi GetToken(Battler battler) => (battler.Team == GameData.PlayerTeam ? _playerTeam : _otherTeam).GetToken(battler);
    }
 }

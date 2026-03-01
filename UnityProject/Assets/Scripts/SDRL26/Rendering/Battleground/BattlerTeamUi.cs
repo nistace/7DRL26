@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using SDRL26.Battles;
+using SDRL26.Battles.Battlers;
 using UnityEngine;
 
 namespace SDRL26.Rendering.Battleground
@@ -61,5 +63,7 @@ namespace SDRL26.Rendering.Battleground
             token.DisplayMode = TokensDisplayMode;
          }
       }
+
+      public BattlerTokenUi GetToken(Battler battler) => _tokens.FirstOrDefault(t => t.Battler == battler);
    }
 }
