@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using SDRL26.Battlers.Actions;
+using SDRL26.Battles.Battlers;
 using UnityEngine;
 
-namespace SDRL26.Actions
+namespace SDRL26.Battles.Actions
 {
     public class ShieldBattleAction : BattleAction
     {

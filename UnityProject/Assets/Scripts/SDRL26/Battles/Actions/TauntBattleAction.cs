@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
-using SDRL26.Battlers.Actions;
+using SDRL26.Battles.Battlers;
 
-namespace SDRL26.Actions
+namespace SDRL26.Battles.Actions
 {
-    public class TauntBattleAction : BattleAction
-    {
-        public override string DebugString => $"Taunt";
+   public class TauntBattleAction : BattleAction
+   {
+      public override string DebugString => $"Taunt";
 
-        public override int ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
-        {
-            foreach (var target in targets)
-            {
-                target.SetTargets(new[] { actionDoer });
-            }
+      public override int ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
+      {
+         foreach (var target in targets)
+         {
+            target.SetTargets(new[] { actionDoer });
+         }
 
-            return targets.Count;
-        }
-    }
+         return targets.Count;
+      }
+   }
 }

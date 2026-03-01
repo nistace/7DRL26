@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using SDRL26.Battles.Battlers;
 using UnityEngine;
 
-namespace SDRL26.Battlers.Actions
+namespace SDRL26.Battles.Actions
 {
-    public abstract class BattleAction : MonoBehaviour
-    {
-        public abstract string DebugString { get; }
-        public abstract int ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets);
-    }
+   public abstract class BattleAction : MonoBehaviour
+   {
+      public abstract string DebugString { get; }
+      public abstract int ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets);
+   }
 }
