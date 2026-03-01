@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976e46155ef947848f121df9f9056377, type: 3}
+  m_Name: GameDataLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.GameDataLibrary
+  _playerStartBattlers:
+  - {fileID: 2301385055571929859, guid: 1a81d9646ea778540b620c6b19d478c1, type: 3}
+  - {fileID: 2301385055571929859, guid: 5b50d6083577568459054cca7ddaa9cd, type: 3}
+  - {fileID: 2301385055571929859, guid: 459c49b30c397f4459885b5edc479792, type: 3}
+  _playerStartBattlersOptions: 3
+  _battleSetupsPerLevel:
+  - _setups:
+    - {fileID: 11400000, guid: ef9457bca5442934f9138e5f3a5ce9ac, type: 2}
+  - _setups:
+    - {fileID: 11400000, guid: 74b702576a9c03048b50626e7c01c256, type: 2}
+  - _setups:
+    - {fileID: 11400000, guid: 74b702576a9c03048b50626e7c01c256, type: 2}
+  - _setups:
+    - {fileID: 11400000, guid: 74b702576a9c03048b50626e7c01c256, type: 2}
+  - _setups:
+    - {fileID: 11400000, guid: 74b702576a9c03048b50626e7c01c256, type: 2}
+  _minBattlerStartTime: 1
+  _maxBattlerStartTime: 3

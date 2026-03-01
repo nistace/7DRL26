@@ -9,7 +9,7 @@ namespace SDRL26.Battles.Battlers
 {
    public class Battler : MonoBehaviour
    {
-      private enum Phase
+      public enum Phase
       {
          Start = 0,
          Action = 1,
@@ -17,21 +17,36 @@ namespace SDRL26.Battles.Battlers
       }
 
       [SerializeField] private string _displayName = "Battler";
+      [SerializeField] private Sprite _portrait;
       [SerializeField] private Health _health = new();
       [SerializeField] private ActionTarget _target = ActionTarget.FirstEnemy;
       [SerializeField] private float _chargeActionTime = 1;
       [SerializeField] private float _restTime = 2;
 
       public string DisplayName => _displayName;
+      public Sprite Portrait => _portrait;
       public BattleAction[] Actions { get; private set; }
       public Health Health => _health;
-      private Phase CurrentPhase { get; set; }
+      public Phase CurrentPhase { get; set; }
       private float CurrentPhaseLoadUpTime { get; set; }
-      private float StartTime { get; set; }
+      private float StartTime { get; set; } = 1;
       public BattlerTeam Team { get; set; }
       public BattlerTeam OtherTeam { get; set; }
       public IReadOnlyCollection<Battler> Targets { get; private set; }
       public ActionTarget Target => _target;
+
+      public float CurrentLoadRatio => Mathf.Clamp01(CurrentPhaseLoadUpTime
+         / Mathf.Max(.001f,
+            CurrentPhaseLoadUpTime,
+            CurrentPhase switch
+            {
+               Phase.Start => StartTime,
+               Phase.Action => _chargeActionTime,
+               Phase.Rest => _restTime,
+               _ => throw new ArgumentOutOfRangeException()
+            }
+         )
+      );
 
       public static UnityEvent<Battler> OnTargetsChanged { get; } = new();
       public static UnityEvent<Battler> OnTargetsEvaluated { get; } = new();

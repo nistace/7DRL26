@@ -1,0 +1,38 @@
+﻿using SDRL26.GameControllers;
+using SDRL26.GameControllers.GameStates;
+using UnityEngine;
+
+namespace SDRL26.Rendering.Battleground
+{
+   public class BattleGroundUi : MonoBehaviour
+   {
+      [SerializeField] private BattlerTeamUi _playerTeam;
+      [SerializeField] private BattlerTeamUi _otherTeam;
+
+      private void Start()
+      {
+         GameState.OnStateChanged.AddListener(HandleGameStateChanged);
+
+         _playerTeam.Setup(GameData.PlayerTeam);
+         _playerTeam.SetVisible(true);
+         _otherTeam.SetVisible(false);
+      }
+
+      private void HandleGameStateChanged(GameState newState)
+      {
+         if (newState is PrepareBattleGameState prepareBattleGameState)
+         {
+            _otherTeam.Setup(prepareBattleGameState.Battle.OpponentTeam);
+            _otherTeam.SetVisible(true);
+         }
+         else if (newState is ContinueBattleGameState)
+         {
+            _otherTeam.SetVisible(true);
+         }
+         else
+         {
+            _otherTeam.SetVisible(false);
+         }
+      }
+   }
+}

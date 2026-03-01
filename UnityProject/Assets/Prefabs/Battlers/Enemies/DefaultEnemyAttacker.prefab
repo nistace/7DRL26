@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portrait
+      value: 
+      objectReference: {fileID: 9079002682661804598, guid: c2fb13340834d524db968b087008e8e0, type: 3}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
       value: 2
       objectReference: {fileID: 0}
