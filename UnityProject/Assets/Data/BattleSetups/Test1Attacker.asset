@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test1Attacker
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.BattleSetup
   _opponentsPrefabs:
-  - {fileID: 2301385055571929859, guid: 8f4b027e79516c24a97b47bfd57ae6df, type: 3}
+  - {fileID: 2301385055571929859, guid: d50d6f2226566544f8d2b0edd0f98a79, type: 3}

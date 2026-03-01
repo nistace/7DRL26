@@ -25,9 +25,12 @@ namespace SDRL26.Battles.Battlers
 
       public string DisplayName => _displayName;
       public Sprite Portrait => _portrait;
-      public BattleAction[] Actions { get; private set; }
+      private BattleAction[] _actions;
+      public BattleAction[] Actions => _actions ??= GetComponentsInChildren<BattleAction>();
       public Health Health => _health;
-      public Phase CurrentPhase { get; set; }
+      public Phase CurrentPhase { get; private set; }
+      public float ChargeActionTime => _chargeActionTime;
+      public float RestTime => _restTime;
       private float CurrentPhaseLoadUpTime { get; set; }
       private float StartTime { get; set; } = 1;
       public BattlerTeam Team { get; set; }
@@ -52,9 +55,8 @@ namespace SDRL26.Battles.Battlers
       public static UnityEvent<Battler> OnTargetsEvaluated { get; } = new();
       public static UnityEvent<Battler> OnActionsPerformed { get; } = new();
 
-      private void Start()
+      public void Initialize()
       {
-         Actions = GetComponentsInChildren<BattleAction>();
          Health.FullyHeal();
       }
 

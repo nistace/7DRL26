@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using SDRL26.Battles;
+﻿using SDRL26.Battles;
 using SDRL26.Battles.Battlers;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,7 +18,7 @@ namespace SDRL26.Test
       private void Start()
       {
          BattleStartTime = Time.time;
-         Battle = new Battle(new BattlerTeam(_playerBattlers.Select(Instantiate).ToArray()), new BattlerTeam(_opponentBattlers.Select(Instantiate).ToArray()));
+         Battle = new Battle(new BattlerTeam(_playerBattlers), new BattlerTeam(_opponentBattlers));
          Battle.Prepare(1, 2);
          OnBattleInitialized.Invoke();
       }

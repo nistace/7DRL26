@@ -2,7 +2,6 @@
 using System.Linq;
 using SDRL26.Battles.Battlers;
 using UnityEngine.Events;
-using Object = UnityEngine.Object;
 
 namespace SDRL26.GameControllers.GameStates
 {
@@ -27,7 +26,7 @@ namespace SDRL26.GameControllers.GameStates
             return;
          }
 
-         GameData.PlayerTeam.Add(Object.Instantiate(selected));
+         GameData.PlayerTeam.AddBattlerPrefabInstance(selected);
 
          OnHeroChosen?.Invoke();
       }

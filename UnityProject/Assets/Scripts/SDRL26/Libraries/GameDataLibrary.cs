@@ -3,7 +3,7 @@ using System.Linq;
 using SDRL26.Battles.Battlers;
 using UnityEngine;
 
-namespace SDRL26
+namespace SDRL26.Libraries
 {
    [CreateAssetMenu]
    public class GameDataLibrary : ScriptableObject

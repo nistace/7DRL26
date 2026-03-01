@@ -8,8 +8,9 @@ namespace SDRL26.Battles.Actions
    public class HealBattleAction : BattleAction
    {
       [SerializeField] private int _heal;
+      [SerializeField] private string _displayName = "Heal ([heal])";
 
-      public override string DebugString => $"Heal ({_heal})";
+      public override string DisplayString => _displayName.Replace("[heal]", $"{_heal}");
 
       public override int ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
       {

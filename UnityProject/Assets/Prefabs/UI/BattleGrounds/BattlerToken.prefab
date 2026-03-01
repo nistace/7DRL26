@@ -325,8 +325,7 @@ MonoBehaviour:
   - {fileID: 5411032708397955462}
   - {fileID: 1309330961077524092}
   _fillImage: {fileID: 1269133523213546359}
-  _fillActionColor: {r: 0.6415094, g: 0.35705125, b: 0.015129937, a: 1}
-  _fillRestColor: {r: 0.14922369, g: 0.015886446, b: 0.4811321, a: 1}
+  _style: {fileID: 11400000, guid: 647d8fa5d00280b429c4d8c2d449d727, type: 2}
 --- !u!114 &4224026634066949551
 MonoBehaviour:
   m_ObjectHideFlags: 0

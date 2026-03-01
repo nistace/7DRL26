@@ -12,6 +12,7 @@ namespace SDRL26.Rendering.Battleground
 
       private BattlerTeam _team;
       private readonly List<BattlerTokenUi> _tokens = new();
+      private BattlerTokenDisplayMode TokensDisplayMode { get; set; }
 
       public void Setup(BattlerTeam team)
       {
@@ -40,6 +41,7 @@ namespace SDRL26.Rendering.Battleground
 
             _tokens[battlerIndex].gameObject.SetActive(true);
             _tokens[battlerIndex].Setup(battler);
+            _tokens[battlerIndex].DisplayMode = TokensDisplayMode;
          }
 
          for (var tokenIndex = _team.Battlers.Count; tokenIndex < _tokens.Count; tokenIndex++)
@@ -49,5 +51,15 @@ namespace SDRL26.Rendering.Battleground
       }
 
       public void SetVisible(bool visible) => _canvasGroup.alpha = visible ? 1 : 0;
+
+      public void SetTokensDisplayMode(BattlerTokenDisplayMode mode)
+      {
+         TokensDisplayMode = mode;
+
+         foreach (var token in _tokens)
+         {
+            token.DisplayMode = TokensDisplayMode;
+         }
+      }
    }
 }

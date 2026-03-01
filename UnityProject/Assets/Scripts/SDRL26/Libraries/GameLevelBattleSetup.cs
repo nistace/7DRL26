@@ -2,7 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace SDRL26
+namespace SDRL26.Libraries
 {
    [Serializable]
    public class GameLevelBattleSetup

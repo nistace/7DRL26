@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using SDRL26.Battles.Battlers;
 using SDRL26.Rendering.Battleground.HealthBars;
 using TMPro;
@@ -14,42 +15,77 @@ namespace SDRL26.Rendering.Battleground
       [SerializeField] private HealthBarUi _healthBar;
       [SerializeField] private TMP_Text[] _actionsTexts;
       [SerializeField] private Image _fillImage;
-      [SerializeField] private Color _fillActionColor = Color.white;
-      [SerializeField] private Color _fillRestColor = Color.red;
+      [SerializeField] private BattlerTokenStyle _style;
 
       private Battler _battler;
+
+      public BattlerTokenDisplayMode DisplayMode { get; set; }
 
       public void Setup(Battler battler)
       {
          _battler = battler;
          _portrait.sprite = battler.Portrait;
+         _actionsTexts[0].text = $"> Targets {_battler.Target}";
+         _actionsTexts[1].text = $"> [{_battler.ChargeActionTime:0.0}s] {string.Join(", ", battler.Actions.Select(t => t.DisplayString))}";
+         _actionsTexts[2].text = $"> [{_battler.RestTime:0.0}s] Rest";
          _healthBar.Setup(battler.Health);
       }
 
       private void Update()
       {
-         _canvasGroup.alpha = _battler.Health.IsDead
-            ? .3f
-            : _battler.CurrentPhase switch
-            {
-               Battler.Phase.Action => 1,
-               Battler.Phase.Rest or Battler.Phase.Start => .6f,
-               _ => throw new ArgumentOutOfRangeException()
-            };
-
-         _fillImage.fillAmount = _battler.CurrentPhase switch
+         if (_battler.Health.IsDead)
          {
-            Battler.Phase.Action => _battler.CurrentLoadRatio,
-            Battler.Phase.Rest or Battler.Phase.Start => 1 - _battler.CurrentLoadRatio,
-            _ => throw new ArgumentOutOfRangeException()
-         };
+            _canvasGroup.alpha = _style.DeadOpacity;
+            _fillImage.fillAmount = 0;
+            _fillImage.color = Color.clear;
+            _actionsTexts[0].color = _style.InactiveActionColor;
+            _actionsTexts[1].color = _style.InactiveActionColor;
+            _actionsTexts[2].color = _style.InactiveActionColor;
 
-         _fillImage.color = _battler.CurrentPhase switch
+            return;
+         }
+
+         switch (DisplayMode)
          {
-            Battler.Phase.Action => _fillActionColor,
-            Battler.Phase.Rest or Battler.Phase.Start => _fillRestColor,
-            _ => throw new ArgumentOutOfRangeException()
-         };
+            case BattlerTokenDisplayMode.Battle when _battler.CurrentPhase is Battler.Phase.Action:
+               _canvasGroup.alpha = _style.DefaultOpacity;
+               _fillImage.fillAmount = _battler.CurrentLoadRatio;
+               _fillImage.color = _style.FillActionColor;
+               _actionsTexts[0].color = _style.InactiveActionColor;
+               _actionsTexts[1].color = _style.DefaultActionColor;
+               _actionsTexts[2].color = _style.InactiveActionColor;
+
+               break;
+            case BattlerTokenDisplayMode.Battle:
+               _canvasGroup.alpha = _style.RestOpacity;
+               _fillImage.fillAmount = 1 - _battler.CurrentLoadRatio;
+               _fillImage.color = _style.FillRestColor;
+               _actionsTexts[0].color = _style.InactiveActionColor;
+               _actionsTexts[1].color = _style.InactiveActionColor;
+               _actionsTexts[2].color = _style.DefaultActionColor;
+
+               break;
+            case BattlerTokenDisplayMode.Prepare:
+               _canvasGroup.alpha = _style.DefaultOpacity;
+               _fillImage.fillAmount = 1 - _battler.CurrentLoadRatio;
+               _fillImage.color = _style.FillRestColor;
+               _actionsTexts[0].color = _style.DefaultActionColor;
+               _actionsTexts[1].color = _style.DefaultActionColor;
+               _actionsTexts[2].color = _style.DefaultActionColor;
+
+               break;
+            case BattlerTokenDisplayMode.Default:
+               _canvasGroup.alpha = 1;
+               _fillImage.fillAmount = 0;
+               _fillImage.color = Color.clear;
+               _actionsTexts[0].color = _style.DefaultActionColor;
+               _actionsTexts[1].color = _style.DefaultActionColor;
+               _actionsTexts[2].color = _style.DefaultActionColor;
+
+               break;
+            default:
+               throw new ArgumentOutOfRangeException();
+         }
       }
    }
 }

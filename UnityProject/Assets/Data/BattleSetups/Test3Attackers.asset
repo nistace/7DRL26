@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6b12653b8124d0c8c95d9749f1a3429, type: 3}
-  m_Name: Test2Attackers
+  m_Name: Test3Attackers
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.BattleSetup
   _opponentsPrefabs:
   - {fileID: 2301385055571929859, guid: d50d6f2226566544f8d2b0edd0f98a79, type: 3}
+  - {fileID: 2301385055571929859, guid: 987d3ea6a63cd394c949ce47f33b12ea, type: 3}
   - {fileID: 2301385055571929859, guid: d50d6f2226566544f8d2b0edd0f98a79, type: 3}

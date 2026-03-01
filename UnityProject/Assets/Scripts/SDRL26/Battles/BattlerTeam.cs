@@ -4,6 +4,7 @@ using System.Linq;
 using SDRL26.Battles.Battlers;
 using UnityEngine;
 using UnityEngine.Events;
+using Object = UnityEngine.Object;
 
 namespace SDRL26.Battles
 {
@@ -16,9 +17,14 @@ namespace SDRL26.Battles
       public int LowestAliveHealth => _battlers.Where(t => t.Health.IsAlive).Min(t => t.Health.CurrentHealth);
       public UnityEvent OnChanged { get; } = new();
 
-      public BattlerTeam(Battler[] battlers)
+      public BattlerTeam(Battler[] battlerPrefabs)
       {
-         _battlers = battlers.ToList();
+         _battlers = new List<Battler>();
+
+         foreach (var battlerPrefab in battlerPrefabs)
+         {
+            AddBattlerPrefabInstance(battlerPrefab, false);
+         }
       }
 
       public BattlerTeam() : this(Array.Empty<Battler>()) { }
@@ -31,10 +37,13 @@ namespace SDRL26.Battles
          }
       }
 
-      public void Add(Battler battler)
+      public void AddBattlerPrefabInstance(Battler battlerPrefab, bool notify = true)
       {
-         _battlers.Add(battler);
-         OnChanged.Invoke();
+         var instance = Object.Instantiate(battlerPrefab);
+         instance.Health.FullyHeal();
+         _battlers.Add(instance);
+
+         if (notify) OnChanged.Invoke();
       }
 
       public List<Battler> GetFirst(Func<Battler, bool> condition)

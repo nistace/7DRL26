@@ -54,7 +54,7 @@ namespace SDRL26.Test
       private void HandleActionPerformed(Battler battler)
       {
          AddText(
-            $"{battler.DisplayName} performed: {string.Join(", ", battler.Actions.Select(t => t.DebugString))} on {string.Join(", ", battler.Targets.Select(t => t.DisplayName))}",
+            $"{battler.DisplayName} performed: {string.Join(", ", battler.Actions.Select(t => t.DisplayString))} on {string.Join(", ", battler.Targets.Select(t => t.DisplayName))}",
             _battleTester.Battle.IsInPlayerTeam(battler) ? Color.green : Color.red
          );
       }

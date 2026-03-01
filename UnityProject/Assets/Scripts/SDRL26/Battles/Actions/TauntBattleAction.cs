@@ -5,7 +5,7 @@ namespace SDRL26.Battles.Actions
 {
    public class TauntBattleAction : BattleAction
    {
-      public override string DebugString => $"Taunt";
+      public override string DisplayString => "Taunt";
 
       public override int ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
       {

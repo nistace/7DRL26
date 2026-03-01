@@ -24,15 +24,24 @@ namespace SDRL26.Rendering.Battleground
          {
             _otherTeam.Setup(prepareBattleGameState.Battle.OpponentTeam);
             _otherTeam.SetVisible(true);
+            SetTokensDisplayMode(BattlerTokenDisplayMode.Prepare);
          }
          else if (newState is ContinueBattleGameState)
          {
             _otherTeam.SetVisible(true);
+            SetTokensDisplayMode(BattlerTokenDisplayMode.Battle);
          }
          else
          {
             _otherTeam.SetVisible(false);
+            SetTokensDisplayMode(BattlerTokenDisplayMode.Default);
          }
+      }
+
+      private void SetTokensDisplayMode(BattlerTokenDisplayMode mode)
+      {
+         _playerTeam.SetTokensDisplayMode(mode);
+         _otherTeam.SetTokensDisplayMode(mode);
       }
    }
 }
