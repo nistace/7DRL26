@@ -23,7 +23,7 @@ namespace SDRL26.Battles
 
          foreach (var battlerPrefab in battlerPrefabs)
          {
-            AddBattlerPrefabInstance(battlerPrefab, false);
+            AddBattlerPrefabInstance(battlerPrefab, notify: false);
          }
       }
 
@@ -31,19 +31,23 @@ namespace SDRL26.Battles
 
       public void ContinueBattle(float deltaTime)
       {
-         foreach (var battler in _battlers)
+         for (var index = 0; index < _battlers.Count; index++)
          {
-            battler.ContinueBattle(deltaTime);
+            _battlers[index].ContinueBattle(deltaTime);
          }
       }
 
-      public void AddBattlerPrefabInstance(Battler battlerPrefab, bool notify = true)
+      public Battler AddBattlerPrefabInstance(Battler battlerPrefab, int? position = null, bool notify = true)
       {
+         var actualPosition = position ?? _battlers.Count;
          var instance = Object.Instantiate(battlerPrefab);
          instance.Health.FullyHeal();
-         _battlers.Add(instance);
+         _battlers.Insert(actualPosition, instance);
+         instance.Team = this;
 
          if (notify) OnChanged.Invoke();
+
+         return instance;
       }
 
       public List<Battler> GetFirst(Func<Battler, bool> condition)
@@ -74,5 +78,7 @@ namespace SDRL26.Battles
       }
 
       public bool IsInTeam(Battler battler) => battler.Team == this;
+      public int IndexOf(Battler battler) => _battlers.IndexOf(battler);
+      public void NotifyChanged() => OnChanged.Invoke();
    }
 }

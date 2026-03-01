@@ -21,12 +21,12 @@ MonoBehaviour:
   - _setups:
     - {fileID: 11400000, guid: ef9457bca5442934f9138e5f3a5ce9ac, type: 2}
   - _setups:
-    - {fileID: 11400000, guid: 74b702576a9c03048b50626e7c01c256, type: 2}
+    - {fileID: 11400000, guid: ef9457bca5442934f9138e5f3a5ce9ac, type: 2}
   - _setups:
     - {fileID: 11400000, guid: 74b702576a9c03048b50626e7c01c256, type: 2}
   - _setups:
-    - {fileID: 11400000, guid: 74b702576a9c03048b50626e7c01c256, type: 2}
+    - {fileID: 11400000, guid: b8437b77d85d10d448e79ad2a78fc4d1, type: 2}
   - _setups:
-    - {fileID: 11400000, guid: 74b702576a9c03048b50626e7c01c256, type: 2}
+    - {fileID: 11400000, guid: fdd807f59316ff24f8210c0a9258c67f, type: 2}
   _minBattlerStartTime: 1
   _maxBattlerStartTime: 3
