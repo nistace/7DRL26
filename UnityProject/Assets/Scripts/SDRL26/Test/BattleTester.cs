@@ -1,0 +1,35 @@
+﻿using System.Linq;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace SDRL26
+{
+    public class BattleTester : MonoBehaviour
+    {
+        [SerializeField] private Battler[] _playerBattlers;
+        [SerializeField] private Battler[] _opponentBattlers;
+
+        public Battle Battle { get; private set; }
+        public float BattleStartTime { get; private set; }
+        public float BattleTime => Time.time - BattleStartTime;
+        public UnityEvent OnBattleInitialized { get; } = new();
+
+        private void Start()
+        {
+            BattleStartTime = Time.time;
+            Battle = new Battle(new BattlerTeam(_playerBattlers.Select(Instantiate).ToArray()), new BattlerTeam(_opponentBattlers.Select(Instantiate).ToArray()));
+            Battle.Prepare(1, 2);
+            OnBattleInitialized.Invoke();
+        }
+
+        public bool IsBattleInitialized() => Battle != null;
+
+        private void Update()
+        {
+            if (!Battle.IsOver())
+            {
+                Battle.Continue(Time.deltaTime);
+            }
+        }
+    }
+}
