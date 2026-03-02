@@ -19,7 +19,7 @@ namespace SDRL26.Rendering.Battleground.HealthBars
          Instance = this;
       }
 
-      public static Image GetToken(HealthTokenType tokenType)
+      public static Image GetToken(HealthTokenType tokenType, Transform container)
       {
          if (!Instance.PoolOfHealthTokens.TryDequeue(out var token))
          {
@@ -28,6 +28,8 @@ namespace SDRL26.Rendering.Battleground.HealthBars
 
          token.sprite = Instance._tokenSprites.GetValueOrDefault(tokenType);
          token.gameObject.SetActive(true);
+         token.transform.SetParent(container);
+         token.transform.localScale = Vector3.one;
 
          return token;
       }

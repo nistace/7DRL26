@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using SDRL26.Battles.Battlers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,9 +42,8 @@ namespace SDRL26.Rendering.Battleground.HealthBars
 
          while (healthTokens.Count < _health.MaxHealth)
          {
-            var token = HealthPool.GetToken(HealthTokenType.Health);
+            var token = HealthPool.GetToken(HealthTokenType.Health, transform);
             token.gameObject.SetActive(true);
-            token.transform.SetParent(transform);
             token.transform.SetSiblingIndex(healthTokens.Count);
             healthTokens.Add(token);
          }
@@ -63,9 +61,8 @@ namespace SDRL26.Rendering.Battleground.HealthBars
 
          while (shieldTokens.Count < _health.CurrentShield)
          {
-            var token = HealthPool.GetToken(HealthTokenType.Shield);
+            var token = HealthPool.GetToken(HealthTokenType.Shield, transform);
             token.gameObject.SetActive(true);
-            token.transform.SetParent(transform);
             token.color = Color.white;
             shieldTokens.Add(token);
          }

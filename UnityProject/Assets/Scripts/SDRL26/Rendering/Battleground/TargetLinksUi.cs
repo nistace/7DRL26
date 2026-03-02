@@ -7,6 +7,7 @@ namespace SDRL26.Rendering.Battleground
 {
    public class TargetLinksUi : MonoBehaviour
    {
+      [SerializeField] private RectTransform _rect;
       [SerializeField] private BattleGroundUi _battleGround;
       [SerializeField] private RectTransform _linkPrefab;
       [SerializeField] private float _linkDestinationOffset = 20;
@@ -100,10 +101,13 @@ namespace SDRL26.Rendering.Battleground
 
       private void RefreshLink((RectTransform link, BattlerTokenUi origin, BattlerTokenUi destination) linkData)
       {
-         var originToDestination = linkData.destination.LinkAnchorDestination.position - linkData.origin.LinkAnchorOrigin.position;
+         RectTransformUtility.ScreenPointToLocalPointInRectangle(_rect, linkData.origin.LinkAnchorOrigin.position, null, out var localOrigin);
+         RectTransformUtility.ScreenPointToLocalPointInRectangle(_rect, linkData.destination.LinkAnchorDestination.position, null, out var localDestination);
+
+         var originToDestination = localDestination - localOrigin;
 
          linkData.link.gameObject.SetActive(true);
-         linkData.link.anchoredPosition = linkData.origin.LinkAnchorOrigin.position;
+         linkData.link.anchoredPosition = localOrigin;
          linkData.link.localRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(originToDestination.y, originToDestination.x) * Mathf.Rad2Deg);
          linkData.link.sizeDelta = new Vector2(originToDestination.magnitude - _linkDestinationOffset, linkData.link.sizeDelta.y);
       }
