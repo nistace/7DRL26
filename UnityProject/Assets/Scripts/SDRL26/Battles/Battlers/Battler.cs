@@ -19,7 +19,8 @@ namespace SDRL26.Battles.Battlers
       [SerializeField] private string _displayName = "Battler";
       [SerializeField] private Sprite _portrait;
       [SerializeField] private Health _health = new();
-      [SerializeField] private BattlerPosture[] _postures;
+
+      private BattlerPosture[] _postures;
 
       public string DisplayName => _displayName;
       public Sprite Portrait => _portrait;
@@ -27,8 +28,9 @@ namespace SDRL26.Battles.Battlers
       public Health Health => _health;
       public Phase CurrentPhase { get; private set; }
       private int PostureIndex { get; set; }
-      public IReadOnlyList<BattlerPosture> Postures => _postures;
-      public BattlerPosture Posture => _postures[PostureIndex];
+      private BattlerPosture[] ArrayOfPostures => _postures ??= GetComponentsInChildren<BattlerPosture>();
+      public IReadOnlyList<BattlerPosture> Postures => ArrayOfPostures;
+      public BattlerPosture Posture => Postures[PostureIndex];
       private float CurrentPhaseLoadUpTime { get; set; }
       public BattlerTeam Team { get; set; }
       public BattlerTeam OtherTeam { get; set; }
@@ -126,10 +128,16 @@ namespace SDRL26.Battles.Battlers
                ActionTarget.LastAlly => Team.GetLast(t => t._health.IsAlive),
                ActionTarget.FirstEnemy => OtherTeam.GetFirst(t => t._health.IsAlive),
                ActionTarget.LastEnemy => OtherTeam.GetLast(t => t._health.IsAlive),
-               ActionTarget.AllyWithLowestHealth => Team.GetFirst(t => t.Health.CurrentHealth == Team.LowestAliveHealth),
-               ActionTarget.EnemyWithLowestHealth => OtherTeam.GetFirst(t => t.Health.CurrentHealth == OtherTeam.LowestAliveHealth),
+               ActionTarget.AllyWithLowestHealth => Team.GetFirst(t => t.Health.IsAlive, t => t.Health.CurrentHealth),
+               ActionTarget.EnemyWithLowestHealth => OtherTeam.GetFirst(t => t.Health.IsAlive, t => t.Health.CurrentHealth),
                ActionTarget.RandomAlly => Team.GetRandom(t => t.Health.IsAlive),
                ActionTarget.RandomEnemy => OtherTeam.GetRandom(t => t.Health.IsAlive),
+               ActionTarget.FirstDeadAlly => Team.GetFirst(t => t.Health.IsDead),
+               ActionTarget.AllyWithMostMissingHealth => Team.GetFirst(t => t.Health.IsAlive, t => -t.Health.MissingHealth),
+               ActionTarget.EnemyWithMostMissingHealth => OtherTeam.GetFirst(t => t.Health.IsAlive, t => -t.Health.MissingHealth),
+               ActionTarget.EnemyWithMostHealth => OtherTeam.GetFirst(t => t.Health.IsAlive, t => -t.Health.CurrentHealth),
+               ActionTarget.ÀllyWithLowestHealthRatio => Team.GetFirst(t => t.Health.IsAlive, t => t.Health.Ratio),
+               ActionTarget.EnemyWithLowestHealthRatio => OtherTeam.GetFirst(t => t.Health.IsAlive, t => t.Health.Ratio),
                _ => throw new ArgumentOutOfRangeException()
             }
          );
@@ -145,16 +153,15 @@ namespace SDRL26.Battles.Battlers
       }
 
       public int Damage(int damage) => _health.Damage(damage);
-      public int Heal(int points) => _health.Heal(points);
+      public int Heal(int points, bool canRevive) => _health.Heal(points, canRevive);
+      public int Revive(float newRatio) => _health.Revive(newRatio);
       public int Shield(int points) => _health.Shield(points);
-
-      [ContextMenu("Initialize Postures")] private void InitializePostures() => _postures = GetComponentsInChildren<BattlerPosture>();
 
       public void SelectNextPosture() => SelectPosture(PostureIndex + 1);
 
       public void SelectPosture(BattlerPosture posture)
       {
-         var index = Array.IndexOf(_postures, posture);
+         var index = Array.IndexOf(ArrayOfPostures, posture);
 
          if (index >= 0)
          {
@@ -164,7 +171,7 @@ namespace SDRL26.Battles.Battlers
 
       private void SelectPosture(int index)
       {
-         var newIndex = (index + _postures.Length) % _postures.Length;
+         var newIndex = (index + ArrayOfPostures.Length) % ArrayOfPostures.Length;
 
          if (PostureIndex == index) return;
 
@@ -172,5 +179,18 @@ namespace SDRL26.Battles.Battlers
          ChangePhase(Phase.Prepare);
          OnPostureChanged.Invoke(Posture);
       }
+
+      public void ForceRest() => ChangePhase(Phase.Rest);
+
+      public void EndRest(bool orPreparation)
+      {
+         if (CurrentPhase == Phase.Action) return;
+         if (CurrentPhase == Phase.Prepare && !orPreparation) return;
+
+         RefreshTargets();
+         ChangePhase(Phase.Action);
+      }
+
+      public void ProgressCurrentPhaseLoadUpTime(float progress) => CurrentPhaseLoadUpTime += progress;
    }
 }

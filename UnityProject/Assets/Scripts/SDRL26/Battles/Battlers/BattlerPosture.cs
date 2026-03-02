@@ -11,15 +11,14 @@ namespace SDRL26.Battles.Battlers
       [SerializeField] private float _preparationTime = 2f;
       [SerializeField] private float _chargeActionTime = 1;
       [SerializeField] private float _restTime = 2;
-      [SerializeField] private BattleAction[] _actions;
+
+      private BattleAction[] _actions;
 
       public Sprite Icon => _icon;
       public ActionTarget Target => _target;
-      public IReadOnlyList<BattleAction> Actions => _actions;
+      public IReadOnlyList<BattleAction> Actions => _actions ??= GetComponents<BattleAction>();
       public float PreparationTime => _preparationTime;
       public float ChargeActionTime => _chargeActionTime;
       public float RestTime => _restTime;
-
-      [ContextMenu("Load Actions")] private void LoadActions() => _actions = GetComponentsInChildren<BattleAction>();
    }
 }

@@ -14,9 +14,12 @@ namespace SDRL26.Battles.Battlers
       public bool IsAlive => !IsDead;
       public bool IsDead => CurrentHealth <= 0;
       public int MaxHealth => _maxHealth;
+      public int MissingHealth => MaxHealth - CurrentHealth;
+      public float Ratio => (float)CurrentHealth / MaxHealth;
 
       public UnityEvent OnChanged { get; } = new();
       public UnityEvent OnDied { get; } = new();
+      public UnityEvent OnRevived { get; } = new();
 
       public Health() : this(5) { }
 
@@ -46,7 +49,6 @@ namespace SDRL26.Battles.Battlers
             }
          }
 
-
          return damageToHealth + damageToShield;
       }
 
@@ -57,13 +59,39 @@ namespace SDRL26.Battles.Battlers
          OnChanged.Invoke();
       }
 
-      public int Heal(int points)
+      public int Heal(int points, bool canRevive)
       {
+         if (!canRevive && IsDead)
+         {
+            return 0;
+         }
+
          var healTaken = Mathf.Min(points, _maxHealth - CurrentHealth);
 
          CurrentHealth += healTaken;
 
          OnChanged.Invoke();
+
+         if (CurrentHealth == healTaken)
+         {
+            OnRevived.Invoke();
+         }
+
+         return healTaken;
+      }
+
+      public int Revive(float healthRatio)
+      {
+         if (IsAlive) return 0;
+
+         var healTaken = Mathf.CeilToInt(healthRatio * MaxHealth);
+
+         if (healTaken == 0) return 0;
+
+         CurrentHealth += healTaken;
+
+         OnChanged.Invoke();
+         OnRevived.Invoke();
 
          return healTaken;
       }

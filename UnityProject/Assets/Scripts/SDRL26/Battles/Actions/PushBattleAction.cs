@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace SDRL26.Battles.Actions
 {
-   public class AttackBattleAction : BattleAction
+   public class PushBattleAction : BattleAction
    {
-      [SerializeField] private int _damage;
-      [SerializeField] private string _displayName = "Attack ([damage])";
+      [SerializeField] private int _steps = 1;
+      [SerializeField] private string _displayName = "Push ([steps])";
 
-      public override string DisplayString => _displayName.Replace("[damage]", $"{_damage}");
+      public override string DisplayString => _displayName.Replace("[steps]", _steps.ToString());
 
       public override void ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
       {
          foreach (var target in targets)
          {
-            target.Damage(_damage);
+            target.Team.Move(target, _steps);
          }
       }
    }
