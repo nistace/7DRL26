@@ -102,5 +102,13 @@ namespace SDRL26.Battles
 
          OnChanged.Invoke();
       }
+
+      public void ResetBattlers()
+      {
+         foreach (var battler in _battlers)
+         {
+            battler.ResetForBattle();
+         }
+      }
    }
 }

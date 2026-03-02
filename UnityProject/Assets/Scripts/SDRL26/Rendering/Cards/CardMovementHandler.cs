@@ -1,14 +1,17 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace SDRL26.Rendering
+namespace SDRL26.Rendering.Cards
 {
    public class CardMovementHandler : MonoBehaviour
    {
+      [SerializeField] private Transform[] _slots;
+      [SerializeField] private Transform _spawn;
       private static CardMovementHandler Instance { get; set; }
 
       private readonly Dictionary<Transform, Movement> _movingCards = new();
       private readonly HashSet<Transform> _doneMovements = new();
+      public static Transform Spawn => Instance._spawn;
 
       private void Awake()
       {
@@ -33,7 +36,10 @@ namespace SDRL26.Rendering
          _doneMovements.Clear();
       }
 
-      public static void Move(Transform item, Transform destination)
+      public static void HideCard(Transform item) => Move(item, Instance._spawn);
+      public static void MoveToSlot(Transform item, int index) => Move(item, Instance._slots[index]);
+
+      private static void Move(Transform item, Transform destination)
       {
          if (!Instance._movingCards.TryGetValue(item, out var movement))
          {
@@ -58,5 +64,13 @@ namespace SDRL26.Rendering
       }
 
       public static bool IsMoving(Transform item) => Instance._movingCards.ContainsKey(item);
+
+      public static void SetSlotCountActive(int count)
+      {
+         for (var index = 0; index < Instance._slots.Length; index++)
+         {
+            Instance._slots[index].gameObject.SetActive(index < count);
+         }
+      }
    }
 }

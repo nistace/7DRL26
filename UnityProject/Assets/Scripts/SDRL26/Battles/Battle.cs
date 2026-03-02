@@ -13,6 +13,7 @@ namespace SDRL26.Battles
       [SerializeField] private BattlerTeam _playerTeam;
       [SerializeField] private BattlerTeam _opponentTeam;
 
+      public float BattleTime { get; private set; }
       public BattlerTeam PlayerTeam => _playerTeam;
       public BattlerTeam OpponentTeam => _opponentTeam;
 
@@ -50,6 +51,7 @@ namespace SDRL26.Battles
       {
          _playerTeam.ContinueBattle(deltaTime);
          _opponentTeam.ContinueBattle(deltaTime);
+         BattleTime += deltaTime;
       }
 
       public bool IsOver()
@@ -58,5 +60,8 @@ namespace SDRL26.Battles
       }
 
       public bool IsInPlayerTeam(Battler battler) => _playerTeam.IsInTeam(battler);
+
+      public float GetNextPauseTime(int timeBetweenInterruptions) =>
+         timeBetweenInterruptions * Mathf.RoundToInt((BattleTime + timeBetweenInterruptions) / timeBetweenInterruptions);
    }
 }

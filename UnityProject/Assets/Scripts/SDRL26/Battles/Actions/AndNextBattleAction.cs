@@ -12,7 +12,7 @@ namespace SDRL26.Battles.Actions
 
       public override string DisplayString => "And Next Target";
 
-      public override void ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
       {
          var actions = GetComponents<BattleAction>();
 

@@ -7,9 +7,9 @@ namespace SDRL26.GameControllers.GameStates
    public class PrepareBattleGameState : GameState
    {
       public Battle Battle { get; }
-      public UnityAction<Battle> OnPrepared { get; }
+      public UnityAction OnPrepared { get; }
 
-      public PrepareBattleGameState(BattleSetup battleSetup, UnityAction<Battle> onPrepared)
+      public PrepareBattleGameState(BattleSetup battleSetup, UnityAction onPrepared)
       {
          Battle = new Battle(GameData.PlayerTeam, battleSetup.InstantiateOpponentTeam());
          Battle.Prepare(GameDataLibrary.Instance.MaxBattlerAdditionalPreparationTime);
@@ -18,7 +18,11 @@ namespace SDRL26.GameControllers.GameStates
 
       protected override void StartState() { }
 
-      public void EndPreparation() => OnPrepared?.Invoke(Battle);
+      public void EndPreparation()
+      {
+         GameData.CurrentBattle = Battle;
+         OnPrepared?.Invoke();
+      }
 
       protected override void EndState() { }
    }

@@ -28,13 +28,13 @@ namespace SDRL26.Battles.Actions
 
       public override string DisplayString => _displayName.Replace("[battler]", _battlerPrefab.DisplayName).Replace("[position]", $"{_position}");
 
-      public override void ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
       {
          var teamsChanged = new HashSet<BattlerTeam>();
 
          var destinations = _targetTeam switch
          {
-            TargetTeam.ActionDoer => new[] { actionDoer },
+            TargetTeam.ActionDoer when actionDoer is Battler battlerActionDoer => new[] { battlerActionDoer },
             TargetTeam.AllTargets => targets,
             _ => throw new ArgumentOutOfRangeException()
          };

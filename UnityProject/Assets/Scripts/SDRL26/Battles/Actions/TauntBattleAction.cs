@@ -7,11 +7,16 @@ namespace SDRL26.Battles.Actions
    {
       public override string DisplayString => "Taunt";
 
-      public override void ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
       {
+         if (actionDoer is not Battler battler)
+         {
+            return;
+         }
+
          foreach (var target in targets)
          {
-            target.SetTargets(new[] { actionDoer });
+            target.SetTargets(new[] { battler });
          }
       }
    }

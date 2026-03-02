@@ -1,5 +1,4 @@
-﻿using SDRL26.Battles;
-using SDRL26.GameControllers.GameStates;
+﻿using SDRL26.GameControllers.GameStates;
 using SDRL26.Libraries;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,22 +12,20 @@ namespace SDRL26.GameControllers
       private void Awake()
       {
          GameDataLibrary.Instance = _gameDataLibrary;
-         GameData.Reset();
+         GameData.Reset(_gameDataLibrary.StarterCards);
       }
 
-      private void Start()
-      {
-         GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, HandleHeroChosen));
-      }
+      private void Start() => GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, PrepareBattle));
+      private void PrepareBattle() => GameState.Change(new PrepareBattleGameState(GameDataLibrary.Instance.RandomBattleSetup(GameData.Level), ChangeToContinueBattleState));
+      private void ChangeToContinueBattleState() => GameState.Change(new ContinueBattleGameState(OnBattleWon, OnBattleLost, PauseBattle));
+      private void PauseBattle() => GameState.Change(new PauseBattleGameState(ChangeToContinueBattleState));
 
-      private static void HandleHeroChosen() => GameState.Change(new PrepareBattleGameState(GameDataLibrary.Instance.RandomBattleSetup(GameData.Level), HandleBattlePrepared));
-      private static void HandleBattlePrepared(Battle battle) => GameState.Change(new ContinueBattleGameState(battle, OnBattleWon, OnBattleLost));
-
-      private static void OnBattleWon()
+      private void OnBattleWon()
       {
          Debug.Log("Battle won!");
          GameData.NextLevel();
-         GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, HandleHeroChosen));
+         GameData.PlayerTeam.ResetBattlers();
+         GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, PrepareBattle));
       }
 
       private static void OnBattleLost()

@@ -2,6 +2,7 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using SDRL26.Battles;
+using SDRL26.Libraries;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,17 +10,19 @@ namespace SDRL26.GameControllers.GameStates
 {
    public class ContinueBattleGameState : GameState
    {
-      private Battle Battle { get; }
+      private static Battle Battle => GameData.CurrentBattle;
+      private float InterruptOnTimeElapsed { get; }
       private UnityAction OnWon { get; }
       private UnityAction OnLost { get; }
+      private UnityAction OnTimeElapsed { get; }
       private CancellationTokenSource CancellationTokenSource;
-      public float BattleTime { get; private set; }
 
-      public ContinueBattleGameState(Battle battle, UnityAction onWon, UnityAction onLost)
+      public ContinueBattleGameState(UnityAction onWon, UnityAction onLost, UnityAction onTimeElapsed)
       {
-         Battle = battle;
          OnWon = onWon;
          OnLost = onLost;
+         InterruptOnTimeElapsed = Battle.GetNextPauseTime(GameDataLibrary.Instance.TimeBetweenInterruptions);
+         OnTimeElapsed = onTimeElapsed;
       }
 
       protected override void StartState()
@@ -33,20 +36,25 @@ namespace SDRL26.GameControllers.GameStates
 
       private async UniTask ContinueBattleAsync()
       {
-         while (!Battle.IsOver())
+         await UniTask.NextFrame();
+
+         while (!Battle.IsOver() && Battle.BattleTime < InterruptOnTimeElapsed)
          {
-            BattleTime += Time.deltaTime;
             Battle.Continue(Time.deltaTime);
             await UniTask.NextFrame();
          }
 
-         if (Battle.PlayerTeam.Battlers.Any(t => t.Health.IsAlive))
+         if (Battle.PlayerTeam.Battlers.All(t => t.Health.IsDead))
+         {
+            OnLost?.Invoke();
+         }
+         else if (Battle.OpponentTeam.Battlers.All(t => t.Health.IsDead))
          {
             OnWon?.Invoke();
          }
          else
          {
-            OnLost?.Invoke();
+            OnTimeElapsed?.Invoke();
          }
       }
 
