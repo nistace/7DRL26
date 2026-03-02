@@ -36,11 +36,11 @@ namespace SDRL26.Battles
          }
       }
 
-      public void Prepare(float minStartTime, float maxStartTime)
+      public void Prepare(float maxAdditionalPreparationTime)
       {
          foreach (var battler in _playerTeam.Battlers.Union(_opponentTeam.Battlers))
          {
-            battler.PrepareForBattle(Random.Range(minStartTime, maxStartTime));
+            battler.PrepareForBattle(Random.value * maxAdditionalPreparationTime);
          }
 
          OnStarted.Invoke();

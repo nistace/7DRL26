@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using SDRL26.Battles.Battlers;
@@ -46,6 +47,13 @@ namespace SDRL26.Rendering.ChooseHeroes
          }
       }
 
+      private void OnDestroy()
+      {
+         moveCardsCancellationTokenSource?.Cancel();
+         moveCardsCancellationTokenSource?.Dispose();
+         moveCardsCancellationTokenSource = null;
+      }
+
       private async UniTask HideCardsAsync(CancellationToken token)
       {
          foreach (var card in _visibleCards)
@@ -55,15 +63,10 @@ namespace SDRL26.Rendering.ChooseHeroes
 
          while (_visibleCards.Count > 0)
          {
-            for (var cardIndex = 0; cardIndex < _visibleCards.Count; cardIndex++)
+            if (!CardMovementHandler.IsMoving(_visibleCards[0].transform))
             {
-               if (CardMovementHandler.IsMoving(_visibleCards[cardIndex].transform))
-               {
-                  continue;
-               }
-
-               Destroy(_visibleCards[cardIndex].gameObject);
-               _visibleCards.RemoveAt(cardIndex);
+               Destroy(_visibleCards[0].gameObject);
+               _visibleCards.RemoveAt(0);
             }
 
             await UniTask.NextFrame(cancellationToken: token);

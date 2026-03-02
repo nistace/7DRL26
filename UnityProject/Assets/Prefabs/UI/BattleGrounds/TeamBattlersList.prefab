@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.BattlerTeamUi
   _canvasGroup: {fileID: 8545734399276256432}
   _container: {fileID: 8169716573892488001}
-  _battlerTokenPrefab: {fileID: 8309436556048322336, guid: 943eb3304774b2942be871d3130e8156, type: 3}
+  _battlerTokenPrefab: {fileID: 5843194991294791230, guid: a61045e19d4748340976f896e629c48f, type: 3}
 --- !u!225 &8545734399276256432
 CanvasGroup:
   m_ObjectHideFlags: 0

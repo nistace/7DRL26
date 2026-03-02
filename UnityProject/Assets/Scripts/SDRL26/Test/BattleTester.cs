@@ -19,7 +19,7 @@ namespace SDRL26.Test
       {
          BattleStartTime = Time.time;
          Battle = new Battle(new BattlerTeam(_playerBattlers), new BattlerTeam(_opponentBattlers));
-         Battle.Prepare(1, 2);
+         Battle.Prepare(1);
          OnBattleInitialized.Invoke();
       }
 

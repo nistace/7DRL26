@@ -4,6 +4,7 @@ using SDRL26.Battles.Battlers;
 using SDRL26.Rendering.Battleground.HealthBars;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace SDRL26.Rendering.Battleground
@@ -24,14 +25,29 @@ namespace SDRL26.Rendering.Battleground
       public Transform LinkAnchorOrigin => _linkAnchorOrigin;
       public Transform LinkAnchorDestination => _linkAnchorDestination;
 
+      public UnityEvent OnBattlerChanged { get; } = new();
+
       public void Setup(Battler battler)
       {
+         if (Battler) Battler.OnPostureChanged.RemoveListener(HandleBattlerPostureChanged);
+
          Battler = battler;
-         _portrait.sprite = battler.Portrait;
-         _actionsTexts[0].text = $"> Targets {Battler.Target}";
-         _actionsTexts[1].text = $"> [{Battler.ChargeActionTime:0.0}s] {string.Join(", ", battler.Actions.Select(t => t.DisplayString))}";
-         _actionsTexts[2].text = $"> [{Battler.RestTime:0.0}s] Rest";
+         RefreshBattlerInfo();
          _healthBar.Setup(battler.Health);
+
+         Battler.OnPostureChanged.AddListener(HandleBattlerPostureChanged);
+
+         OnBattlerChanged.Invoke();
+      }
+
+      private void HandleBattlerPostureChanged(BattlerPosture newPosture) => RefreshBattlerInfo();
+
+      private void RefreshBattlerInfo()
+      {
+         _portrait.sprite = Battler.Portrait;
+         _actionsTexts[0].text = $"> Targets {Battler.Target}";
+         _actionsTexts[1].text = $"> [{Battler.Posture.ChargeActionTime:0.0}s] {string.Join(", ", Battler.Posture.Actions.Select(t => t.DisplayString))}";
+         _actionsTexts[2].text = $"> [{Battler.Posture.RestTime:0.0}s] Rest";
       }
 
       private void Update()

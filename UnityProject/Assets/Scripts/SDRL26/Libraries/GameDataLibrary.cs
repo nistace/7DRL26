@@ -13,12 +13,10 @@ namespace SDRL26.Libraries
       [SerializeField] private Battler[] _playerStartBattlers;
       [SerializeField] private int _playerStartBattlersOptions;
       [SerializeField] private GameLevelBattleSetup[] _battleSetupsPerLevel;
-      [SerializeField] private float _minBattlerStartTime = 1;
-      [SerializeField] private float _maxBattlerStartTime = 3;
+      [SerializeField] private float _maxBattlerAdditionalPreparationTime = 1;
 
       public IReadOnlyList<Battler> RandomStartBattlers => _playerStartBattlers.OrderBy(_ => Random.value).Take(_playerStartBattlersOptions).ToArray();
-      public float MinBattlerStartTime => _minBattlerStartTime;
-      public float MaxBattlerStartTime => _maxBattlerStartTime;
+      public float MaxBattlerAdditionalPreparationTime => _maxBattlerAdditionalPreparationTime;
 
       public BattleSetup RandomBattleSetup(int level) => _battleSetupsPerLevel[level].RandomSetup;
    }
