@@ -10,6 +10,8 @@ namespace SDRL26.Rendering.Battleground
 {
    public class BattlerTokenUi : MonoBehaviour
    {
+      [SerializeField] private Transform _linkAnchorOrigin;
+      [SerializeField] private Transform _linkAnchorDestination;
       [SerializeField] private CanvasGroup _canvasGroup;
       [SerializeField] private Image _portrait;
       [SerializeField] private HealthBarUi _healthBar;
@@ -19,6 +21,8 @@ namespace SDRL26.Rendering.Battleground
 
       public BattlerTokenDisplayMode DisplayMode { get; set; }
       public Battler Battler { get; private set; }
+      public Transform LinkAnchorOrigin => _linkAnchorOrigin;
+      public Transform LinkAnchorDestination => _linkAnchorDestination;
 
       public void Setup(Battler battler)
       {

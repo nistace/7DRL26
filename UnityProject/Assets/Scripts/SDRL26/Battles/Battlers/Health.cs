@@ -16,6 +16,7 @@ namespace SDRL26.Battles.Battlers
       public int MaxHealth => _maxHealth;
 
       public UnityEvent OnChanged { get; } = new();
+      public UnityEvent OnDied { get; } = new();
 
       public Health() : this(5) { }
 
@@ -38,7 +39,13 @@ namespace SDRL26.Battles.Battlers
          if (damageToShield > 0 || damageToHealth > 0)
          {
             OnChanged.Invoke();
+
+            if (IsDead)
+            {
+               OnDied.Invoke();
+            }
          }
+
 
          return damageToHealth + damageToShield;
       }

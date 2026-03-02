@@ -10,7 +10,8 @@ namespace SDRL26.Rendering.Battleground
 
       private void Start()
       {
-         GameState.OnStateChanged.AddListener(HandleStateChanged);
+         RefreshForState(GameState.CurrentState);
+         GameState.OnStateChanged.AddListener(RefreshForState);
       }
 
       private void OnEnable()
@@ -31,6 +32,6 @@ namespace SDRL26.Rendering.Battleground
          }
       }
 
-      private void HandleStateChanged(GameState newState) => _startBattleButton.gameObject.SetActive(newState is PrepareBattleGameState);
+      private void RefreshForState(GameState newState) => _startBattleButton.gameObject.SetActive(newState is PrepareBattleGameState);
    }
 }

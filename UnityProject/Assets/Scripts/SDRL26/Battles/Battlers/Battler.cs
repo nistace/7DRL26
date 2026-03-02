@@ -54,11 +54,25 @@ namespace SDRL26.Battles.Battlers
       public static UnityEvent<Battler> OnTargetsChanged { get; } = new();
       public static UnityEvent<Battler> OnTargetsEvaluated { get; } = new();
       public static UnityEvent<Battler> OnActionsPerformed { get; } = new();
+      public static UnityEvent<Battler> OnPhaseChanged { get; } = new();
+      public static UnityEvent<Battler> OnAliveChanged { get; } = new();
 
       public void Initialize()
       {
          Health.FullyHeal();
       }
+
+      private void OnEnable()
+      {
+         Health.OnDied.AddListener(HandleDied);
+      }
+
+      private void OnDisable()
+      {
+         Health.OnDied.RemoveListener(HandleDied);
+      }
+
+      private void HandleDied() => OnAliveChanged.Invoke(this);
 
       public void ContinueBattle(float deltaTime)
       {
@@ -102,6 +116,7 @@ namespace SDRL26.Battles.Battlers
       {
          CurrentPhase = newPhase;
          CurrentPhaseLoadUpTime = 0;
+         OnPhaseChanged.Invoke(this);
       }
 
       private void RefreshTargets()

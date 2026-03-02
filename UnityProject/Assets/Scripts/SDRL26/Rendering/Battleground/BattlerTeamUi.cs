@@ -13,7 +13,8 @@ namespace SDRL26.Rendering.Battleground
       [SerializeField] private BattlerTokenUi _battlerTokenPrefab;
 
       private BattlerTeam _team;
-      private readonly List<BattlerTokenUi> _tokens = new();
+      private readonly Dictionary<Battler, BattlerTokenUi> _tokens = new();
+      private readonly Queue<BattlerTokenUi> _tokenPool = new();
       private BattlerTokenDisplayMode TokensDisplayMode { get; set; }
 
       public void Setup(BattlerTeam team)
@@ -21,6 +22,11 @@ namespace SDRL26.Rendering.Battleground
          _team?.OnChanged.RemoveListener(HandleChanged);
          _team = team;
          _team.OnChanged.AddListener(HandleChanged);
+
+         foreach (var battlerToRemove in _tokens.Keys.ToArray())
+         {
+            Pool(battlerToRemove);
+         }
 
          Refresh();
       }
@@ -30,25 +36,39 @@ namespace SDRL26.Rendering.Battleground
          Refresh();
       }
 
+      private void Pool(Battler battler)
+      {
+         var token = _tokens[battler];
+         _tokenPool.Enqueue(token);
+         token.gameObject.SetActive(false);
+         _tokens.Remove(battler);
+      }
+
       private void Refresh()
       {
+         foreach (var battlerToRemove in _tokens.Keys.Except(_team.Battlers).ToArray())
+         {
+            Pool(battlerToRemove);
+         }
+
          for (var battlerIndex = 0; battlerIndex < _team.Battlers.Count; battlerIndex++)
          {
             var battler = _team.Battlers[battlerIndex];
 
-            if (_tokens.Count <= battlerIndex)
+            if (!_tokens.TryGetValue(battler, out var token))
             {
-               _tokens.Add(Instantiate(_battlerTokenPrefab, transform));
+               if (!_tokenPool.TryDequeue(out token))
+               {
+                  token = Instantiate(_battlerTokenPrefab, transform);
+               }
+
+               _tokens.Add(battler, token);
             }
 
-            _tokens[battlerIndex].gameObject.SetActive(true);
-            _tokens[battlerIndex].Setup(battler);
-            _tokens[battlerIndex].DisplayMode = TokensDisplayMode;
-         }
-
-         for (var tokenIndex = _team.Battlers.Count; tokenIndex < _tokens.Count; tokenIndex++)
-         {
-            _tokens[tokenIndex].gameObject.SetActive(false);
+            token.gameObject.SetActive(true);
+            token.transform.SetSiblingIndex(battlerIndex);
+            token.Setup(battler);
+            token.DisplayMode = TokensDisplayMode;
          }
       }
 
@@ -58,12 +78,12 @@ namespace SDRL26.Rendering.Battleground
       {
          TokensDisplayMode = mode;
 
-         foreach (var token in _tokens)
+         foreach (var token in _tokens.Values)
          {
             token.DisplayMode = TokensDisplayMode;
          }
       }
 
-      public BattlerTokenUi GetToken(Battler battler) => _tokens.FirstOrDefault(t => t.Battler == battler);
+      public BattlerTokenUi GetToken(Battler battler) => _tokens.FirstOrDefault(t => t.Key == battler).Value;
    }
 }
