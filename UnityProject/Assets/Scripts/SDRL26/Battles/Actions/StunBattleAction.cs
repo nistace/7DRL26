@@ -3,13 +3,16 @@ using SDRL26.Battles.Battlers;
 
 namespace SDRL26.Battles.Actions
 {
-   public class ChangePostureBattleAction : BattleAction
+   public class StunBattleAction : BattleAction
    {
-      public override string DisplayString => "Change Posture";
+      public override string DisplayString => "Stun";
 
       public override void ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
       {
-         actionDoer.SelectNextPosture();
+         foreach (var target in targets)
+         {
+            target.ForceRest();
+         }
       }
    }
 }

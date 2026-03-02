@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using SDRL26.Battles.Battlers;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,7 +15,6 @@ namespace SDRL26.Battles
       [SerializeField] private List<Battler> _battlers;
 
       public IReadOnlyList<Battler> Battlers => _battlers;
-      public int LowestAliveHealth => _battlers.Where(t => t.Health.IsAlive).Min(t => t.Health.CurrentHealth);
       public UnityEvent OnChanged { get; } = new();
 
       public BattlerTeam(Battler[] battlerPrefabs)
@@ -31,9 +31,9 @@ namespace SDRL26.Battles
 
       public void ContinueBattle(float deltaTime)
       {
-         for (var index = 0; index < _battlers.Count; index++)
+         foreach (var battler in _battlers.ToArray())
          {
-            _battlers[index].ContinueBattle(deltaTime);
+            battler.ContinueBattle(deltaTime);
          }
       }
 
@@ -50,35 +50,57 @@ namespace SDRL26.Battles
          return instance;
       }
 
-      public List<Battler> GetFirst(Func<Battler, bool> condition)
+      private List<Battler> AsList([CanBeNull] Battler battler)
       {
-         var battler = _battlers.Where(condition).FirstOrDefault();
-
          if (battler == null) return new List<Battler>();
 
          return new List<Battler> { battler };
       }
 
-      public List<Battler> GetLast(Func<Battler, bool> condition)
-      {
-         var battler = _battlers.Where(condition).LastOrDefault();
-
-         if (battler == null) return new List<Battler>();
-
-         return new List<Battler> { battler };
-      }
-
-      public List<Battler> GetRandom(Func<Battler, bool> condition)
-      {
-         var battler = _battlers.Where(condition).OrderBy(_ => UnityEngine.Random.value).ToList().FirstOrDefault();
-
-         if (battler == null) return new List<Battler>();
-
-         return new List<Battler> { battler };
-      }
+      public List<Battler> GetFirst(Func<Battler, bool> where) => AsList(_battlers.Where(where).FirstOrDefault());
+      public List<Battler> GetLast(Func<Battler, bool> where) => AsList(_battlers.Where(where).LastOrDefault());
+      public List<Battler> GetRandom(Func<Battler, bool> where) => AsList(_battlers.Where(where).OrderBy(_ => UnityEngine.Random.value).ToList().FirstOrDefault());
+      public List<Battler> GetFirst(Func<Battler, int> order) => AsList(_battlers.OrderBy(order).FirstOrDefault());
+      public List<Battler> GetFirst(Func<Battler, bool> where, Func<Battler, float> order) => AsList(_battlers.Where(where).OrderBy(order).FirstOrDefault());
 
       public bool IsInTeam(Battler battler) => battler.Team == this;
       public int IndexOf(Battler battler) => _battlers.IndexOf(battler);
       public void NotifyChanged() => OnChanged.Invoke();
+
+      public bool TryGetNextBattler(Battler battler, out Battler next, bool loop, bool allowSame)
+      {
+         next = default;
+         var index = _battlers.IndexOf(battler);
+
+         if (index < 0) return false;
+
+         var nextIndex = (index + 1);
+
+         if (!loop && nextIndex >= _battlers.Count) return false;
+
+         nextIndex %= _battlers.Count;
+
+         if (!allowSame && nextIndex == index) return false;
+
+         next = _battlers[nextIndex];
+
+         return true;
+      }
+
+      public void Move(Battler battler, int delta)
+      {
+         var index = _battlers.IndexOf(battler);
+
+         if (index < 0) return;
+
+         var newIndex = Mathf.Clamp(index + delta, 0, _battlers.Count);
+
+         if (index == newIndex) return;
+
+         _battlers.Remove(battler);
+         _battlers.Insert(newIndex, battler);
+
+         OnChanged.Invoke();
+      }
    }
 }

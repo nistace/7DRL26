@@ -12,9 +12,12 @@ namespace SDRL26.Battles.Actions
 
       public override string DisplayString => _displayName.Replace("[shield]", $"{_shield}");
 
-      public override int ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
       {
-         return targets.Sum(target => target.Shield(_shield));
+         foreach (var target in targets)
+         {
+            target.Shield(_shield);
+         }
       }
    }
 }

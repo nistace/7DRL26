@@ -28,7 +28,7 @@ namespace SDRL26.Battles.Actions
 
       public override string DisplayString => _displayName.Replace("[battler]", _battlerPrefab.DisplayName).Replace("[position]", $"{_position}");
 
-      public override int ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
       {
          var teamsChanged = new HashSet<BattlerTeam>();
 
@@ -63,8 +63,6 @@ namespace SDRL26.Battles.Actions
          {
             team.NotifyChanged();
          }
-
-         return targets.Count;
       }
    }
 }
