@@ -78,7 +78,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4154366079223272370}
+      addedObject: {fileID: 4183253766137259995}
     - targetCorrespondingSourceObject: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2042492352402976417}
@@ -88,7 +88,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
   m_PrefabInstance: {fileID: 399325408705782464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4154366079223272370
+--- !u!114 &4183253766137259995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,11 +97,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8232931795561852271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
+  m_Script: {fileID: 11500000, guid: b1139942be944d7f80d3c8ca3fda4989, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
-  _damage: 1
-  _displayName: Attack ([damage])
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
+  _heal: 1
+  _displayName: Heal ([heal])
 --- !u!114 &2042492352402976417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,5 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.SummonBattleAction
   _battlerPrefab: {fileID: 2301385055571929859, guid: 8334fbff47bfc954fbfb16e41e012843, type: 3}
+  _targetTeam: 0
   _position: 2
   _displayName: 'Summon [battler] [position]'

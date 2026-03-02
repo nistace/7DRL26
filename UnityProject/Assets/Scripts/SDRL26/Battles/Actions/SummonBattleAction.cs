@@ -15,7 +15,14 @@ namespace SDRL26.Battles.Actions
          After = 3
       }
 
+      private enum TargetTeam
+      {
+         ActionDoer = 0,
+         AllTargets = 1
+      }
+
       [SerializeField] private Battler _battlerPrefab;
+      [SerializeField] private TargetTeam _targetTeam = TargetTeam.ActionDoer;
       [SerializeField] private Position _position = Position.Last;
       [SerializeField] private string _displayName = "Summon [battler] [position]";
 
@@ -25,7 +32,14 @@ namespace SDRL26.Battles.Actions
       {
          var teamsChanged = new HashSet<BattlerTeam>();
 
-         foreach (var target in targets)
+         var destinations = _targetTeam switch
+         {
+            TargetTeam.ActionDoer => new[] { actionDoer },
+            TargetTeam.AllTargets => targets,
+            _ => throw new ArgumentOutOfRangeException()
+         };
+
+         foreach (var target in destinations)
          {
             teamsChanged.Add(target.Team);
 
