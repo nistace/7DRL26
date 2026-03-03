@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using SDRL26.Battles;
 using SDRL26.Battles.Cards;
+using UnityEngine.Events;
 
 namespace SDRL26.GameControllers
 {
@@ -11,13 +12,20 @@ namespace SDRL26.GameControllers
       public static int Level { get; private set; }
       public static Battle CurrentBattle { get; set; }
 
+      public static UnityEvent<int> OnLevelChanged { get; } = new();
+
       public static void Reset(IReadOnlyList<AbilityCard> starterCards)
       {
          PlayerTeam = new BattlerTeam();
-         PlayerDeck = new(starterCards);
+         PlayerDeck = new PlayerAbilityCardDeck(starterCards);
          Level = 0;
+         OnLevelChanged.Invoke(Level);
       }
 
-      public static void NextLevel() => Level++;
+      public static void NextLevel()
+      {
+         Level++;
+         OnLevelChanged.Invoke(Level);
+      }
    }
 }

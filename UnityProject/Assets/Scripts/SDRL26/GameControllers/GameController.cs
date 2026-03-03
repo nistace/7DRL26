@@ -22,10 +22,17 @@ namespace SDRL26.GameControllers
 
       private void OnBattleWon()
       {
-         Debug.Log("Battle won!");
-         GameData.NextLevel();
          GameData.PlayerTeam.ResetBattlers();
-         GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, PrepareBattle));
+         GameData.NextLevel();
+
+         if (GameDataLibrary.Instance.HasToChooseHero(GameData.Level))
+         {
+            GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomBattlers, PrepareBattle));
+         }
+         else
+         {
+            PrepareBattle();
+         }
       }
 
       private static void OnBattleLost()

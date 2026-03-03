@@ -16,7 +16,11 @@ MonoBehaviour:
   - {fileID: 2301385055571929859, guid: 1a81d9646ea778540b620c6b19d478c1, type: 3}
   - {fileID: 2301385055571929859, guid: 5b50d6083577568459054cca7ddaa9cd, type: 3}
   - {fileID: 2301385055571929859, guid: 459c49b30c397f4459885b5edc479792, type: 3}
-  _playerStartBattlersOptions: 3
+  _chooseBattlersOptions: 3
+  _allPlayerBattlers:
+  - {fileID: 2301385055571929859, guid: 1a81d9646ea778540b620c6b19d478c1, type: 3}
+  - {fileID: 2301385055571929859, guid: 5b50d6083577568459054cca7ddaa9cd, type: 3}
+  - {fileID: 2301385055571929859, guid: 459c49b30c397f4459885b5edc479792, type: 3}
   _battleSetupsPerLevel:
   - _setups:
     - {fileID: 11400000, guid: ef9457bca5442934f9138e5f3a5ce9ac, type: 2}
@@ -36,3 +40,4 @@ MonoBehaviour:
   - {fileID: 2530319927965642811, guid: 672d299162b52b14c8814834b92ce424, type: 3}
   _pauseCardsCount: 3
   _timeBetweenInterruptions: 5
+  _chooseHeroOnLevelMultiples: 4
