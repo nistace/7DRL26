@@ -55,7 +55,7 @@ MonoBehaviour:
     - Key: 2
       Value: {fileID: 0}
   _target: 16
-  _preparationTime: 1
+  _preparationTime: 0
   _chargeActionTime: 1.5
   _restTime: 1.5
 --- !u!114 &8926081268291626199
@@ -126,13 +126,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: _actions.Array.size
+      propertyPath: _preparationTime
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: '_actions.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1251863823636004592}
+      propertyPath: _chargeActionTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _actions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -190,7 +194,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1251863823636004592}
+      addedObject: {fileID: 6201009169064792439}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
 --- !u!4 &3906161212698977625 stripped
 Transform:
@@ -202,7 +206,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
   m_PrefabInstance: {fileID: 399325408705782464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1251863823636004592
+--- !u!114 &6201009169064792439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,9 +215,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4234510613630717437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1139942be944d7f80d3c8ca3fda4989, type: 3}
+  m_Script: {fileID: 11500000, guid: 51f33a72dd554146803e7a834bbfdca5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
-  _heal: 5
-  _canRevive: 1
-  _displayName: Heal ([heal])
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ReviveBattleAction
+  _healthRatio: 0.5
+  _displayName: Revive ([healthRatio]%)
