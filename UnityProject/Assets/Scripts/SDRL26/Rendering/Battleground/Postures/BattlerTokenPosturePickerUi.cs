@@ -8,6 +8,7 @@ namespace SDRL26.Rendering.Battleground.Postures
    {
       [SerializeField] private BattlerTokenUi _token;
       [SerializeField] private BattlerPostureButton[] _postureButtons;
+      [SerializeField] private GameStateTypes _canChangeInStates = GameStateTypes.PrepareBattle | GameStateTypes.PauseBattle;
 
       private Battler _battler;
 
@@ -25,7 +26,7 @@ namespace SDRL26.Rendering.Battleground.Postures
 
       private void HandlePostureClicked(BattlerPosture posture)
       {
-         if (GameState.CurrentState is PrepareBattleGameState)
+         if (GameState.CurrentState?.Is(_canChangeInStates) ?? false)
          {
             _battler.SelectPosture(posture);
          }

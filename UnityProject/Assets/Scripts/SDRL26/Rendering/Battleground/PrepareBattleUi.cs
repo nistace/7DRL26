@@ -8,12 +8,6 @@ namespace SDRL26.Rendering.Battleground
    {
       [SerializeField] private Button _startBattleButton;
 
-      private void Start()
-      {
-         RefreshForState(GameState.CurrentState);
-         GameState.OnStateChanged.AddListener(RefreshForState);
-      }
-
       private void OnEnable()
       {
          _startBattleButton.onClick.AddListener(HandleStartBattleClicked);
@@ -31,7 +25,5 @@ namespace SDRL26.Rendering.Battleground
             prepareBattleGameState.EndPreparation();
          }
       }
-
-      private void RefreshForState(GameState newState) => _startBattleButton.gameObject.SetActive(newState is PrepareBattleGameState);
    }
 }

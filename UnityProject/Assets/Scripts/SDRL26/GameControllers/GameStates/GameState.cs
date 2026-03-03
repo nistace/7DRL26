@@ -6,6 +6,7 @@ namespace SDRL26.GameControllers.GameStates
    {
       public static GameState CurrentState { get; private set; }
       public static UnityEvent<GameState> OnStateChanged { get; } = new();
+      public abstract GameStateTypes Types { get; }
 
       public static void Change(GameState newState)
       {
@@ -18,5 +19,7 @@ namespace SDRL26.GameControllers.GameStates
 
       protected abstract void EndState();
       protected abstract void StartState();
+
+      public bool Is(GameStateTypes states) => (Types & states) > 0;
    }
 }

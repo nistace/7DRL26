@@ -8,8 +8,12 @@ namespace SDRL26.Rendering.HUD
    {
       [SerializeField] private TMP_Text _levelText;
 
-      private void Start() => RefreshText();
-      private void OnEnable() => GameData.OnLevelChanged.AddListener(HandleLevelChanged);
+      private void OnEnable()
+      {
+         RefreshText();
+         GameData.OnLevelChanged.AddListener(HandleLevelChanged);
+      }
+
       private void OnDisable() => GameData.OnLevelChanged.RemoveListener(HandleLevelChanged);
       private void HandleLevelChanged(int arg0) => RefreshText();
       private void RefreshText() => _levelText.text = $"Level {(GameData.Level + 1)}";

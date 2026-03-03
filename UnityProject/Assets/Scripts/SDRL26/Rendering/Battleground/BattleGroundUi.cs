@@ -1,4 +1,5 @@
-﻿using SDRL26.Battles.Battlers;
+﻿using SDRL26.Battles;
+using SDRL26.Battles.Battlers;
 using SDRL26.GameControllers;
 using SDRL26.GameControllers.GameStates;
 using UnityEngine;
@@ -12,12 +13,15 @@ namespace SDRL26.Rendering.Battleground
 
       private void Start()
       {
+         GameData.OnPlayerTeamChanged.AddListener(HandlePlayerTeamChanged);
          GameState.OnStateChanged.AddListener(HandleGameStateChanged);
 
          _playerTeam.Setup(GameData.PlayerTeam);
          _playerTeam.SetVisible(true);
          _otherTeam.SetVisible(false);
       }
+
+      private void HandlePlayerTeamChanged(BattlerTeam newPlayerTeam) => _playerTeam.Setup(GameData.PlayerTeam);
 
       private void HandleGameStateChanged(GameState newState)
       {

@@ -10,21 +10,6 @@ namespace SDRL26.Rendering.HUD
       [SerializeField] private TMP_Text _text;
       [SerializeField] private Image _progressImage;
 
-      private void Start()
-      {
-         GameState.OnStateChanged.AddListener(HandleGameStateChanged);
-         RefreshWithCurrentState();
-      }
-
-      private void OnDestroy()
-      {
-         GameState.OnStateChanged.RemoveListener(HandleGameStateChanged);
-      }
-
-      private void HandleGameStateChanged(GameState newState) => RefreshWithCurrentState();
-
-      private void RefreshWithCurrentState() => gameObject.SetActive(GameState.CurrentState is PauseBattleGameState or ContinueBattleGameState);
-
       private void Update()
       {
          switch (GameState.CurrentState)

@@ -17,6 +17,7 @@ namespace SDRL26.GameControllers.GameStates
       private UnityAction OnWon { get; }
       private UnityAction OnLost { get; }
       private UnityAction OnTimeElapsed { get; }
+      public override GameStateTypes Types => GameStateTypes.ContinueBattle;
       private CancellationTokenSource CancellationTokenSource;
 
       public ContinueBattleGameState(UnityAction onWon, UnityAction onLost, UnityAction onTimeElapsed)

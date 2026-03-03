@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using SDRL26.Battles;
-using SDRL26.Battles.Battlers;
 using SDRL26.Battles.Cards;
 using SDRL26.Libraries;
 using UnityEngine.Events;
@@ -12,6 +11,7 @@ namespace SDRL26.GameControllers.GameStates
       public Battle Battle => GameData.CurrentBattle;
       public PlayerAbilityCardDeck CardDeck => GameData.PlayerDeck;
       public UnityAction OnResumed { get; }
+      public override GameStateTypes Types => GameStateTypes.PauseBattle;
       public IReadOnlyList<AbilityCard> Options => CardDeck.HandCards;
 
       public PauseBattleGameState(UnityAction onResumed)

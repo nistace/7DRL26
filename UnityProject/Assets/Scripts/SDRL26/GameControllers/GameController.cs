@@ -1,7 +1,6 @@
 ﻿using SDRL26.GameControllers.GameStates;
 using SDRL26.Libraries;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace SDRL26.GameControllers
 {
@@ -15,7 +14,18 @@ namespace SDRL26.GameControllers
          GameData.Reset(_gameDataLibrary.StarterCards);
       }
 
-      private void Start() => ChooseStarterBattler();
+      private void Start() => ShowMainMenu();
+
+      private static void ShowMainMenu() => GameState.Change(new MainMenuGameState());
+
+      public void NewGame()
+      {
+         GameData.Reset(_gameDataLibrary.StarterCards);
+         ChooseStarterBattler();
+      }
+
+      public void Quit() => Application.Quit();
+
       private void ChooseStarterBattler() => GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, ContinueAfterChoosingStarterBattler));
 
       private void PrepareBattle() => GameState.Change(new PrepareBattleGameState(GameDataLibrary.Instance.RandomBattleSetup(GameData.Level), ChangeToContinueBattleState));
@@ -43,16 +53,16 @@ namespace SDRL26.GameControllers
          {
             GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomBattlers, PrepareBattle));
          }
+         else if (GameDataLibrary.Instance.IsGameWon(GameData.Level))
+         {
+            GameState.Change(new MainMenuGameState());
+         }
          else
          {
             PrepareBattle();
          }
       }
 
-      private static void OnBattleLost()
-      {
-         Debug.Log("GameOver");
-         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-      }
+      private static void OnBattleLost() => ShowMainMenu();
    }
 }

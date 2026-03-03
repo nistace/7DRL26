@@ -8,6 +8,7 @@ namespace SDRL26.GameControllers.GameStates
    {
       public Battle Battle { get; }
       public UnityAction OnPrepared { get; }
+      public override GameStateTypes Types => GameStateTypes.PrepareBattle;
 
       public PrepareBattleGameState(BattleSetup battleSetup, UnityAction onPrepared)
       {

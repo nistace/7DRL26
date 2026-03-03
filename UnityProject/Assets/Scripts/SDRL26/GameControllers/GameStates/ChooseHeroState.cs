@@ -9,6 +9,7 @@ namespace SDRL26.GameControllers.GameStates
    {
       public IReadOnlyList<Battler> Options { get; }
       private UnityAction OnHeroChosen { get; }
+      public override GameStateTypes Types => GameStateTypes.ChooseHero;
 
       public ChooseHeroState(IReadOnlyList<Battler> options, UnityAction OnHeroChosen)
       {

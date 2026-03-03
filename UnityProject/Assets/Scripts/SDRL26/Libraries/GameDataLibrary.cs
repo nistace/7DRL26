@@ -13,6 +13,7 @@ namespace SDRL26.Libraries
 
       [Header("Pick battlers")]
       [SerializeField] private Battler[] _playerStartBattlers;
+
       [SerializeField] private int _battlersToPickOnStart = 1;
       [SerializeField] private int _optionsPerBattlerPick = 3;
       [SerializeField] private Battler[] _allPlayerBattlers;
@@ -20,12 +21,14 @@ namespace SDRL26.Libraries
 
       [Header("Battles")]
       [SerializeField] private GameLevelBattleSetup[] _battleSetupsPerLevel;
+
       [SerializeField] private float _maxBattlerAdditionalPreparationTime = 1;
       [SerializeField] private int _timeBetweenInterruptions = 5;
       [SerializeField] private bool _canReorganizeDuringPauses = true;
 
       [Header("Ability Cards")]
       [SerializeField] private AbilityCard[] _starterCards;
+
       [SerializeField] private int _pauseCardsCount = 3;
 
       public IReadOnlyList<Battler> RandomStartBattlers => _playerStartBattlers.OrderBy(_ => Random.value).Take(_optionsPerBattlerPick).ToArray();
@@ -39,5 +42,7 @@ namespace SDRL26.Libraries
 
       public BattleSetup RandomBattleSetup(int level) => _battleSetupsPerLevel[level].RandomSetup;
       public bool HasToChooseHero(int level) => level % _chooseHeroOnLevelMultiples == 0;
+
+      public bool IsGameWon(int level) => _battleSetupsPerLevel.Length <= level;
    }
 }
