@@ -74,6 +74,7 @@ namespace SDRL26.Battles.Battlers
 
          if (CurrentHealth == healTaken)
          {
+            CurrentShield = 0;
             OnRevived.Invoke();
          }
 
@@ -98,6 +99,8 @@ namespace SDRL26.Battles.Battlers
 
       public int Shield(int points)
       {
+         if (IsDead) return 0;
+
          CurrentShield += points;
 
          OnChanged.Invoke();
