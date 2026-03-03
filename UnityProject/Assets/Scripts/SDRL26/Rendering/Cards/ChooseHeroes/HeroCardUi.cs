@@ -49,9 +49,13 @@ namespace SDRL26.Rendering.Cards.ChooseHeroes
 
       private void RefreshInfo()
       {
+         var posture = BattlerPrefab.Postures[PostureIndex];
          _card.DisplayName = BattlerPrefab.DisplayName;
-         _card.Portrait = BattlerPrefab.Postures[PostureIndex].GetPortrait(BattlerPosture.Portrait.Rest);
-         _card.Description = string.Join("<br> - ", BattlerPrefab.Postures[PostureIndex].Actions.Select(t => t.DisplayString));
+         _card.Portrait = posture.GetPortrait(BattlerPosture.Portrait.Rest);
+
+         _card.Description = $"Targets {posture.Target}<br>"
+            + $"[{posture.ChargeActionTime:0.##}s] Action<br>{string.Join("<br>", posture.Actions.Select(t => $" - {t.DisplayString}"))}<br>"
+            + $"[{posture.RestTime:0.##}s] Rest";
       }
 
       public void SetUp(Battler battlerPrefab)

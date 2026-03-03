@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: GameDataLibrary
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.GameDataLibrary
   _playerStartBattlers:
-  - {fileID: 2301385055571929859, guid: 063295c1be151e143a2b435b2e029379, type: 3}
   - {fileID: 2301385055571929859, guid: 1a81d9646ea778540b620c6b19d478c1, type: 3}
-  - {fileID: 2301385055571929859, guid: 5b50d6083577568459054cca7ddaa9cd, type: 3}
-  _battlersToPickOnStart: 3
+  - {fileID: 2301385055571929859, guid: 063295c1be151e143a2b435b2e029379, type: 3}
+  - {fileID: 2301385055571929859, guid: 3dd2daedade155a4c9daba33ad9101bd, type: 3}
+  _battlersToPickOnStart: 2
   _optionsPerBattlerPick: 3
   _allPlayerBattlers:
   - {fileID: 2301385055571929859, guid: 1a81d9646ea778540b620c6b19d478c1, type: 3}
   - {fileID: 2301385055571929859, guid: 5b50d6083577568459054cca7ddaa9cd, type: 3}
-  - {fileID: 2301385055571929859, guid: 459c49b30c397f4459885b5edc479792, type: 3}
+  - {fileID: 2301385055571929859, guid: 063295c1be151e143a2b435b2e029379, type: 3}
+  - {fileID: 2301385055571929859, guid: fe7fc29d461ef72458bbadec51f6731c, type: 3}
+  - {fileID: 2301385055571929859, guid: 3dd2daedade155a4c9daba33ad9101bd, type: 3}
+  - {fileID: 2301385055571929859, guid: 69bdf5683a1d12e448f03dddd7232c90, type: 3}
   _chooseHeroOnLevelMultiples: 4
   _battleSetupsPerLevel:
   - _setups:
