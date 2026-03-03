@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &444866279639858384
+--- !u!1 &8252237594685478329
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5359547659989068058}
-  - component: {fileID: 4285484121423327129}
-  - component: {fileID: 2628215701673512052}
+  - component: {fileID: 2888868697072338483}
+  - component: {fileID: 8634827911174764194}
+  - component: {fileID: 11290050155658871}
+  - component: {fileID: 2723596690082478269}
   m_Layer: 0
-  m_Name: TankPosture
+  m_Name: HealPosture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5359547659989068058
+--- !u!4 &2888868697072338483
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444866279639858384}
+  m_GameObject: {fileID: 8252237594685478329}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,39 +34,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3906161212698977625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4285484121423327129
+--- !u!114 &8634827911174764194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444866279639858384}
+  m_GameObject: {fileID: 8252237594685478329}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
-  _icon: {fileID: 1075993247170539406, guid: c4e4bc771cc534942a14ff89caeb49f7, type: 3}
-  _target: 0
-  _preparationTime: 2
-  _chargeActionTime: 1
-  _restTime: 3
-  _actions:
-  - {fileID: 2628215701673512052}
---- !u!114 &2628215701673512052
+  _icon: {fileID: 1709680392034587706, guid: 9667d31cc74e0764baff28f45ab54957, type: 3}
+  _target: 10
+  _preparationTime: 1.5
+  _chargeActionTime: 2.5
+  _restTime: 1.5
+--- !u!114 &11290050155658871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444866279639858384}
+  m_GameObject: {fileID: 8252237594685478329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf2f58388d84453948f188925aadf50, type: 3}
+  m_Script: {fileID: 11500000, guid: b1139942be944d7f80d3c8ca3fda4989, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ShieldBattleAction
-  _shield: 4
-  _displayName: Shield ([shield])
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
+  _heal: 3
+  _canRevive: 0
+  _displayName: Heal ([heal])
+--- !u!114 &2723596690082478269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252237594685478329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056c668aafe84afa81bf9d2bc2805966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.MotivateBattleAction
+  _progress: 1
+  _displayName: Motivate ([progress]s)
 --- !u!1001 &399325408705782464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77,14 +91,22 @@ PrefabInstance:
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portrait
       value: 
-      objectReference: {fileID: 1075993247170539406, guid: c4e4bc771cc534942a14ff89caeb49f7, type: 3}
+      objectReference: {fileID: -5860470177254374992, guid: 7454fbebecddca3488587032e2eefc65, type: 3}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _restTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _displayName
-      value: Tank
+      value: Captain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _chargeActionTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._maxHealth
-      value: 20
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _postures.Array.size
@@ -93,27 +115,31 @@ PrefabInstance:
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: '_postures.Array.data[1]'
       value: 
-      objectReference: {fileID: 4285484121423327129}
+      objectReference: {fileID: 8634827911174764194}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _icon
       value: 
-      objectReference: {fileID: -205270267638800340, guid: 4a298cd866087c142866981cd42cc691, type: 3}
+      objectReference: {fileID: 1075993247170539406, guid: c4e4bc771cc534942a14ff89caeb49f7, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _target
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: _actions.Array.size
+      propertyPath: _restTime
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: '_actions.Array.data[0]'
-      value: 
-      objectReference: {fileID: 7203571854009269930}
+      propertyPath: _preparationTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: '_actions.Array.data[1]'
-      value: 
-      objectReference: {fileID: 5318220967023117475}
+      propertyPath: _chargeActionTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _actions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -156,25 +182,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
-      value: TauntPosture
+      value: ShieldPosture
       objectReference: {fileID: 0}
     - target: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
-      value: Tank
+      value: Captain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5359547659989068058}
+      addedObject: {fileID: 2888868697072338483}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7203571854009269930}
+      addedObject: {fileID: 8101463327844952343}
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5318220967023117475}
+      addedObject: {fileID: 6963097579002054727}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
 --- !u!4 &3906161212698977625 stripped
 Transform:
@@ -186,7 +212,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
   m_PrefabInstance: {fileID: 399325408705782464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7203571854009269930
+--- !u!114 &8101463327844952343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,12 +221,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4234510613630717437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
+  m_Script: {fileID: 11500000, guid: baf2f58388d84453948f188925aadf50, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AttackBattleAction
-  _damage: 1
-  _displayName: Attack ([damage])
---- !u!114 &5318220967023117475
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ShieldBattleAction
+  _shield: 4
+  _displayName: Shield ([shield])
+--- !u!114 &6963097579002054727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,6 +235,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4234510613630717437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3e0e2626e7d408ca3417429ffdc5c8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dd695ce918c4be197e294215ed9191b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.TauntBattleAction
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.WakeUpBattleAction
+  _displayName: Wake Up
