@@ -368,8 +368,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 448734257057060758, guid: 943eb3304774b2942be871d3130e8156, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6462228242825182888}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3455224656452398850, guid: 943eb3304774b2942be871d3130e8156, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8564516321916469357}
   m_SourcePrefab: {fileID: 100100000, guid: 943eb3304774b2942be871d3130e8156, type: 3}
+--- !u!1 &987786831755238940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3455224656452398850, guid: 943eb3304774b2942be871d3130e8156, type: 3}
+  m_PrefabInstance: {fileID: 2469730059633586462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8564516321916469357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987786831755238940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7062478bc4914aaf856350055a283083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.BattlerDragAndDrop
+  _token: {fileID: 5843194991294791230}
 --- !u!224 &2628984024323794568 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 448734257057060758, guid: 943eb3304774b2942be871d3130e8156, type: 3}
@@ -380,7 +401,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8309436556048322336, guid: 943eb3304774b2942be871d3130e8156, type: 3}
   m_PrefabInstance: {fileID: 2469730059633586462}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 987786831755238940}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 301427fcf2d4cf746ba918cae2f21043, type: 3}

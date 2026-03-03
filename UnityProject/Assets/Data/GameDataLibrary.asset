@@ -16,7 +16,8 @@ MonoBehaviour:
   - {fileID: 2301385055571929859, guid: 1a81d9646ea778540b620c6b19d478c1, type: 3}
   - {fileID: 2301385055571929859, guid: 5b50d6083577568459054cca7ddaa9cd, type: 3}
   - {fileID: 2301385055571929859, guid: 459c49b30c397f4459885b5edc479792, type: 3}
-  _chooseBattlersOptions: 3
+  _battlersToPickOnStart: 3
+  _optionsPerBattlerPick: 3
   _allPlayerBattlers:
   - {fileID: 2301385055571929859, guid: 1a81d9646ea778540b620c6b19d478c1, type: 3}
   - {fileID: 2301385055571929859, guid: 5b50d6083577568459054cca7ddaa9cd, type: 3}

@@ -16,7 +16,7 @@ namespace SDRL26.Battles.Actions
       {
          foreach (var target in targets)
          {
-            target.Team.Move(target, -_steps);
+            target.Team.MoveBattlerByDelta(target, -_steps);
          }
       }
    }

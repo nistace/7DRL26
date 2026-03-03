@@ -20,13 +20,11 @@ namespace SDRL26.Rendering.Cards
 
       private void HandleStateChanged(GameState newState)
       {
+         Hide();
+
          if (newState is TState theState)
          {
             Show(GetOptions(theState).Select(SpawnCard).ToArray());
-         }
-         else
-         {
-            Hide();
          }
       }
 

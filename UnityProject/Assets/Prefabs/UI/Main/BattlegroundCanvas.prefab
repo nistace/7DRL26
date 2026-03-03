@@ -52,6 +52,81 @@ MonoBehaviour:
   _battleGround: {fileID: 6487454064477289814}
   _linkPrefab: {fileID: 2188567702149335362, guid: f28a4d029a1cc4040a2139adcabd46b7, type: 3}
   _linkDestinationOffset: 20
+--- !u!1 &8281088308040869397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3900908434247877507}
+  - component: {fileID: 322015292129366951}
+  - component: {fileID: 1973629963879617162}
+  m_Layer: 5
+  m_Name: Drop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &3900908434247877507
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281088308040869397}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1620795242664752414}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 330, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &322015292129366951
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281088308040869397}
+  m_CullTransparentMesh: 1
+--- !u!114 &1973629963879617162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281088308040869397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.48513722, g: 0.3300107, b: 0.6792453, a: 0.8}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8430129618730782681
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +182,41 @@ MonoBehaviour:
       Value: {fileID: -205270267638800340, guid: 4a298cd866087c142866981cd42cc691, type: 3}
     - Key: 1
       Value: {fileID: 255877476622243558, guid: aab2afa896508004fad72f5eef5d955f, type: 3}
+--- !u!1 &8966008551222773083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7169347346279217601}
+  m_Layer: 5
+  m_Name: DraggableOnTop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7169347346279217601
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8966008551222773083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2461477791865133267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &9209784006729072496
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +230,7 @@ GameObject:
   - component: {fileID: 946877457997973951}
   - component: {fileID: 1360914372395362214}
   - component: {fileID: 6487454064477289814}
+  - component: {fileID: 2152817132062798242}
   m_Layer: 5
   m_Name: BattlegroundCanvas
   m_TagString: Untagged
@@ -143,6 +254,7 @@ RectTransform:
   - {fileID: 1620795242664752414}
   - {fileID: 4533064577275485157}
   - {fileID: 7091091692502816724}
+  - {fileID: 7169347346279217601}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -227,6 +339,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.BattleGroundUi
   _playerTeam: {fileID: 3083240692686953291}
   _otherTeam: {fileID: 170936175709074864}
+--- !u!114 &2152817132062798242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209784006729072496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169e8998fbb34441b9f0f0ca8de11cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.DragAndDrop.BattlerOrganizer
+  _canvasRect: {fileID: 2461477791865133267}
+  _organizingTeam: {fileID: 5931742864808749371}
+  _topTransform: {fileID: 7169347346279217601}
+  _enableOnPause: 0
+  _changePositionOffset: 30
 --- !u!1001 &5730839077613400228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -442,20 +571,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8169716573892488001, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3900908434247877507}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4687789362644600185, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5931742864808749371}
   m_SourcePrefab: {fileID: 100100000, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
 --- !u!224 &1620795242664752414 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8169716573892488001, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
   m_PrefabInstance: {fileID: 7430536275818929759}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2742919537172028198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4687789362644600185, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
+  m_PrefabInstance: {fileID: 7430536275818929759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5931742864808749371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742919537172028198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a11f497e3604a73a16e420990903631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.DragAndDrop.DraggableTeam
+  _dropPosition: {fileID: 3900908434247877507}
 --- !u!114 &3083240692686953291 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5609037952701547796, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
   m_PrefabInstance: {fileID: 7430536275818929759}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2742919537172028198}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5156d1d6ce84fa8b2674c3ede495e6f, type: 3}

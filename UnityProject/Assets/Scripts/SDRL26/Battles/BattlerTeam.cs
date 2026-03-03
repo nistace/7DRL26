@@ -87,20 +87,29 @@ namespace SDRL26.Battles
          return true;
       }
 
-      public void Move(Battler battler, int delta)
+      public void MoveBattlerToIndex(Battler battler, int index)
       {
-         var index = _battlers.IndexOf(battler);
+         var currentIndex = _battlers.IndexOf(battler);
 
-         if (index < 0) return;
+         if (currentIndex < 0) return;
 
-         var newIndex = Mathf.Clamp(index + delta, 0, _battlers.Count);
+         var newIndex = Mathf.Clamp(index, 0, _battlers.Count - 1);
 
-         if (index == newIndex) return;
+         if (currentIndex == newIndex) return;
 
          _battlers.Remove(battler);
          _battlers.Insert(newIndex, battler);
 
          OnChanged.Invoke();
+      }
+
+      public void MoveBattlerByDelta(Battler battler, int delta)
+      {
+         var index = _battlers.IndexOf(battler);
+
+         if (index < 0) return;
+
+         MoveBattlerToIndex(battler, index + delta);
       }
 
       public void ResetBattlers()

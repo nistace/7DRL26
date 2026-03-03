@@ -10,8 +10,10 @@ namespace SDRL26.GameControllers.GameStates
 {
    public class ContinueBattleGameState : GameState
    {
-      private static Battle Battle => GameData.CurrentBattle;
+      public static Battle Battle => GameData.CurrentBattle;
       private float InterruptOnTimeElapsed { get; }
+      private float BattlePhaseStartTime { get; }
+      public float PhaseProgress => (Battle.BattleTime - BattlePhaseStartTime) / (InterruptOnTimeElapsed - BattlePhaseStartTime);
       private UnityAction OnWon { get; }
       private UnityAction OnLost { get; }
       private UnityAction OnTimeElapsed { get; }
@@ -21,6 +23,7 @@ namespace SDRL26.GameControllers.GameStates
       {
          OnWon = onWon;
          OnLost = onLost;
+         BattlePhaseStartTime = Battle.BattleTime;
          InterruptOnTimeElapsed = Battle.GetNextPauseTime(GameDataLibrary.Instance.TimeBetweenInterruptions);
          OnTimeElapsed = onTimeElapsed;
       }
@@ -38,7 +41,7 @@ namespace SDRL26.GameControllers.GameStates
       {
          await UniTask.NextFrame();
 
-         while (!Battle.IsOver() && Battle.BattleTime < InterruptOnTimeElapsed)
+         while (!Battle.IsOver() && PhaseProgress < 1)
          {
             Battle.Continue(Time.deltaTime);
             await UniTask.NextFrame();

@@ -15,10 +15,24 @@ namespace SDRL26.GameControllers
          GameData.Reset(_gameDataLibrary.StarterCards);
       }
 
-      private void Start() => GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, PrepareBattle));
+      private void Start() => ChooseStarterBattler();
+      private void ChooseStarterBattler() => GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, ContinueAfterChoosingStarterBattler));
+
       private void PrepareBattle() => GameState.Change(new PrepareBattleGameState(GameDataLibrary.Instance.RandomBattleSetup(GameData.Level), ChangeToContinueBattleState));
       private void ChangeToContinueBattleState() => GameState.Change(new ContinueBattleGameState(OnBattleWon, OnBattleLost, PauseBattle));
       private void PauseBattle() => GameState.Change(new PauseBattleGameState(ChangeToContinueBattleState));
+
+      private void ContinueAfterChoosingStarterBattler()
+      {
+         if (GameData.PlayerTeam.Battlers.Count < GameDataLibrary.Instance.BattlersToPickOnStart)
+         {
+            ChooseStarterBattler();
+         }
+         else
+         {
+            PrepareBattle();
+         }
+      }
 
       private void OnBattleWon()
       {
