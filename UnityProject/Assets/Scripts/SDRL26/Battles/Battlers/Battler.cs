@@ -17,12 +17,10 @@ namespace SDRL26.Battles.Battlers
       }
 
       [SerializeField] private string _displayName = "Battler";
-      [SerializeField] private Sprite _portrait;
       [SerializeField] private Health _health = new();
       [SerializeField] private BattlerPosture[] _postures;
 
       public string DisplayName => _displayName;
-      public Sprite Portrait => _portrait;
       private BattleAction[] _actions;
       public Health Health => _health;
       public Phase CurrentPhase { get; private set; }
@@ -196,6 +194,22 @@ namespace SDRL26.Battles.Battlers
       public void ResetForBattle()
       {
          Health.RemoveAllShields();
+         ChangePhase(Phase.Prepare);
+      }
+
+      public Sprite GetCurrentPortrait()
+      {
+         if (Health.IsDead)
+         {
+            return Posture.GetPortrait(BattlerPosture.Portrait.Dead);
+         }
+
+         if (CurrentPhase is Phase.Action)
+         {
+            return Posture.GetPortrait(BattlerPosture.Portrait.Action);
+         }
+
+         return Posture.GetPortrait(BattlerPosture.Portrait.Rest);
       }
    }
 }
