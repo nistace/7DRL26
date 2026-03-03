@@ -27,7 +27,7 @@ namespace SDRL26.Rendering.Battleground
             _otherTeam.SetVisible(true);
             SetTokensDisplayMode(BattlerTokenDisplayMode.Prepare);
          }
-         else if (newState is ContinueBattleGameState)
+         else if (newState is ContinueBattleGameState or PauseBattleGameState)
          {
             _otherTeam.SetVisible(true);
             SetTokensDisplayMode(BattlerTokenDisplayMode.Battle);

@@ -104,5 +104,14 @@ namespace SDRL26.Battles.Battlers
 
          return points;
       }
+
+      public void RemoveAllShields()
+      {
+         if (CurrentShield == 0) return;
+
+         CurrentShield = 0;
+
+         OnChanged.Invoke();
+      }
    }
 }

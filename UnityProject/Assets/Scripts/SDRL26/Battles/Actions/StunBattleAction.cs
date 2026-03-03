@@ -7,7 +7,7 @@ namespace SDRL26.Battles.Actions
    {
       public override string DisplayString => "Stun";
 
-      public override void ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
       {
          foreach (var target in targets)
          {

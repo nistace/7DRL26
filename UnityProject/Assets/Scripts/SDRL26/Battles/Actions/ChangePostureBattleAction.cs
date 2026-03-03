@@ -7,9 +7,14 @@ namespace SDRL26.Battles.Actions
    {
       public override string DisplayString => "Change Posture";
 
-      public override void ApplyEffect(Battler actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
       {
-         actionDoer.SelectNextPosture();
+         if (actionDoer is not Battler battler)
+         {
+            return;
+         }
+         
+         battler.SelectNextPosture();
       }
    }
 }

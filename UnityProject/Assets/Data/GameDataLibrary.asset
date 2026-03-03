@@ -28,5 +28,11 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b8437b77d85d10d448e79ad2a78fc4d1, type: 2}
   - _setups:
     - {fileID: 11400000, guid: fdd807f59316ff24f8210c0a9258c67f, type: 2}
-  _minBattlerStartTime: 1
-  _maxBattlerStartTime: 3
+  _maxBattlerAdditionalPreparationTime: 1
+  _starterCards:
+  - {fileID: 2530319927965642811, guid: 74424fe5435ae80479d5d5042994c38f, type: 3}
+  - {fileID: 2530319927965642811, guid: 987710c6c39da5e4b93392161aa8fbfb, type: 3}
+  - {fileID: 2530319927965642811, guid: 8313f3e777644b94dbc29e0e2f5a934d, type: 3}
+  - {fileID: 2530319927965642811, guid: 672d299162b52b14c8814834b92ce424, type: 3}
+  _pauseCardsCount: 3
+  _timeBetweenInterruptions: 5
