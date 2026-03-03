@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2888868697072338483}
   - component: {fileID: 8634827911174764194}
-  - component: {fileID: 5052484461818792135}
-  - component: {fileID: 7730606900958819947}
+  - component: {fileID: 354119566859008082}
+  - component: {fileID: 4855110320404766437}
   m_Layer: 0
-  m_Name: Attack2Posture
+  m_Name: AttackPosture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,16 +50,16 @@ MonoBehaviour:
   _portraits:
     _serializedList:
     - Key: 0
-      Value: {fileID: 1347020135, guid: 367ebc7eef1967f439cdf6222b0cd630, type: 3}
+      Value: {fileID: 0}
     - Key: 1
-      Value: {fileID: 76074898, guid: 367ebc7eef1967f439cdf6222b0cd630, type: 3}
+      Value: {fileID: 0}
     - Key: 2
       Value: {fileID: 0}
-  _target: 0
+  _target: 51
   _preparationTime: 1.5
-  _chargeActionTime: 2
-  _restTime: 2
---- !u!114 &5052484461818792135
+  _chargeActionTime: 1.5
+  _restTime: 1.5
+--- !u!114 &354119566859008082
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,9 +71,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AttackBattleAction
-  _damage: 4
+  _damage: 2
   _displayName: Attack ([damage])
---- !u!114 &7730606900958819947
+--- !u!114 &4855110320404766437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,11 +82,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8252237594685478329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8b33f9043d45bc8815e2735723dad9, type: 3}
+  m_Script: {fileID: 11500000, guid: 52a8a11d59094829ab20c0cbbef28126, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.PushBattleAction
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.PullBattleAction
   _steps: 1
-  _displayName: Push ([steps])
+  _displayName: Pull ([steps])
 --- !u!1001 &399325408705782464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _displayName
-      value: Attacker
+      value: Support
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
@@ -113,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._maxHealth
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _postures.Array.size
@@ -126,10 +126,14 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _icon
       value: 
+      objectReference: {fileID: -205270267638800340, guid: 4a298cd866087c142866981cd42cc691, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _target
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _preparationTime
@@ -137,24 +141,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actions.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: '_actions.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8443741294010625289}
-    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: _portraits._serializedList.Array.data[0].Value
-      value: 
-      objectReference: {fileID: -8345435589167100473, guid: 367ebc7eef1967f439cdf6222b0cd630, type: 3}
-    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: _portraits._serializedList.Array.data[1].Value
-      value: 
-      objectReference: {fileID: 1496833907, guid: 367ebc7eef1967f439cdf6222b0cd630, type: 3}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -197,11 +189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
-      value: Attack1Posture
+      value: HealPosture
       objectReference: {fileID: 0}
     - target: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
-      value: Attacker
+      value: Support
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -212,10 +204,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8443741294010625289}
+      addedObject: {fileID: 2220726698154567966}
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7640726578690153148}
+      addedObject: {fileID: 8881836194531712563}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
 --- !u!4 &3906161212698977625 stripped
 Transform:
@@ -227,7 +219,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
   m_PrefabInstance: {fileID: 399325408705782464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8443741294010625289
+--- !u!114 &2220726698154567966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,12 +228,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4234510613630717437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
+  m_Script: {fileID: 11500000, guid: b1139942be944d7f80d3c8ca3fda4989, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AttackBattleAction
-  _damage: 4
-  _displayName: Attack ([damage])
---- !u!114 &7640726578690153148
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
+  _heal: 3
+  _canRevive: 0
+  _displayName: Heal ([heal])
+--- !u!114 &8881836194531712563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,4 +247,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AndNextBattleAction
   _allowSameTarget: 0
-  _loop: 1
+  _loop: 0
