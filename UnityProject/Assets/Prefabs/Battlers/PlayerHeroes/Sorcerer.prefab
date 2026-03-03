@@ -46,6 +46,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
   _icon: {fileID: 1709680392034587706, guid: 9667d31cc74e0764baff28f45ab54957, type: 3}
+  _portraits:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: -7280169748082540770, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+    - Key: 1
+      Value: {fileID: 1178052159, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+    - Key: 2
+      Value: {fileID: 0}
   _target: 55
   _preparationTime: 1.5
   _chargeActionTime: 0.5
@@ -124,6 +132,14 @@ PrefabInstance:
       propertyPath: '_actions.Array.data[0]'
       value: 
       objectReference: {fileID: 8443741294010625289}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraits._serializedList.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 328936763, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraits._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 1898717118, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

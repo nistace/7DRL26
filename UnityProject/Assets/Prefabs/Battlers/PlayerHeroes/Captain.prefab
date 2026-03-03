@@ -46,7 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
-  _icon: {fileID: 1709680392034587706, guid: 9667d31cc74e0764baff28f45ab54957, type: 3}
+  _icon: {fileID: -205270267638800340, guid: 4a298cd866087c142866981cd42cc691, type: 3}
+  _portraits:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 0}
+    - Key: 1
+      Value: {fileID: 0}
+    - Key: 2
+      Value: {fileID: 0}
   _target: 10
   _preparationTime: 1.5
   _chargeActionTime: 2.5
@@ -119,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _icon
       value: 
-      objectReference: {fileID: 1075993247170539406, guid: c4e4bc771cc534942a14ff89caeb49f7, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _target
       value: 10
