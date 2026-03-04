@@ -51,6 +51,7 @@ namespace SDRL26.Rendering.Battleground.HealthBars
          for (var i = 0; i < healthTokens.Count; ++i)
          {
             healthTokens[i].color = i < _health.CurrentHealth ? _data.FullColor : _data.EmptyColor;
+            healthTokens[i].sprite = i < _health.CurrentHealth ? _data.FullSprite : _data.EmptySprite;
          }
 
          while (shieldTokens.Count > _health.CurrentShield)

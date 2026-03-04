@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc86e47ca2a495eba2bdf53dd615eab, type: 3}
   m_Name: HealthBarData
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.HealthBars.HealthBarData
+  _fullSprite: {fileID: 21300000, guid: 4f61704b9cdfdf04482c632a02c9437c, type: 3}
+  _emptySprite: {fileID: 21300000, guid: 9c79f39697ddaca47be5b504e0959b27, type: 3}
   _fullColor: {r: 1, g: 1, b: 1, a: 1}
-  _emptyColor: {r: 1, g: 1, b: 1, a: 0.5}
+  _emptyColor: {r: 1, g: 1, b: 1, a: 1}
