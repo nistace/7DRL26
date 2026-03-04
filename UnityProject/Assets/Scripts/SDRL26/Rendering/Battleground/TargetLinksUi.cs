@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SDRL26.Battles.Actions;
 using SDRL26.Battles.Battlers;
 using SDRL26.GameControllers.GameStates;
 using UnityEngine;
@@ -22,11 +23,11 @@ namespace SDRL26.Rendering.Battleground
 
       private void HandleGameStateChanged(GameState newState)
       {
-         Battler.OnTargetsChanged.RemoveListener(HandleBattlerTargetsChanged);
+         Battler.OnTargetChanged.RemoveListener(HandleBattlerTargetsChanged);
 
          if (newState is ContinueBattleGameState)
          {
-            Battler.OnTargetsChanged.AddListener(HandleBattlerTargetsChanged);
+            Battler.OnTargetChanged.AddListener(HandleBattlerTargetsChanged);
             Battler.OnActionsPerformed.AddListener(HandleBattlerActionPerformed);
             Battler.OnPhaseChanged.AddListener(HandleBattlerPhaseChanged);
             Battler.OnAliveChanged.AddListener(HandleBattlerAliveChanged);
@@ -80,7 +81,7 @@ namespace SDRL26.Rendering.Battleground
             _links.Add(battler, battlerLinks);
          }
 
-         foreach (var target in battler.Targets)
+         foreach (var target in ActionResolver.EvaluateAllTargets(battler.Target, battler.TotalAdditionalTargets))
          {
             var linkData = (GetLink(), _battleGround.GetToken(battler), _battleGround.GetToken(target));
             battlerLinks.Add(linkData);

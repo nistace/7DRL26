@@ -1,18 +1,15 @@
-﻿using System.Collections.Generic;
-using SDRL26.Battles.Battlers;
+﻿using SDRL26.Battles.Battlers;
 
 namespace SDRL26.Battles.Actions
 {
    public class StunBattleAction : BattleAction
    {
+      public override RepeatingBehaviour Repetition => RepeatingBehaviour.Repeating;
       public override string DisplayString => "Stun";
 
-      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(BattleActionData data, Battler target)
       {
-         foreach (var target in targets)
-         {
-            target.ForceRest();
-         }
+         target.ForceRest();
       }
    }
 }

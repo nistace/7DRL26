@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using SDRL26.Battles.Battlers;
+﻿using SDRL26.Battles.Battlers;
 using UnityEngine;
 
 namespace SDRL26.Battles.Actions
@@ -11,14 +9,12 @@ namespace SDRL26.Battles.Actions
       [SerializeField] private bool _canRevive;
       [SerializeField] private string _displayName = "Heal ([heal])";
 
+      public override RepeatingBehaviour Repetition => RepeatingBehaviour.Repeating;
       public override string DisplayString => _displayName.Replace("[heal]", $"{_heal}");
 
-      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(BattleActionData data, Battler target)
       {
-         foreach (var target in targets)
-         {
-            target.Heal(_heal, _canRevive);
-         }
+         target.Heal(_heal, _canRevive);
       }
    }
 }

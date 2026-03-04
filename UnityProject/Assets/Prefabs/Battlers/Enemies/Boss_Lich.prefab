@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8252237594685478329
+--- !u!1 &6645561990141404657
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2888868697072338483}
-  - component: {fileID: 8634827911174764194}
-  - component: {fileID: 1595981201226051759}
+  - component: {fileID: 4484966619794244864}
+  - component: {fileID: 5206868975161077674}
+  - component: {fileID: 4070384387870195970}
+  - component: {fileID: 599451275076628868}
+  - component: {fileID: 5375065765488282901}
   m_Layer: 0
-  m_Name: Attack2Posture
+  m_Name: HealPosture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2888868697072338483
+--- !u!4 &4484966619794244864
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252237594685478329}
+  m_GameObject: {fileID: 6645561990141404657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,46 +35,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3906161212698977625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8634827911174764194
+--- !u!114 &5206868975161077674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252237594685478329}
+  m_GameObject: {fileID: 6645561990141404657}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
-  _icon: {fileID: 1709680392034587706, guid: 9667d31cc74e0764baff28f45ab54957, type: 3}
+  _icon: {fileID: 0}
   _portraits:
     _serializedList:
     - Key: 0
-      Value: {fileID: -7280169748082540770, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+      Value: {fileID: 0}
     - Key: 1
-      Value: {fileID: 1178052159, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+      Value: {fileID: 0}
     - Key: 2
       Value: {fileID: 0}
-  _target: 55
-  _additionalTargets: 0
-  _preparationTime: 1.5
-  _chargeActionTime: 0.5
-  _restTime: 1.5
---- !u!114 &1595981201226051759
+  _target: 12
+  _preparationTime: 2
+  _chargeActionTime: 7
+  _restTime: 0
+--- !u!114 &4070384387870195970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252237594685478329}
+  m_GameObject: {fileID: 6645561990141404657}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AttackBattleAction
-  _damage: 3
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
+  _damage: 10
   _displayName: Attack ([damage])
+--- !u!114 &599451275076628868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645561990141404657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056c668aafe84afa81bf9d2bc2805966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.MotivateBattleAction
+  _progress: 1
+  _displayName: Motivate ([progress]s)
+--- !u!114 &5375065765488282901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645561990141404657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b50a286991472daf113a9113a6cc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ChangePostureBattleAction
 --- !u!1001 &399325408705782464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,16 +109,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _target
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portrait
       value: 
-      objectReference: {fileID: -5860470177254374992, guid: 7454fbebecddca3488587032e2eefc65, type: 3}
+      objectReference: {fileID: 9079002682661804598, guid: c2fb13340834d524db968b087008e8e0, type: 3}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _displayName
-      value: Sorcerer
+      value: Lich
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
@@ -99,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._maxHealth
-      value: 9
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _postures.Array.size
@@ -108,30 +139,18 @@ PrefabInstance:
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: '_postures.Array.data[1]'
       value: 
-      objectReference: {fileID: 8634827911174764194}
-    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: _icon
-      value: 
-      objectReference: {fileID: 1075993247170539406, guid: c4e4bc771cc534942a14ff89caeb49f7, type: 3}
+      objectReference: {fileID: 5206868975161077674}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _target
-      value: 54
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: _preparationTime
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: _additionalTargets
-      value: 2
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actions.Array.size
@@ -140,15 +159,7 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: '_actions.Array.data[0]'
       value: 
-      objectReference: {fileID: 8443741294010625289}
-    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: _portraits._serializedList.Array.data[0].Value
-      value: 
-      objectReference: {fileID: 328936763, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
-    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: _portraits._serializedList.Array.data[1].Value
-      value: 
-      objectReference: {fileID: 1898717118, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+      objectReference: {fileID: 2441393529320362138}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
@@ -163,22 +174,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
-      value: Attack1Posture
+      value: AttackPosture
       objectReference: {fileID: 0}
     - target: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
-      value: Sorcerer
+      value: Boss_Lich
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2888868697072338483}
+      addedObject: {fileID: 4484966619794244864}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8443741294010625289}
+      addedObject: {fileID: 2441393529320362138}
+    - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2291396462376818925}
+    - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4705290068169346163}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
 --- !u!4 &3906161212698977625 stripped
 Transform:
@@ -190,7 +207,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
   m_PrefabInstance: {fileID: 399325408705782464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8443741294010625289
+--- !u!114 &2441393529320362138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,6 +218,32 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AttackBattleAction
-  _damage: 1
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
+  _damage: 5
   _displayName: Attack ([damage])
+--- !u!114 &2291396462376818925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234510613630717437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a8a11d59094829ab20c0cbbef28126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.PullBattleAction
+  _steps: 5
+  _displayName: Pull ([steps])
+--- !u!114 &4705290068169346163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234510613630717437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b50a286991472daf113a9113a6cc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ChangePostureBattleAction

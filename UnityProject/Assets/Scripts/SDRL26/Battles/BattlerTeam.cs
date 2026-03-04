@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
 using SDRL26.Battles.Battlers;
 using UnityEngine;
 using UnityEngine.Events;
@@ -50,18 +49,11 @@ namespace SDRL26.Battles
          return instance;
       }
 
-      private List<Battler> AsList([CanBeNull] Battler battler)
-      {
-         if (battler == null) return new List<Battler>();
-
-         return new List<Battler> { battler };
-      }
-
-      public List<Battler> GetFirst(Func<Battler, bool> where) => AsList(_battlers.Where(where).FirstOrDefault());
-      public List<Battler> GetLast(Func<Battler, bool> where) => AsList(_battlers.Where(where).LastOrDefault());
-      public List<Battler> GetRandom(Func<Battler, bool> where) => AsList(_battlers.Where(where).OrderBy(_ => UnityEngine.Random.value).ToList().FirstOrDefault());
-      public List<Battler> GetFirst(Func<Battler, int> order) => AsList(_battlers.OrderBy(order).FirstOrDefault());
-      public List<Battler> GetFirst(Func<Battler, bool> where, Func<Battler, float> order) => AsList(_battlers.Where(where).OrderBy(order).FirstOrDefault());
+      public Battler GetFirst(Func<Battler, bool> where) => _battlers.Where(where).FirstOrDefault();
+      public Battler GetLast(Func<Battler, bool> where) => _battlers.Where(where).LastOrDefault();
+      public Battler GetRandom(Func<Battler, bool> where) => _battlers.Where(where).OrderBy(_ => UnityEngine.Random.value).ToList().FirstOrDefault();
+      public Battler GetFirst(Func<Battler, int> order) => _battlers.OrderBy(order).FirstOrDefault();
+      public Battler GetFirst(Func<Battler, bool> where, Func<Battler, float> order) => _battlers.Where(where).OrderBy(order).FirstOrDefault();
 
       public bool IsInTeam(Battler battler) => battler.Team == this;
       public int IndexOf(Battler battler) => _battlers.IndexOf(battler);

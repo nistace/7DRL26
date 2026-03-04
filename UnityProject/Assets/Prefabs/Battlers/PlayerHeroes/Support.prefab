@@ -56,6 +56,7 @@ MonoBehaviour:
     - Key: 2
       Value: {fileID: 0}
   _target: 51
+  _additionalTargets: 0
   _preparationTime: 1.5
   _chargeActionTime: 1.5
   _restTime: 1.5
@@ -144,36 +145,12 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _additionalTargets
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actions.Array.size
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -205,9 +182,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2220726698154567966}
-    - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8881836194531712563}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
 --- !u!4 &3906161212698977625 stripped
 Transform:
@@ -234,17 +208,3 @@ MonoBehaviour:
   _heal: 3
   _canRevive: 0
   _displayName: Heal ([heal])
---- !u!114 &8881836194531712563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4234510613630717437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2833aaee97964493b854ad0a3ce25ceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AndNextBattleAction
-  _allowSameTarget: 0
-  _loop: 0

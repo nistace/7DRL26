@@ -1,5 +1,105 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4138567684218121045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6339208552918401629}
+  - component: {fileID: 7013722186151596439}
+  - component: {fileID: 2204107975822043683}
+  - component: {fileID: 9014578905197005533}
+  - component: {fileID: 7622307754229540077}
+  m_Layer: 0
+  m_Name: ShieldPosture
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6339208552918401629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138567684218121045}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3906161212698977625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7013722186151596439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138567684218121045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
+  _icon: {fileID: 0}
+  _portraits:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 0}
+    - Key: 1
+      Value: {fileID: 0}
+    - Key: 2
+      Value: {fileID: 0}
+  _target: 12
+  _preparationTime: 1
+  _chargeActionTime: 1.5
+  _restTime: 2
+--- !u!114 &2204107975822043683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138567684218121045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf2f58388d84453948f188925aadf50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ShieldBattleAction
+  _shield: 3
+  _displayName: Shield ([shield])
+--- !u!114 &9014578905197005533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138567684218121045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2833aaee97964493b854ad0a3ce25ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AndNextBattleAction
+  _allowSameTarget: 0
+  _loop: 1
+--- !u!114 &7622307754229540077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138567684218121045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b50a286991472daf113a9113a6cc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ChangePostureBattleAction
 --- !u!1001 &399325408705782464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _displayName
-      value: Blob Mother
+      value: Mama Blob
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
@@ -26,7 +126,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._maxHealth
-      value: 30
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _postures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: '_postures.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7013722186151596439}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _restTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _preparationTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _chargeActionTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actions.Array.size
@@ -41,34 +161,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3511658117641248990}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -80,13 +172,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: m_Name
+      value: SummonPosture
+      objectReference: {fileID: 0}
     - target: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
-      value: BlobMother
+      value: Boss_MamaBlob
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6339208552918401629}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
@@ -94,7 +193,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3511658117641248990}
+    - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6487071739687488071}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
+--- !u!4 &3906161212698977625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
+  m_PrefabInstance: {fileID: 399325408705782464}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4234510613630717437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
@@ -113,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
   _heal: 2
+  _canRevive: 1
   _displayName: Heal ([heal])
 --- !u!114 &3511658117641248990
 MonoBehaviour:
@@ -130,3 +238,15 @@ MonoBehaviour:
   _targetTeam: 0
   _position: 2
   _displayName: 'Summon [battler] [position]'
+--- !u!114 &6487071739687488071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234510613630717437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b50a286991472daf113a9113a6cc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ChangePostureBattleAction

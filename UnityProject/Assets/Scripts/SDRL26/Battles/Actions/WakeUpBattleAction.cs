@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using SDRL26.Battles.Battlers;
+﻿using SDRL26.Battles.Battlers;
 using UnityEngine;
 
 namespace SDRL26.Battles.Actions
@@ -8,17 +7,12 @@ namespace SDRL26.Battles.Actions
    {
       [SerializeField] private string _displayName = "Wake Up";
 
+      public override RepeatingBehaviour Repetition => RepeatingBehaviour.Repeating;
       public override string DisplayString => _displayName;
 
-      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(BattleActionData data, Battler target)
       {
-         foreach (var target in targets)
-         {
-            if (target.CurrentPhase is Battler.Phase.Rest or Battler.Phase.Prepare)
-            {
-               target.EndRest(true);
-            }
-         }
+         target.EndRest(true);
       }
    }
 }

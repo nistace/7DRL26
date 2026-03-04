@@ -47,21 +47,20 @@ namespace SDRL26.Test
       private void ObserveBattle()
       {
          _battleTester.Battle.OnStarted.AddListener(HandleBattleStarted);
-         Battler.OnTargetsChanged.AddListener(HandleBattlerTargetsEvaluated);
+         Battler.OnTargetChanged.AddListener(HandleBattlerTargetsEvaluated);
          Battler.OnActionsPerformed.AddListener(HandleActionPerformed);
       }
 
       private void HandleActionPerformed(Battler battler)
       {
-         AddText(
-            $"{battler.DisplayName} performed: {string.Join(", ", battler.Posture.Actions.Select(t => t.DisplayString))} on {string.Join(", ", battler.Targets.Select(t => t.DisplayName))}",
+         AddText($"{battler.DisplayName} performed: {string.Join(", ", battler.Posture.Actions.Select(t => t.DisplayString))} on {string.Join(", ", battler.Target.DisplayName)}",
             _battleTester.Battle.IsInPlayerTeam(battler) ? Color.green : Color.red
          );
       }
 
       private void HandleBattlerTargetsEvaluated(Battler battler)
       {
-         AddText($"{battler.DisplayName}'s targets changed: {string.Join(", ", battler.Targets.Select(t => t.DisplayName))}",
+         AddText($"{battler.DisplayName}'s targets changed: {string.Join(", ", battler.Target.DisplayName)}",
             _battleTester.Battle.IsInPlayerTeam(battler) ? Color.green : Color.red
          );
       }

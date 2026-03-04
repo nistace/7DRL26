@@ -1,23 +1,20 @@
-﻿using System.Collections.Generic;
-using SDRL26.Battles.Battlers;
+﻿using SDRL26.Battles.Battlers;
 
 namespace SDRL26.Battles.Actions
 {
    public class TauntBattleAction : BattleAction
    {
+      public override RepeatingBehaviour Repetition => RepeatingBehaviour.Repeating;
       public override string DisplayString => "Taunt";
 
-      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(BattleActionData data, Battler target)
       {
-         if (actionDoer is not Battler battler)
+         if (data.ActionDoer is not Battler battler)
          {
             return;
          }
 
-         foreach (var target in targets)
-         {
-            target.SetTargets(new[] { battler });
-         }
+         target.SetTarget(battler);
       }
    }
 }
