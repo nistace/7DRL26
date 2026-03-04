@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SDRL26.Battles.Battlers;
 
 namespace SDRL26.Battles.Actions
@@ -39,6 +40,7 @@ namespace SDRL26.Battles.Actions
 
       public static Battler[] EvaluateAllTargets(Battler initialTarget, int additionalTargets = 0)
       {
+         if (initialTarget == null) return Array.Empty<Battler>();
          if (additionalTargets == 0) return new[] { initialTarget };
 
          var allTargets = new List<Battler> { initialTarget };

@@ -104,12 +104,25 @@ namespace SDRL26.Battles
          MoveBattlerToIndex(battler, index + delta);
       }
 
-      public void ResetBattlers()
+      public void ResetAfterBattle()
       {
+         for (var i = _battlers.Count - 1; i >= 0; i--)
+         {
+            if (!_battlers[i].IsSummoned)
+            {
+               continue;
+            }
+
+            Object.Destroy(_battlers[i].gameObject);
+            _battlers.RemoveAt(i);
+         }
+
          foreach (var battler in _battlers)
          {
             battler.ResetForBattle();
          }
+
+         OnChanged.Invoke();
       }
    }
 }
