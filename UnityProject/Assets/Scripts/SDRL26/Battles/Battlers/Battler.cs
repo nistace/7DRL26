@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using SDRL26.Battles.Actions;
 using UnityEngine;
 using UnityEngine.Events;
@@ -30,8 +29,11 @@ namespace SDRL26.Battles.Battlers
       private float CurrentPhaseLoadUpTime { get; set; }
       public BattlerTeam Team { get; set; }
       public BattlerTeam OtherTeam { get; set; }
-      public IReadOnlyCollection<Battler> Targets { get; private set; }
-      public ActionTarget Target => Posture.Target;
+      public bool IsSummoned { get; set; }
+      public Battler Target { get; private set; }
+      public ActionTarget TargetChoice => Posture.Target;
+      public int AdditionalTargets { get; set; }
+      public int TotalAdditionalTargets => AdditionalTargets + Posture.AdditionalTargets;
 
       public float CurrentLoadRatio => Mathf.Clamp01(CurrentPhaseLoadUpTime
          / Mathf.Max(.001f,
@@ -46,7 +48,7 @@ namespace SDRL26.Battles.Battlers
          )
       );
 
-      public static UnityEvent<Battler> OnTargetsChanged { get; } = new();
+      public static UnityEvent<Battler> OnTargetChanged { get; } = new();
       public static UnityEvent<Battler> OnTargetsEvaluated { get; } = new();
       public static UnityEvent<Battler> OnActionsPerformed { get; } = new();
       public static UnityEvent<Battler> OnPhaseChanged { get; } = new();
@@ -100,10 +102,7 @@ namespace SDRL26.Battles.Battlers
 
       private void ExecuteActions()
       {
-         foreach (var action in Posture.Actions)
-         {
-            action.ApplyEffect(this, Targets);
-         }
+         ActionResolver.Resolve(Posture.Actions, this, Target, TotalAdditionalTargets);
 
          OnActionsPerformed.Invoke(this);
       }
@@ -117,15 +116,15 @@ namespace SDRL26.Battles.Battlers
 
       private void RefreshTargets()
       {
-         SetTargets(EvaluateTargets());
+         SetTarget(EvaluateTarget());
          OnTargetsEvaluated.Invoke(this);
       }
 
-      private IReadOnlyCollection<Battler> EvaluateTargets() => EvaluateTargets(Target);
+      private Battler EvaluateTarget() => EvaluateTarget(TargetChoice);
 
-      public IReadOnlyCollection<Battler> EvaluateTargets(ActionTarget target) => target switch
+      public Battler EvaluateTarget(ActionTarget target) => target switch
       {
-         ActionTarget.Self => new[] { this },
+         ActionTarget.Self => this,
          ActionTarget.FirstAlly => Team.GetFirst(t => t._health.IsAlive),
          ActionTarget.LastAlly => Team.GetLast(t => t._health.IsAlive),
          ActionTarget.FirstEnemy => OtherTeam.GetFirst(t => t._health.IsAlive),
@@ -143,11 +142,11 @@ namespace SDRL26.Battles.Battlers
          _ => throw new ArgumentOutOfRangeException()
       };
 
-      public void SetTargets(IReadOnlyCollection<Battler> battlers)
+      public void SetTarget(Battler battler)
       {
-         Targets = battlers.ToArray();
+         Target = battler;
 
-         OnTargetsChanged.Invoke(this);
+         OnTargetChanged.Invoke(this);
       }
 
       public int Damage(int damage) => _health.Damage(damage);
