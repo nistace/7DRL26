@@ -56,6 +56,7 @@ MonoBehaviour:
     - Key: 2
       Value: {fileID: 0}
   _target: 0
+  _additionalTargets: 0
   _preparationTime: 0.5
   _chargeActionTime: 2
   _restTime: 2
@@ -137,7 +138,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _actionRepetitions
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _additionalTargets
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actions.Array.size
@@ -185,9 +194,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8443741294010625289}
-    - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7640726578690153148}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
 --- !u!4 &3906161212698977625 stripped
 Transform:
@@ -213,17 +219,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AttackBattleAction
   _damage: 2
   _displayName: Attack ([damage])
---- !u!114 &7640726578690153148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4234510613630717437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2833aaee97964493b854ad0a3ce25ceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AndNextBattleAction
-  _allowSameTarget: 0
-  _loop: 1

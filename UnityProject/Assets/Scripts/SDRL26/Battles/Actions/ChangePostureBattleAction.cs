@@ -1,19 +1,19 @@
-﻿using System.Collections.Generic;
-using SDRL26.Battles.Battlers;
+﻿using SDRL26.Battles.Battlers;
 
 namespace SDRL26.Battles.Actions
 {
    public class ChangePostureBattleAction : BattleAction
    {
+      public override RepeatingBehaviour Repetition => RepeatingBehaviour.OnceAfterRepeating;
       public override string DisplayString => "Change Posture";
 
-      public override void ApplyEffect(IActionPerformer actionDoer, IReadOnlyCollection<Battler> targets)
+      public override void ApplyEffect(BattleActionData data, Battler target)
       {
-         if (actionDoer is not Battler battler)
+         if (data.ActionDoer is not Battler battler)
          {
             return;
          }
-         
+
          battler.SelectNextPosture();
       }
    }

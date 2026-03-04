@@ -21,11 +21,9 @@ namespace SDRL26.Battles.Cards
 
       public void Play(Battle battle)
       {
-         var targets = EvaluateTargets(battle);
-
-         foreach (var action in GetComponents<BattleAction>())
+         foreach (var target in EvaluateTargets(battle))
          {
-            action.ApplyEffect(this, targets);
+            ActionResolver.Resolve(GetComponents<BattleAction>(), this, target);
          }
       }
 
@@ -34,7 +32,7 @@ namespace SDRL26.Battles.Cards
          CardTargets.All => battle.PlayerTeam.Battlers.Union(battle.OpponentTeam.Battlers).ToArray(),
          CardTargets.AllAllies => battle.PlayerTeam.Battlers,
          CardTargets.AllEnemies => battle.OpponentTeam.Battlers,
-         CardTargets.ActionTarget => battle.PlayerTeam.Battlers[0].EvaluateTargets(_actionTarget),
+         CardTargets.ActionTarget => new[] { battle.PlayerTeam.Battlers[0].EvaluateTarget(_actionTarget) },
          CardTargets.LastOfBothTeams => new[] { battle.PlayerTeam.Battlers.Last(), battle.OpponentTeam.Battlers.Last() },
          CardTargets.FirstOfBothTeams => new[] { battle.PlayerTeam.Battlers.First(), battle.OpponentTeam.Battlers.First() },
          _ => throw new ArgumentOutOfRangeException()
