@@ -46,7 +46,7 @@ namespace SDRL26.GameControllers
 
       private void OnBattleWon()
       {
-         GameData.PlayerTeam.ResetBattlers();
+         GameData.PlayerTeam.ResetAfterBattle();
          GameData.NextLevel();
 
          if (GameDataLibrary.Instance.HasToChooseHero(GameData.Level))
