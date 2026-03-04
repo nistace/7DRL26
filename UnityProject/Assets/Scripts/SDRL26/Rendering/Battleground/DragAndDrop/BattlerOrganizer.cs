@@ -8,7 +8,6 @@ namespace SDRL26.Rendering.Battleground.DragAndDrop
 {
    public class BattlerOrganizer : MonoBehaviour
    {
-      [SerializeField] private RectTransform _canvasRect;
       [SerializeField] private DraggableTeam _organizingTeam;
       [SerializeField] private Transform _topTransform;
       [SerializeField] private float _changePositionOffset = 15;

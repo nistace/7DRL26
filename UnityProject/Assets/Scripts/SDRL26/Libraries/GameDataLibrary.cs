@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using SDRL26.Battles;
 using SDRL26.Battles.Battlers;
 using SDRL26.Battles.Cards;
 using UnityEngine;

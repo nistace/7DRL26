@@ -16,3 +16,7 @@ MonoBehaviour:
   - {fileID: 2301385055571929859, guid: d50d6f2226566544f8d2b0edd0f98a79, type: 3}
   - {fileID: 2301385055571929859, guid: d50d6f2226566544f8d2b0edd0f98a79, type: 3}
   - {fileID: 2301385055571929859, guid: 14218b1103dee7e4097877d58da46f6f, type: 3}
+  _bounties:
+  - _gold: 0
+    _equipments:
+    - {fileID: 5978539611560094270, guid: 9352a5ebf197fee478bb7f68f000d29d, type: 3}

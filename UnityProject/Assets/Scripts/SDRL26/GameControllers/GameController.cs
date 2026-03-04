@@ -47,6 +47,7 @@ namespace SDRL26.GameControllers
       private void OnBattleWon()
       {
          GameData.PlayerTeam.ResetAfterBattle();
+         GameData.EarnCurrentBattleBounty();
          GameData.NextLevel();
 
          if (GameDataLibrary.Instance.HasToChooseHero(GameData.Level))

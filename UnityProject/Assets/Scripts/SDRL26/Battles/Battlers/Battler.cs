@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using SDRL26.Battles.Actions;
 using SDRL26.Battles.Equipments;
 using UnityEngine;
@@ -258,5 +257,7 @@ namespace SDRL26.Battles.Battlers
 
          return true;
       }
+
+      public Equipment GetEquipment(int index) => index < 0 || index >= _equipmentSlots.Length ? null : _equipmentSlots[index];
    }
 }

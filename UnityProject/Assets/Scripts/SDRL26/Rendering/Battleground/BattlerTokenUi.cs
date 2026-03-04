@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using SDRL26.Battles.Battlers;
 using SDRL26.Rendering.Battleground.HealthBars;
+using SDRL26.Rendering.Equipments;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +20,7 @@ namespace SDRL26.Rendering.Battleground
       [SerializeField] private TMP_Text[] _actionsTexts;
       [SerializeField] private Image _fillImage;
       [SerializeField] private BattlerTokenStyle _style;
+      [SerializeField] private EquipmentSlotUi[] _equipmentSlots;
 
       public BattlerTokenDisplayMode DisplayMode { get; set; }
       public Battler Battler { get; private set; }
@@ -48,6 +50,11 @@ namespace SDRL26.Rendering.Battleground
          _actionsTexts[0].text = $"> Targets {Battler.TargetChoice}";
          _actionsTexts[1].text = $"> [{Battler.Posture.ChargeActionTime:0.0}s] {string.Join(", ", Battler.Posture.Actions.Select(t => t.DisplayString))}";
          _actionsTexts[2].text = $"> [{Battler.Posture.RestTime:0.0}s] Rest";
+
+         for (var i = 0; i < _equipmentSlots.Length; i++)
+         {
+            _equipmentSlots[i].SetEquipment(Battler.GetEquipment(i));
+         }
       }
 
       private void Update()

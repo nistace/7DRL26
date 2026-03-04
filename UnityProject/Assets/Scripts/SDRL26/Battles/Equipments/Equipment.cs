@@ -8,6 +8,8 @@ namespace SDRL26.Battles.Equipments
       [SerializeField] private Sprite _icon;
       [SerializeField] private string _displayName;
 
+      public Sprite Icon => _icon;
+
       public void Equip(Battler battler)
       {
          foreach (var effect in GetComponents<EquipmentEffect>())
