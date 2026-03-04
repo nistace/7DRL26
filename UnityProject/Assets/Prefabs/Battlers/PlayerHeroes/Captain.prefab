@@ -57,7 +57,7 @@ MonoBehaviour:
       Value: {fileID: 0}
   _target: 10
   _preparationTime: 0.5
-  _chargeActionTime: 2.5
+  _chargeActionTime: 2
   _restTime: 1.5
 --- !u!114 &11290050155658871
 MonoBehaviour:
