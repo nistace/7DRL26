@@ -1,5 +1,90 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8817493733562867794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6144558222285515239}
+  - component: {fileID: 6296732926923156082}
+  - component: {fileID: 3577490862415416510}
+  - component: {fileID: 89471885609875681}
+  m_Layer: 0
+  m_Name: Attack2Posture
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6144558222285515239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8817493733562867794}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3906161212698977625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6296732926923156082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8817493733562867794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
+  _icon: {fileID: 0}
+  _portraits:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 0}
+    - Key: 1
+      Value: {fileID: 0}
+    - Key: 2
+      Value: {fileID: 0}
+  _target: 55
+  _preparationTime: 2
+  _chargeActionTime: 1.5
+  _restTime: 2
+--- !u!114 &3577490862415416510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8817493733562867794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
+  _damage: 5
+  _displayName: Attack ([damage])
+--- !u!114 &89471885609875681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8817493733562867794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b50a286991472daf113a9113a6cc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ChangePostureBattleAction
 --- !u!1001 &399325408705782464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30,11 +115,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._maxHealth
-      value: 4
+      value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _postures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: '_postures.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6296732926923156082}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
-      value: 5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _preparationTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _chargeActionTime
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actions.Array.size
@@ -44,34 +145,6 @@ PrefabInstance:
       propertyPath: '_actions.Array.data[0]'
       value: 
       objectReference: {fileID: 2441393529320362138}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
@@ -84,18 +157,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: m_Name
+      value: Attack1Posture
+      objectReference: {fileID: 0}
     - target: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
       value: Boss_ToxicSpores
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6144558222285515239}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2441393529320362138}
+    - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8905452936040516837}
+    - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3786757512156062733}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
+--- !u!4 &3906161212698977625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
+  m_PrefabInstance: {fileID: 399325408705782464}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4234510613630717437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
@@ -113,5 +204,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
-  _damage: 6
+  _damage: 5
   _displayName: Attack ([damage])
+--- !u!114 &8905452936040516837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234510613630717437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02306d0c966c4e88998c6c07e52f1eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.StunBattleAction
+--- !u!114 &3786757512156062733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234510613630717437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b50a286991472daf113a9113a6cc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ChangePostureBattleAction

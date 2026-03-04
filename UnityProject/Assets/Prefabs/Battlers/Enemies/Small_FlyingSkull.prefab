@@ -26,7 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._maxHealth
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _restTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _preparationTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actions.Array.size
@@ -36,34 +44,6 @@ PrefabInstance:
       propertyPath: '_actions.Array.data[0]'
       value: 
       objectReference: {fileID: 4363182958470847709}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
@@ -75,6 +55,10 @@ PrefabInstance:
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: m_Name
+      value: AttackPosture
       objectReference: {fileID: 0}
     - target: {fileID: 8632150954890334127, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_Name
@@ -105,5 +89,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
-  _damage: 1
+  _damage: 2
   _displayName: Attack ([damage])
