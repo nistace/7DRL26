@@ -41,7 +41,7 @@ namespace SDRL26.Battles
       {
          var actualPosition = position ?? _battlers.Count;
          var instance = Object.Instantiate(battlerPrefab);
-         instance.Health.FullyHeal();
+         instance.Initialize();
          _battlers.Insert(actualPosition, instance);
          instance.Team = this;
 

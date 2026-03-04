@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SDRL26.Battles.Actions;
+using SDRL26.Battles.Equipments;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,8 @@ namespace SDRL26.Battles.Battlers
 {
    public class Battler : MonoBehaviour, IActionPerformer
    {
+      private const int DefaultEquipmentSlots = 2;
+
       public enum Phase
       {
          Prepare = 0,
@@ -19,6 +22,7 @@ namespace SDRL26.Battles.Battlers
       [SerializeField] private string _displayName = "Battler";
       [SerializeField] private Health _health = new();
       [SerializeField] private BattlerPosture[] _postures;
+      [SerializeField] private Equipment[] _equipmentSlots = new Equipment[DefaultEquipmentSlots];
 
       public string DisplayName => _displayName;
       private BattleAction[] _actions;
@@ -32,6 +36,7 @@ namespace SDRL26.Battles.Battlers
       public BattlerTeam OtherTeam { get; set; }
       public IReadOnlyCollection<Battler> Targets { get; private set; }
       public ActionTarget Target => Posture.Target;
+      public IReadOnlyList<Equipment> Equipments => _equipmentSlots;
 
       public float CurrentLoadRatio => Mathf.Clamp01(CurrentPhaseLoadUpTime
          / Mathf.Max(.001f,
@@ -52,10 +57,24 @@ namespace SDRL26.Battles.Battlers
       public static UnityEvent<Battler> OnPhaseChanged { get; } = new();
       public static UnityEvent<Battler> OnAliveChanged { get; } = new();
       public UnityEvent<BattlerPosture> OnPostureChanged { get; } = new();
+      public UnityEvent<(int index, Equipment equipment)> OnEquipmentChanged { get; } = new();
 
       public void Initialize()
       {
          Health.FullyHeal();
+
+         foreach (var posture in Postures)
+         {
+            posture.RefreshActions();
+         }
+
+         foreach (var equipment in Equipments)
+         {
+            if (equipment)
+            {
+               equipment.Equip(this);
+            }
+         }
       }
 
       private void OnEnable()
@@ -210,6 +229,34 @@ namespace SDRL26.Battles.Battlers
          }
 
          return Posture.GetPortrait(BattlerPosture.Portrait.Rest);
+      }
+
+      public void AddEquipment(int index, Equipment equipment)
+      {
+         if (index < 0 || index >= _equipmentSlots.Length) return;
+         if (equipment == null) return;
+         if (_equipmentSlots[index]) return;
+
+         _equipmentSlots[index] = equipment;
+         equipment.Equip(this);
+
+         OnEquipmentChanged.Invoke((index, equipment));
+      }
+
+      public bool TryRemoveEquipment(int index, out Equipment equipment)
+      {
+         equipment = default;
+
+         if (index < 0 || index >= _equipmentSlots.Length) return false;
+         if (!_equipmentSlots[index]) return false;
+
+         equipment = _equipmentSlots[index];
+         equipment.Unequip();
+         _equipmentSlots[index] = null;
+
+         OnEquipmentChanged.Invoke((index, null));
+
+         return true;
       }
    }
 }

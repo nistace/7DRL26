@@ -21,12 +21,31 @@ namespace SDRL26.Battles.Battlers
       [SerializeField] private float _chargeActionTime = 1;
       [SerializeField] private float _restTime = 2;
 
+      private bool actionsInitialized;
+      private BattleAction[] _actions;
+
       public Sprite Icon => _icon;
       public ActionTarget Target => _target;
-      public IReadOnlyList<BattleAction> Actions => GetComponents<BattleAction>();
+
+      public IReadOnlyList<BattleAction> Actions
+      {
+         get
+         {
+            if (!actionsInitialized) RefreshActions();
+
+            return _actions;
+         }
+      }
+
       public float PreparationTime => _preparationTime;
       public float ChargeActionTime => _chargeActionTime;
       public float RestTime => _restTime;
       public Sprite GetPortrait(Portrait portrait) => _portraits.GetValueOrDefault(portrait);
+
+      public void RefreshActions()
+      {
+         actionsInitialized = true;
+         _actions = GetComponentsInChildren<BattleAction>();
+      }
    }
 }
