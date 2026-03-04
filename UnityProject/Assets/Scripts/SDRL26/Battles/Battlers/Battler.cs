@@ -54,7 +54,7 @@ namespace SDRL26.Battles.Battlers
          )
       );
 
-      public static UnityEvent<Battler> OnTargetsChanged { get; } = new();
+      public static UnityEvent<Battler> OnTargetChanged { get; } = new();
       public static UnityEvent<Battler> OnTargetsEvaluated { get; } = new();
       public static UnityEvent<Battler> OnActionsPerformed { get; } = new();
       public static UnityEvent<Battler> OnPhaseChanged { get; } = new();
