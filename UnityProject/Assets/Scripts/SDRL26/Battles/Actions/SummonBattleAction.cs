@@ -38,6 +38,11 @@ namespace SDRL26.Battles.Actions
             _ => throw new ArgumentOutOfRangeException()
          };
 
+         if (target == null)
+         {
+            return;
+         }
+
          var newInstance = summonTarget.Team.AddBattlerPrefabInstance(_battlerPrefab,
             _position switch
             {
