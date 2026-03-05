@@ -1,19 +1,21 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace SDRL26.Battles.Battlers
 {
    [Serializable]
    public class Health
    {
-      [SerializeField] private int _maxHealth;
+      [FormerlySerializedAs("_maxHealth")]
+      [SerializeField] private int _defaultMaxHealth;
 
+      public int MaxHealth { get; set; }
       public int CurrentHealth { get; private set; }
       public int CurrentShield { get; private set; }
       public bool IsAlive => !IsDead;
       public bool IsDead => CurrentHealth <= 0;
-      public int MaxHealth => _maxHealth;
       public int MissingHealth => MaxHealth - CurrentHealth;
       public float Ratio => (float)CurrentHealth / MaxHealth;
 
@@ -23,10 +25,15 @@ namespace SDRL26.Battles.Battlers
 
       public Health() : this(5) { }
 
-      public Health(int max)
+      public Health(int default_max)
       {
-         _maxHealth = max;
-         CurrentHealth = _maxHealth;
+         _defaultMaxHealth = default_max;
+      }
+
+      public void Initialize()
+      {
+         MaxHealth = _defaultMaxHealth;
+         FullyHeal();
       }
 
       public int Damage(int damage, bool trueDamage = false)
@@ -54,7 +61,7 @@ namespace SDRL26.Battles.Battlers
 
       public void FullyHeal()
       {
-         CurrentHealth = _maxHealth;
+         CurrentHealth = MaxHealth;
 
          OnChanged.Invoke();
       }
@@ -66,7 +73,7 @@ namespace SDRL26.Battles.Battlers
             return 0;
          }
 
-         var healTaken = Mathf.Min(points, _maxHealth - CurrentHealth);
+         var healTaken = Mathf.Min(points, MissingHealth);
 
          CurrentHealth += healTaken;
 
@@ -115,6 +122,31 @@ namespace SDRL26.Battles.Battlers
          CurrentShield = 0;
 
          OnChanged.Invoke();
+      }
+
+      public void ChangeMax(int additional_health)
+      {
+         if (additional_health == 0) return;
+
+         MaxHealth += additional_health;
+         var currentHealthChange = Mathf.Clamp(additional_health, -CurrentHealth, MissingHealth);
+         CurrentHealth += currentHealthChange;
+
+         OnChanged.Invoke();
+
+         if (currentHealthChange == 0)
+         {
+            return;
+         }
+
+         if (IsAlive && CurrentHealth == currentHealthChange)
+         {
+            OnRevived.Invoke();
+         }
+         else if (IsDead)
+         {
+            OnDied.Invoke();
+         }
       }
    }
 }

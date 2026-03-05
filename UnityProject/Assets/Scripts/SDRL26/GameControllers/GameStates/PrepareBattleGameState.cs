@@ -12,7 +12,7 @@ namespace SDRL26.GameControllers.GameStates
 
       public PrepareBattleGameState(BattleSetup battleSetup, UnityAction onPrepared)
       {
-         Battle = new Battle(GameData.PlayerTeam, battleSetup.InstantiateOpponentTeam());
+         Battle = new Battle(GameData.PlayerTeam, battleSetup.InstantiateOpponentTeam(), battleSetup.RandomBounty);
          Battle.Prepare(GameDataLibrary.Instance.MaxBattlerAdditionalPreparationTime);
          OnPrepared = onPrepared;
       }

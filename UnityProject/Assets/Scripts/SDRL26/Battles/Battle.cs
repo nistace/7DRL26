@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using SDRL26.Battles.Battlers;
+using SDRL26.Battles.Equipments;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -12,17 +13,20 @@ namespace SDRL26.Battles
    {
       [SerializeField] private BattlerTeam _playerTeam;
       [SerializeField] private BattlerTeam _opponentTeam;
+      [SerializeField] private Bounty _bounty;
 
       public float BattleTime { get; private set; }
       public BattlerTeam PlayerTeam => _playerTeam;
       public BattlerTeam OpponentTeam => _opponentTeam;
+      public Bounty Bounty => _bounty;
 
       public UnityEvent OnStarted { get; } = new();
 
-      public Battle(BattlerTeam playerTeam, BattlerTeam opponentTeam)
+      public Battle(BattlerTeam playerTeam, BattlerTeam opponentTeam, Bounty bounty)
       {
          _playerTeam = playerTeam;
          _opponentTeam = opponentTeam;
+         _bounty = bounty;
 
          foreach (var battler in playerTeam.Battlers)
          {

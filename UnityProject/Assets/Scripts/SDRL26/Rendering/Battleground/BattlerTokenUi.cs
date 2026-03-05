@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
 using SDRL26.Battles.Battlers;
+using SDRL26.Battles.Equipments;
 using SDRL26.Rendering.Battleground.HealthBars;
+using SDRL26.Rendering.Equipments;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +21,7 @@ namespace SDRL26.Rendering.Battleground
       [SerializeField] private TMP_Text[] _actionsTexts;
       [SerializeField] private Image _fillImage;
       [SerializeField] private BattlerTokenStyle _style;
+      [SerializeField] private EquipmentSlotUi[] _equipmentSlots;
 
       public BattlerTokenDisplayMode DisplayMode { get; set; }
       public Battler Battler { get; private set; }
@@ -29,16 +32,52 @@ namespace SDRL26.Rendering.Battleground
 
       public void Setup(Battler battler)
       {
-         if (Battler) Battler.OnPostureChanged.RemoveListener(HandleBattlerPostureChanged);
+         CleanUpCurrentBattler();
 
          Battler = battler;
          RefreshBattlerInfo();
          _healthBar.Setup(battler.Health);
 
          Battler.OnPostureChanged.AddListener(HandleBattlerPostureChanged);
+         Battler.OnEquipmentChanged.AddListener(HandleEquipmentChanged);
+
+         foreach (var equipmentSlot in _equipmentSlots)
+         {
+            equipmentSlot.OnSetRequested.AddListener(HandleSetRequested);
+            equipmentSlot.OnRemovalRequested.AddListener(HandleRemovalRequested);
+         }
 
          OnBattlerChanged.Invoke();
       }
+
+      private void HandleRemovalRequested(EquipmentSlotUi slot)
+      {
+         if (!Battler) return;
+
+         Battler.RemoveEquipment(slot.Index);
+      }
+
+      private void HandleSetRequested(EquipmentSlotUi slot, Equipment equipment)
+      {
+         if (!Battler) return;
+
+         Battler.AddEquipment(slot.Index, equipment);
+      }
+
+      private void OnDestroy() => CleanUpCurrentBattler();
+
+      private void CleanUpCurrentBattler()
+      {
+         if (!Battler)
+         {
+            return;
+         }
+
+         Battler.OnPostureChanged.RemoveListener(HandleBattlerPostureChanged);
+         Battler.OnEquipmentChanged.RemoveListener(HandleEquipmentChanged);
+      }
+
+      private void HandleEquipmentChanged((uint index, Equipment equipment) change) => _equipmentSlots[change.index].SetEquipment(change.equipment);
 
       private void HandleBattlerPostureChanged(BattlerPosture newPosture) => RefreshBattlerInfo();
 
@@ -48,6 +87,11 @@ namespace SDRL26.Rendering.Battleground
          _actionsTexts[0].text = $"> Targets {Battler.TargetChoice}";
          _actionsTexts[1].text = $"> [{Battler.Posture.ChargeActionTime:0.0}s] {string.Join(", ", Battler.Posture.Actions.Select(t => t.DisplayString))}";
          _actionsTexts[2].text = $"> [{Battler.Posture.RestTime:0.0}s] Rest";
+
+         for (var i = 0; i < _equipmentSlots.Length; i++)
+         {
+            _equipmentSlots[i].SetEquipment(Battler.GetEquipment(i));
+         }
       }
 
       private void Update()
