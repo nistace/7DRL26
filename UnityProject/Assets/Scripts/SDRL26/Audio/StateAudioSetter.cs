@@ -12,10 +12,12 @@ namespace SDRL26.Audio
       [SerializeField] private TrackData[] _clipsPerState;
       [SerializeField] private AudioClip _defaultClip;
       [SerializeField] private float _defaultFadeSpeed = 2;
+      [SerializeField] private float _defaultVolume;
 
       private void Reset()
       {
          _source = GetComponent<AudioSource>();
+         _defaultVolume = _source ? _source.volume : 1;
       }
 
       private void Update()
@@ -25,6 +27,7 @@ namespace SDRL26.Audio
          var newTrackData = _clipsPerState.FirstOrDefault(t => t.Targets(types));
          var clip = newTrackData?.Clip ?? _defaultClip;
          var fadeSpeed = newTrackData?.FadeSpeed ?? _defaultFadeSpeed;
+         var volume = newTrackData?.Volume ?? _defaultVolume;
 
          if (_source.clip != clip)
          {
@@ -42,7 +45,7 @@ namespace SDRL26.Audio
          }
          else
          {
-            _source.volume = Mathf.MoveTowards(_source.volume, 1, fadeSpeed * Time.deltaTime);
+            _source.volume = Mathf.MoveTowards(_source.volume, volume, fadeSpeed * Time.deltaTime);
          }
       }
 
@@ -52,9 +55,11 @@ namespace SDRL26.Audio
          [SerializeField] private GameStateTypes _states;
          [SerializeField] private AudioClip _clip;
          [SerializeField] private float _fadeSpeed = 2;
+         [SerializeField] private float _volume = 1;
 
          public float FadeSpeed => _fadeSpeed;
          public AudioClip Clip => _clip;
+         public float Volume => _volume;
 
          public bool Targets(GameStateTypes state) => _states == state;
       }

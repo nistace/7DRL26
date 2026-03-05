@@ -174,15 +174,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2373191554079260982, guid: c3a1f90dc7b6bd943a35445da6279794, type: 3}
       propertyPath: m_Name
-      value: Music
+      value: Audio
       objectReference: {fileID: 0}
     - target: {fileID: 4820582204632433089, guid: c3a1f90dc7b6bd943a35445da6279794, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 875.9452
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4820582204632433089, guid: c3a1f90dc7b6bd943a35445da6279794, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 534.64746
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4820582204632433089, guid: c3a1f90dc7b6bd943a35445da6279794, type: 3}
       propertyPath: m_LocalPosition.z
