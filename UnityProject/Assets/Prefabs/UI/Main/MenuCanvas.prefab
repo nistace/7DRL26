@@ -272,11 +272,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3949450045368439247, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4972752918599409038, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_text
       value: New Game
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8102551630402547677, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: _pointerUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102551630402547677, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: _pointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: [{fileID: 4932385212492034686, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}]
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -410,17 +422,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3949450045368439247, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4972752918599409038, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_text
       value: Quit
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8102551630402547677, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: _pointerUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102551630402547677, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: _pointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: [{fileID: 4932385212492034686, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}]
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2258285075339715396, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7741311166550665219}
+    m_AddedComponents: [{targetCorrespondingSourceObject: {fileID: 2258285075339715396, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}, insertIndex: -1, addedObject: {fileID: 7741311166550665219}}]
   m_SourcePrefab: {fileID: 100100000, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
 --- !u!114 &6376970133159228500 stripped
 MonoBehaviour:
