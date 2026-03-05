@@ -147,7 +147,7 @@ MonoBehaviour:
   - _states: 8
     _clip: {fileID: 8300000, guid: b7ea79e93b8c8ae4fa9c29ee2d45843a, type: 3}
     _fadeSpeed: 2
-    _volume: 0.396
+    _volume: 0.79
   _defaultClip: {fileID: 0}
   _defaultFadeSpeed: 2
   _defaultVolume: 0.396
