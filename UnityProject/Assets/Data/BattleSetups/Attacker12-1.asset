@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b12653b8124d0c8c95d9749f1a3429, type: 3}
+  m_Name: Attacker12-1
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.BattleSetup
+  _opponentsPrefabs:
+  - {fileID: 2301385055571929859, guid: 2c1c5c4fa11cde04790be43939328c77, type: 3}
+  - {fileID: 2301385055571929859, guid: 2c1c5c4fa11cde04790be43939328c77, type: 3}
+  - {fileID: 2301385055571929859, guid: 182f7028f09ba8a4085f29f7ddfd6584, type: 3}
+  - {fileID: 2301385055571929859, guid: 182f7028f09ba8a4085f29f7ddfd6584, type: 3}
+  _bountyGenerators:
+  - {fileID: 11400000, guid: 59eaf1cf06c5e8d4ca1101662c123f86, type: 2}
+  - {fileID: 11400000, guid: 45b3d138ff7f4d240b707f31ac08c5e8, type: 2}

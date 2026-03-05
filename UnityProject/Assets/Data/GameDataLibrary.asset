@@ -25,18 +25,18 @@ MonoBehaviour:
   - {fileID: 2301385055571929859, guid: fe7fc29d461ef72458bbadec51f6731c, type: 3}
   - {fileID: 2301385055571929859, guid: 3dd2daedade155a4c9daba33ad9101bd, type: 3}
   - {fileID: 2301385055571929859, guid: 69bdf5683a1d12e448f03dddd7232c90, type: 3}
-  _chooseHeroOnLevelMultiples: 4
+  _chooseHeroOnLevelMultiples: 5
   _battleSetupsPerLevel:
   - _setups:
-    - {fileID: 11400000, guid: ef9457bca5442934f9138e5f3a5ce9ac, type: 2}
+    - {fileID: 11400000, guid: 8dbbc1b0f60f9ef4794149d93bb4f836, type: 2}
   - _setups:
-    - {fileID: 11400000, guid: ef9457bca5442934f9138e5f3a5ce9ac, type: 2}
+    - {fileID: 11400000, guid: 683af5402af55f249bdf9c569d428b09, type: 2}
   - _setups:
-    - {fileID: 11400000, guid: 74b702576a9c03048b50626e7c01c256, type: 2}
+    - {fileID: 11400000, guid: 4093c4f1fe3f3854d917d185f0ca0006, type: 2}
   - _setups:
-    - {fileID: 11400000, guid: b8437b77d85d10d448e79ad2a78fc4d1, type: 2}
+    - {fileID: 11400000, guid: b960102b20afc4a40a231f8346e6ec42, type: 2}
   - _setups:
-    - {fileID: 11400000, guid: fdd807f59316ff24f8210c0a9258c67f, type: 2}
+    - {fileID: 11400000, guid: c35054494b131ea4e9b193b761d3313b, type: 2}
   _maxBattlerAdditionalPreparationTime: 1
   _timeBetweenInterruptions: 5
   _canReorganizeDuringPauses: 1
