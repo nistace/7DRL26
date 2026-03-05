@@ -18,21 +18,19 @@ namespace SDRL26.GameControllers
 
       private static void ShowMainMenu() => GameState.Change(new MainMenuGameState());
 
-      public void NewGame()
+      public static void NewGame()
       {
-         GameData.Reset(_gameDataLibrary.StarterCards);
+         GameData.Reset(GameDataLibrary.Instance.StarterCards);
          ChooseStarterBattler();
       }
 
-      public void Quit() => Application.Quit();
+      public static void Quit() => Application.Quit();
+      private static void ChooseStarterBattler() => GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, ContinueAfterChoosingStarterBattler));
+      private static void PrepareBattle() => GameState.Change(new PrepareBattleGameState(GameDataLibrary.Instance.RandomBattleSetup(GameData.Level), ChangeToContinueBattleState));
+      private static void ChangeToContinueBattleState() => GameState.Change(new ContinueBattleGameState(OnBattleWon, OnBattleLost, PauseBattle));
+      private static void PauseBattle() => GameState.Change(new PauseBattleGameState(ChangeToContinueBattleState));
 
-      private void ChooseStarterBattler() => GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, ContinueAfterChoosingStarterBattler));
-
-      private void PrepareBattle() => GameState.Change(new PrepareBattleGameState(GameDataLibrary.Instance.RandomBattleSetup(GameData.Level), ChangeToContinueBattleState));
-      private void ChangeToContinueBattleState() => GameState.Change(new ContinueBattleGameState(OnBattleWon, OnBattleLost, PauseBattle));
-      private void PauseBattle() => GameState.Change(new PauseBattleGameState(ChangeToContinueBattleState));
-
-      private void ContinueAfterChoosingStarterBattler()
+      private static void ContinueAfterChoosingStarterBattler()
       {
          if (GameData.PlayerTeam.Battlers.Count < GameDataLibrary.Instance.BattlersToPickOnStart)
          {
@@ -44,7 +42,7 @@ namespace SDRL26.GameControllers
          }
       }
 
-      private void OnBattleWon()
+      private static void OnBattleWon()
       {
          GameData.PlayerTeam.ResetAfterBattle();
 
@@ -61,7 +59,7 @@ namespace SDRL26.GameControllers
 
       private static void OnBattleLost() => ShowMainMenu();
 
-      private void OnBountyCollected()
+      private static void OnBountyCollected()
       {
          GameData.NextLevel();
 
