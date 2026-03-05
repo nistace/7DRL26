@@ -12,11 +12,13 @@ namespace SDRL26.Battles.Cards
       [SerializeField] private string _displayName;
       [SerializeField] private string _description;
       [SerializeField] private Sprite _portrait;
+      [SerializeField] private Sprite _icon;
       [SerializeField] private CardTargets _targets;
       [SerializeField] private ActionTarget _actionTarget;
 
       public string DisplayName => _displayName;
       public Sprite Portrait => _portrait;
+      public Sprite Icon => _icon;
       public string Description => _description;
 
       public void Play(Battle battle)

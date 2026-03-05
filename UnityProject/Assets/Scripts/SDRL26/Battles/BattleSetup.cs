@@ -8,9 +8,9 @@ namespace SDRL26.Battles
    public class BattleSetup : ScriptableObject
    {
       [SerializeField] private Battler[] _opponentsPrefabs;
-      [SerializeField] private Bounty[] _bounties;
+      [SerializeField] private BountyGenerator[] _bountyGenerators;
 
       public BattlerTeam InstantiateOpponentTeam() => new(_opponentsPrefabs);
-      public Bounty RandomBounty => _bounties[Random.Range(0, _bounties.Length)];
+      public Bounty RandomBounty => _bountyGenerators[Random.Range(0, _bountyGenerators.Length)].RandomBounty();
    }
 }

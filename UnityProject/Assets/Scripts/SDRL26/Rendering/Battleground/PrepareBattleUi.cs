@@ -8,15 +8,8 @@ namespace SDRL26.Rendering.Battleground
    {
       [SerializeField] private Button _startBattleButton;
 
-      private void OnEnable()
-      {
-         _startBattleButton.onClick.AddListener(HandleStartBattleClicked);
-      }
-
-      private void OnDisable()
-      {
-         _startBattleButton.onClick.RemoveListener(HandleStartBattleClicked);
-      }
+      private void OnEnable() => _startBattleButton.onClick.AddListener(HandleStartBattleClicked);
+      private void OnDisable() => _startBattleButton.onClick.RemoveListener(HandleStartBattleClicked);
 
       private static void HandleStartBattleClicked()
       {

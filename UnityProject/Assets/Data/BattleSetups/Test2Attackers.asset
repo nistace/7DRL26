@@ -15,7 +15,6 @@ MonoBehaviour:
   _opponentsPrefabs:
   - {fileID: 2301385055571929859, guid: d50d6f2226566544f8d2b0edd0f98a79, type: 3}
   - {fileID: 2301385055571929859, guid: d50d6f2226566544f8d2b0edd0f98a79, type: 3}
-  _bounties:
-  - _gold: 0
-    _equipments:
-    - {fileID: 5978539611560094270, guid: 9352a5ebf197fee478bb7f68f000d29d, type: 3}
+  _bountyGenerators:
+  - {fileID: 11400000, guid: 59eaf1cf06c5e8d4ca1101662c123f86, type: 2}
+  - {fileID: 11400000, guid: 45b3d138ff7f4d240b707f31ac08c5e8, type: 2}

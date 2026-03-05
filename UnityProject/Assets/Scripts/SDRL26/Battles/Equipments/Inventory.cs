@@ -25,7 +25,11 @@ namespace SDRL26.Battles.Equipments
          }
       }
 
-      public int Gold { get; set; }
+      public int Gold
+      {
+         get => _gold;
+         set => _gold = value;
+      }
 
       public UnityEvent<uint> OnSlotChanged { get; } = new();
 

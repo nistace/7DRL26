@@ -47,23 +47,32 @@ namespace SDRL26.GameControllers
       private void OnBattleWon()
       {
          GameData.PlayerTeam.ResetAfterBattle();
-         GameData.EarnCurrentBattleBounty();
+
+         if (GameDataLibrary.Instance.IsGameWon(GameData.Level))
+         {
+            GameState.Change(new MainMenuGameState());
+         }
+         else
+         {
+            GameData.EarnCurrentBattleBounty();
+            GameState.Change(new BattleWonGameState(GameData.CurrentBattle.Bounty, OnBountyCollected));
+         }
+      }
+
+      private static void OnBattleLost() => ShowMainMenu();
+
+      private void OnBountyCollected()
+      {
          GameData.NextLevel();
 
          if (GameDataLibrary.Instance.HasToChooseHero(GameData.Level))
          {
             GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomBattlers, PrepareBattle));
          }
-         else if (GameDataLibrary.Instance.IsGameWon(GameData.Level))
-         {
-            GameState.Change(new MainMenuGameState());
-         }
          else
          {
             PrepareBattle();
          }
       }
-
-      private static void OnBattleLost() => ShowMainMenu();
    }
 }

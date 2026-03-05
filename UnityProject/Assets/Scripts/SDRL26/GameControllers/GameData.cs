@@ -27,6 +27,7 @@ namespace SDRL26.GameControllers
          Level = 0;
          OnPlayerTeamChanged.Invoke(PlayerTeam);
          OnLevelChanged.Invoke(Level);
+         OnInventoryReset.Invoke();
       }
 
       public static void NextLevel()
@@ -42,6 +43,11 @@ namespace SDRL26.GameControllers
          foreach (var equipment in CurrentBattle.Bounty.Equipments)
          {
             Inventory[Inventory.FirstEmptySlotIndex] = Object.Instantiate(equipment);
+         }
+
+         foreach (var card in CurrentBattle.Bounty.Cards)
+         {
+            PlayerDeck.AddCard(card);
          }
       }
    }

@@ -10,7 +10,8 @@ namespace SDRL26.GameControllers.GameStates
       PrepareBattle = 1 << 2,
       ContinueBattle = 1 << 3,
       PauseBattle = 1 << 4,
+      BattleWon = 1 << 5,
 
-      InGame = ChooseHero | PrepareBattle | ContinueBattle | PauseBattle,
+      InGame = ChooseHero | PrepareBattle | ContinueBattle | PauseBattle | BattleWon,
    }
 }

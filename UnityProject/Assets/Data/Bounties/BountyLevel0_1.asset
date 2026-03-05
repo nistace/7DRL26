@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74a4d5556fd4d848101288108f3ca7e, type: 3}
+  m_Name: BountyLevel0_1
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.BountyGenerator
+  _minGold: 10
+  _maxGold: 20
+  _possibleEquipments: []
+  _minEquipments: 0
+  _maxEquipments: 0
+  _possibleCards: []
+  _minCards: 0
+  _maxCards: 0
+  _minEquipmentPlusCards: 0
+  _maxEquipmentPlusCards: 0
+  _compensateMissingEquipmentsAndCardsWithGold: 0
