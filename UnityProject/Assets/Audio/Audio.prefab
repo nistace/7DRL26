@@ -143,14 +143,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Audio.StateAudioSetter
   _source: {fileID: 2310575264575447405}
-  _clipsPerState:
-  - _states: 8
-    _clip: {fileID: 8300000, guid: b7ea79e93b8c8ae4fa9c29ee2d45843a, type: 3}
-    _fadeSpeed: 2
-    _volume: 0.79
-  _defaultClip: {fileID: 0}
-  _defaultFadeSpeed: 2
-  _defaultVolume: 0.396
+  _dataPerState:
+    _items:
+    - _types: 8
+      _data:
+        _clip: {fileID: 8300000, guid: b7ea79e93b8c8ae4fa9c29ee2d45843a, type: 3}
+        _fadeSpeed: 2
+        _volume: 0.383
+    _default:
+      _clip: {fileID: 0}
+      _fadeSpeed: 2
+      _volume: 0
 --- !u!1 &1598945454956977899
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,14 +297,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Audio.StateAudioSetter
   _source: {fileID: 3880714922882217953}
-  _clipsPerState:
-  - _states: 1
-    _clip: {fileID: 8300000, guid: e9f09446a0cec4743832be6c09d6f88d, type: 3}
-    _fadeSpeed: 2
-    _volume: 0.783
-  _defaultClip: {fileID: 8300000, guid: e4e078f508efbdf4b8c6584d11aa937e, type: 3}
-  _defaultFadeSpeed: 2
-  _defaultVolume: 0.783
+  _dataPerState:
+    _items:
+    - _types: 28
+      _data:
+        _clip: {fileID: 8300000, guid: e4e078f508efbdf4b8c6584d11aa937e, type: 3}
+        _fadeSpeed: 2
+        _volume: 0.783
+    _default:
+      _clip: {fileID: 8300000, guid: e9f09446a0cec4743832be6c09d6f88d, type: 3}
+      _fadeSpeed: 2
+      _volume: 0.783
 --- !u!1 &2373191554079260982
 GameObject:
   m_ObjectHideFlags: 0

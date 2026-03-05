@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4639898860291212692}
+  - component: {fileID: 6027458302310023956}
   m_Layer: 5
   m_Name: SlotSpace
   m_TagString: Untagged
@@ -36,6 +37,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -720, y: -400}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6027458302310023956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58832558098256929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be756eab9eb14d6c8a74e911cbefe28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Cards.CardSlotList
+  _slots:
+  - {fileID: 8042909257887852621}
+  - {fileID: 5747071535749571561}
+  - {fileID: 4974287429451499692}
+  - {fileID: 7541475604844863754}
+  - {fileID: 6897691592043969081}
 --- !u!1 &716659830119670434
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +106,7 @@ GameObject:
   - component: {fileID: 4552325971768089521}
   - component: {fileID: 1898991492585565886}
   - component: {fileID: 5348929156262366996}
+  - component: {fileID: 2047563795904316458}
   m_Layer: 5
   m_Name: CardsCanvas
   m_TagString: Untagged
@@ -191,12 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee9c127dfff4bf4801d55be1a495d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.CardMovementHandler
-  _slots:
-  - {fileID: 8042909257887852621}
-  - {fileID: 5747071535749571561}
-  - {fileID: 4974287429451499692}
-  - {fileID: 7541475604844863754}
-  - {fileID: 6897691592043969081}
   _spawn: {fileID: 1675676512630838880}
 --- !u!114 &4552325971768089521
 MonoBehaviour:
@@ -210,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf9420cdb0b4ce7b4965c924d0c5d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.ChooseHeroes.ChooseHeroUi
+  _slotList: {fileID: 6027458302310023956}
   _spawnDelay: 0.3
   _heroCardPrefab: {fileID: 4170128691254203135, guid: 93603e8bfbee65e4dbb1bea9bf0a54e6, type: 3}
 --- !u!114 &1898991492585565886
@@ -224,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251629095734bf6b26141a3c0e76a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.AbilityCards.PlayAbilityUi
+  _slotList: {fileID: 6027458302310023956}
   _spawnDelay: 0.3
   _abilityCardPrefab: {fileID: 4988093295370291916, guid: 71956ae831d54194b8e422125dd2937e, type: 3}
 --- !u!114 &5348929156262366996
@@ -238,8 +254,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde7d3f5ff04f38a2c11dd303e76b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Cards.Merchants.MerchantUi
+  _slotList: {fileID: 5822346749634956578}
   _spawnDelay: 0.3
   _equipmentCardPrefab: {fileID: 4702437542074029891, guid: e1b3e151eea1fb34a9a32ba2b0e6abf2, type: 3}
+--- !u!114 &2047563795904316458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146160659022467030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28749db5cee49f5aba57839022d5cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Cards.Encounters.ChooseEncounterUi
+  _slotList: {fileID: 6027458302310023956}
+  _spawnDelay: 0.3
+  _encounterCardUi: {fileID: 2741983337664616307, guid: 699ed1cf9a0c1a644bf1324add52c16c, type: 3}
 --- !u!1 &1227119971038234667
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7016993840164088495}
+  - component: {fileID: 5822346749634956578}
   m_Layer: 5
   m_Name: MerchantSlotSpace
   m_TagString: Untagged
@@ -620,6 +653,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 40.000076}
   m_SizeDelta: {x: -720, y: -380.00015}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5822346749634956578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6531558735490070699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be756eab9eb14d6c8a74e911cbefe28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Cards.CardSlotList
+  _slots:
+  - {fileID: 6379575553834775272}
+  - {fileID: 3419004936077183211}
+  - {fileID: 6026833344304030001}
+  - {fileID: 7848424882607006044}
+  - {fileID: 575668410642617532}
 --- !u!1 &6595191621580787721
 GameObject:
   m_ObjectHideFlags: 0
