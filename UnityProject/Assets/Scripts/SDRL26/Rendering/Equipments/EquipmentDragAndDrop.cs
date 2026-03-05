@@ -29,7 +29,7 @@ namespace SDRL26.Rendering.Equipments
 
       private void HandleStateChanged(GameState arg0) => RefreshEnabled();
 
-      private void RefreshEnabled() => enabled = GameState.CurrentState is PrepareBattleGameState;
+      private void RefreshEnabled() => enabled = GameState.CurrentState?.Is(_enableDuringStates) ?? false;
 
       private void OnEnable()
       {
