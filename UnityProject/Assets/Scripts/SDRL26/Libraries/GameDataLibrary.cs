@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using SDRL26.Battles;
 using SDRL26.Battles.Battlers;
 using SDRL26.Battles.Cards;
+using SDRL26.Encounters;
 using UnityEngine;
 
 namespace SDRL26.Libraries
@@ -20,8 +20,8 @@ namespace SDRL26.Libraries
       [SerializeField] private Battler[] _allPlayerBattlers;
       [SerializeField] private int _chooseHeroOnLevelMultiples = 4;
 
-      [Header("Battles")]
-      [SerializeField] private GameLevelBattleSetup[] _battleSetupsPerLevel;
+      [Header("Encounters")]
+      [SerializeField] private EncounterGenerator[] _levelEncounters;
 
       [SerializeField] private float _maxBattlerAdditionalPreparationTime = 1;
       [SerializeField] private int _timeBetweenInterruptions = 5;
@@ -41,9 +41,8 @@ namespace SDRL26.Libraries
       public int BattlersToPickOnStart => _battlersToPickOnStart;
       public bool CanReorganizeDuringPauses => _canReorganizeDuringPauses;
 
-      public BattleSetup RandomBattleSetup(int level) => _battleSetupsPerLevel[level].RandomSetup;
+      public EncounterChoice RandomEncounterChoice(int level) => _levelEncounters[level].GenerateChoice();
       public bool HasToChooseHero(int level) => level % _chooseHeroOnLevelMultiples == 0;
-
-      public bool IsGameWon(int level) => _battleSetupsPerLevel.Length <= level;
+      public bool IsGameWon(int level) => _levelEncounters.Length <= level;
    }
 }

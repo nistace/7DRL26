@@ -28,10 +28,15 @@ namespace SDRL26.Battles.Equipments
       public int Gold
       {
          get => _gold;
-         set => _gold = value;
+         set
+         {
+            _gold = value;
+            OnGoldChanged.Invoke(_gold);
+         }
       }
 
       public UnityEvent<uint> OnSlotChanged { get; } = new();
+      public UnityEvent<int> OnGoldChanged { get; } = new();
 
       public uint FirstEmptySlotIndex
       {

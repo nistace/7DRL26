@@ -7,9 +7,13 @@ namespace SDRL26.Battles.Equipments
    {
       [SerializeField] private Sprite _icon;
       [SerializeField] private string _displayName;
+      [SerializeField] private string _description;
+      [SerializeField] private int _price = 3;
 
       public Sprite Icon => _icon;
       public string DisplayName => _displayName;
+      public int Price => _price;
+      public string Description => _description;
 
       public void Equip(Battler battler)
       {

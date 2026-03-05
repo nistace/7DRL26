@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a01624c875438b95e219de3cc98c6c, type: 3}
+  m_Name: EncounterGenerator_0
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.EncounterGenerator
+  _options: 3
+  _possibleBattles:
+  - {fileID: 11400000, guid: ef9457bca5442934f9138e5f3a5ce9ac, type: 2}
+  _minBattles: 1
+  _maxBattles: 1
+  _possibleMerchants:
+  - {fileID: 11400000, guid: f25ee1ab813ccc142b7495cb722586d7, type: 2}
+  - {fileID: 11400000, guid: f25ee1ab813ccc142b7495cb722586d7, type: 2}
+  _minMerchants: 0
+  _maxMerchants: 1

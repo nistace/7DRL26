@@ -9,6 +9,7 @@ namespace SDRL26.Rendering.Cards
 {
    public abstract class CardPickerUi<TState, TDataType> : MonoBehaviour where TState : GameState
    {
+      [SerializeField] private CardSlotList _slotList;
       [SerializeField] private float _spawnDelay = .3f;
 
       private readonly List<Transform> _visibleCards = new();
@@ -79,12 +80,12 @@ namespace SDRL26.Rendering.Cards
 
       private async UniTask ShowCardsAsync(Transform[] Cards, CancellationToken token)
       {
-         CardMovementHandler.SetSlotCountActive(Cards.Length);
+         _slotList.SetCountActive(Cards.Length);
 
          for (var i = 0; i < Cards.Length; ++i)
          {
             _visibleCards.Add(Cards[i]);
-            CardMovementHandler.MoveToSlot(Cards[i].transform, i);
+            CardMovementHandler.MoveToSlot(Cards[i].transform, _slotList[i]);
             await UniTask.WaitForSeconds(_spawnDelay, cancellationToken: token);
          }
       }

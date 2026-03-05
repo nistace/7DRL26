@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using SDRL26.GameControllers.GameStates;
 using UnityEngine;
 
@@ -8,34 +7,25 @@ namespace SDRL26.Audio
    public class StateAudioSetter : MonoBehaviour
    {
       [SerializeField] private AudioSource _source;
-
-      [SerializeField] private TrackData[] _clipsPerState;
-      [SerializeField] private AudioClip _defaultClip;
-      [SerializeField] private float _defaultFadeSpeed = 2;
-      [SerializeField] private float _defaultVolume;
+      [SerializeField] private StateDataList<TrackData> _dataPerState;
 
       private void Reset()
       {
          _source = GetComponent<AudioSource>();
-         _defaultVolume = _source ? _source.volume : 1;
+         _dataPerState = new StateDataList<TrackData>(_source ? new(_source.clip, 2, _source.volume) : new());
       }
 
       private void Update()
       {
-         var types = GameState.CurrentState?.Types ?? GameStateTypes.MainMenu;
+         var newTrackData = _dataPerState.First(GameState.CurrentState?.Types ?? GameStateTypes.MainMenu);
 
-         var newTrackData = _clipsPerState.FirstOrDefault(t => t.Targets(types));
-         var clip = newTrackData?.Clip ?? _defaultClip;
-         var fadeSpeed = newTrackData?.FadeSpeed ?? _defaultFadeSpeed;
-         var volume = newTrackData?.Volume ?? _defaultVolume;
-
-         if (_source.clip != clip)
+         if (_source.clip != newTrackData.Clip)
          {
-            _source.volume = Mathf.MoveTowards(_source.volume, 0, fadeSpeed * Time.deltaTime);
+            _source.volume = Mathf.MoveTowards(_source.volume, 0, newTrackData.FadeSpeed * Time.deltaTime);
 
             if (Mathf.Approximately(_source.volume, 0))
             {
-               _source.clip = clip;
+               _source.clip = newTrackData.Clip;
 
                if (_source.clip)
                {
@@ -45,14 +35,13 @@ namespace SDRL26.Audio
          }
          else
          {
-            _source.volume = Mathf.MoveTowards(_source.volume, volume, fadeSpeed * Time.deltaTime);
+            _source.volume = Mathf.MoveTowards(_source.volume, newTrackData.Volume, newTrackData.FadeSpeed * Time.deltaTime);
          }
       }
 
       [Serializable]
       private class TrackData
       {
-         [SerializeField] private GameStateTypes _states;
          [SerializeField] private AudioClip _clip;
          [SerializeField] private float _fadeSpeed = 2;
          [SerializeField] private float _volume = 1;
@@ -61,7 +50,14 @@ namespace SDRL26.Audio
          public AudioClip Clip => _clip;
          public float Volume => _volume;
 
-         public bool Targets(GameStateTypes state) => _states == state;
+         public TrackData(AudioClip clip, float fade_speed, float volume)
+         {
+            _clip = clip;
+            _fadeSpeed = fade_speed;
+            _volume = volume;
+         }
+
+         public TrackData() { }
       }
    }
 }

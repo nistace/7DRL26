@@ -8,6 +8,7 @@ namespace SDRL26.Rendering.Equipments
 {
    public class EquipmentDragAndDrop : MonoBehaviour
    {
+      [SerializeField] private GameStateTypes _enableDuringStates = GameStateTypes.PrepareBattle | GameStateTypes.BattleWon | GameStateTypes.NonBattleEncounter;
       [SerializeField] private Image _draggingEquipmentVisual;
 
       private DraggableEquipmentSlotUi _draggedEquipmentOrigin;

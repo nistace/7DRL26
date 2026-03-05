@@ -1,4 +1,6 @@
-﻿using SDRL26.GameControllers.GameStates;
+﻿using SDRL26.Battles;
+using SDRL26.Encounters;
+using SDRL26.GameControllers.GameStates;
 using SDRL26.Libraries;
 using UnityEngine;
 
@@ -26,7 +28,7 @@ namespace SDRL26.GameControllers
 
       public static void Quit() => Application.Quit();
       private static void ChooseStarterBattler() => GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, ContinueAfterChoosingStarterBattler));
-      private static void PrepareBattle() => GameState.Change(new PrepareBattleGameState(GameDataLibrary.Instance.RandomBattleSetup(GameData.Level), ChangeToContinueBattleState));
+      private static void PrepareBattle(BattleSetup battleSetup) => GameState.Change(new PrepareBattleGameState(battleSetup, ChangeToContinueBattleState));
       private static void ChangeToContinueBattleState() => GameState.Change(new ContinueBattleGameState(OnBattleWon, OnBattleLost, PauseBattle));
       private static void PauseBattle() => GameState.Change(new PauseBattleGameState(ChangeToContinueBattleState));
 
@@ -38,7 +40,51 @@ namespace SDRL26.GameControllers
          }
          else
          {
-            PrepareBattle();
+            ChooseEncounter();
+         }
+      }
+
+      private static void ChooseEncounter()
+      {
+         var encounterChoice = GameDataLibrary.Instance.RandomEncounterChoice(GameData.Level);
+
+         if (encounterChoice.Options.Count > 1)
+         {
+            GameState.Change(new ChooseEncounterGameState(encounterChoice, OnEncounterPicked));
+         }
+         else
+         {
+            OnEncounterPicked(encounterChoice.Options[0]);
+         }
+      }
+
+      private static void OnEncounterPicked(IEncounter encounter)
+      {
+         if (encounter is BattleSetup battleSetup)
+         {
+            PrepareBattle(battleSetup);
+         }
+         else if (encounter is Merchant merchant)
+         {
+            GameState.Change(new MerchantGameState(merchant, OnPacificEncounterDone));
+         }
+         else
+         {
+            Debug.LogError("Encounter is not handled");
+         }
+      }
+
+      private static void OnPacificEncounterDone()
+      {
+         GameData.NextLevel();
+
+         if (GameDataLibrary.Instance.IsGameWon(GameData.Level))
+         {
+            GameOverVictory();
+         }
+         else
+         {
+            StartNextLevel();
          }
       }
 
@@ -46,30 +92,36 @@ namespace SDRL26.GameControllers
       {
          GameData.PlayerTeam.ResetAfterBattle();
 
-         if (GameDataLibrary.Instance.IsGameWon(GameData.Level))
+         if (GameDataLibrary.Instance.IsGameWon(GameData.Level + 1))
          {
-            GameState.Change(new MainMenuGameState());
+            GameData.NextLevel();
+            GameOverVictory();
          }
          else
          {
             GameData.EarnCurrentBattleBounty();
-            GameState.Change(new BattleWonGameState(GameData.CurrentBattle.Bounty, OnBountyCollected));
+            GameState.Change(new BattleWonGameState(GameData.CurrentBattle.Bounty, StartNextLevel));
          }
+      }
+
+      private static void GameOverVictory()
+      {
+         GameState.Change(new MainMenuGameState());
       }
 
       private static void OnBattleLost() => ShowMainMenu();
 
-      private static void OnBountyCollected()
+      private static void StartNextLevel()
       {
          GameData.NextLevel();
 
          if (GameDataLibrary.Instance.HasToChooseHero(GameData.Level))
          {
-            GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomBattlers, PrepareBattle));
+            GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomBattlers, ChooseEncounter));
          }
          else
          {
-            PrepareBattle();
+            ChooseEncounter();
          }
       }
    }
