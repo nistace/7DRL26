@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: _health._maxHealth
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _health._defaultMaxHealth
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _target
       value: 55
@@ -79,6 +83,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6351676273457297600}
+    - targetCorrespondingSourceObject: {fileID: 4561777675234357053, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2800984582079287552}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
 --- !u!1 &4234510613630717437 stripped
 GameObject:
@@ -99,3 +106,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
   _damage: 4
   _displayName: Attack ([damage])
+--- !u!114 &2800984582079287552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234510613630717437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db63b1250224cb8806c1ca5de1ad641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.BloodlustBattleAction
+  _displayName: Bloodlust [ratio]%
+  _damageDealtRatio: 0.25

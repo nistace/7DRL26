@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6339208552918401629}
   - component: {fileID: 7013722186151596439}
   - component: {fileID: 2204107975822043683}
-  - component: {fileID: 9014578905197005533}
   - component: {fileID: 7622307754229540077}
   m_Layer: 0
   m_Name: ShieldPosture
@@ -57,6 +56,7 @@ MonoBehaviour:
     - Key: 2
       Value: {fileID: 0}
   _target: 12
+  _additionalTargets: 1
   _preparationTime: 1
   _chargeActionTime: 1.5
   _restTime: 2
@@ -74,20 +74,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ShieldBattleAction
   _shield: 3
   _displayName: Shield ([shield])
---- !u!114 &9014578905197005533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4138567684218121045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2833aaee97964493b854ad0a3ce25ceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AndNextBattleAction
-  _allowSameTarget: 0
-  _loop: 1
 --- !u!114 &7622307754229540077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +122,10 @@ PrefabInstance:
       propertyPath: '_postures.Array.data[1]'
       value: 
       objectReference: {fileID: 7013722186151596439}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _health._defaultMaxHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
       value: 1
@@ -238,6 +228,7 @@ MonoBehaviour:
   _targetTeam: 0
   _position: 2
   _displayName: 'Summon [battler] [position]'
+  _repeatingBehaviour: 3
 --- !u!114 &6487071739687488071
 MonoBehaviour:
   m_ObjectHideFlags: 0
