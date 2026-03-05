@@ -285,6 +285,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3949450045368439247, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3949450045368439247, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -320,7 +324,16 @@ PrefabInstance:
       propertyPath: m_text
       value: New Game
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8102551630402547677, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: _pointerUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102551630402547677, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: _pointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4932385212492034686, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -536,6 +549,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3949450045368439247, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3949450045368439247, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -555,7 +572,16 @@ PrefabInstance:
       propertyPath: m_text
       value: Quit
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8102551630402547677, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: _pointerUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102551630402547677, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: _pointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4932385212492034686, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
