@@ -28,8 +28,12 @@ namespace SDRL26.Battles.Battlers
       public Health(int default_max)
       {
          _defaultMaxHealth = default_max;
+      }
+
+      public void Initialize()
+      {
          MaxHealth = _defaultMaxHealth;
-         CurrentHealth = MaxHealth;
+         FullyHeal();
       }
 
       public int Damage(int damage, bool trueDamage = false)
@@ -57,7 +61,7 @@ namespace SDRL26.Battles.Battlers
 
       public void FullyHeal()
       {
-         CurrentHealth = _defaultMaxHealth;
+         CurrentHealth = MaxHealth;
 
          OnChanged.Invoke();
       }
@@ -69,7 +73,7 @@ namespace SDRL26.Battles.Battlers
             return 0;
          }
 
-         var healTaken = Mathf.Min(points, _defaultMaxHealth - CurrentHealth);
+         var healTaken = Mathf.Min(points, MissingHealth);
 
          CurrentHealth += healTaken;
 
@@ -125,15 +129,23 @@ namespace SDRL26.Battles.Battlers
          if (additional_health == 0) return;
 
          MaxHealth += additional_health;
-         var currentHealthChange = Mathf.Clamp(additional_health, -CurrentHealth, MaxHealth - CurrentHealth);
+         var currentHealthChange = Mathf.Clamp(additional_health, -CurrentHealth, MissingHealth);
          CurrentHealth += currentHealthChange;
 
          OnChanged.Invoke();
 
-         if (currentHealthChange != 0)
+         if (currentHealthChange == 0)
          {
-            if (IsAlive && CurrentHealth == currentHealthChange) OnRevived.Invoke();
-            else if (IsDead) OnDied.Invoke();
+            return;
+         }
+
+         if (IsAlive && CurrentHealth == currentHealthChange)
+         {
+            OnRevived.Invoke();
+         }
+         else if (IsDead)
+         {
+            OnDied.Invoke();
          }
       }
    }

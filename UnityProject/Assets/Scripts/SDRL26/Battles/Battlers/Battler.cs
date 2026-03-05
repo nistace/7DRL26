@@ -59,10 +59,11 @@ namespace SDRL26.Battles.Battlers
       public static UnityEvent<Battler> OnPhaseChanged { get; } = new();
       public static UnityEvent<Battler> OnAliveChanged { get; } = new();
       public UnityEvent<BattlerPosture> OnPostureChanged { get; } = new();
-      public UnityEvent<(int index, Equipment equipment)> OnEquipmentChanged { get; } = new();
+      public UnityEvent<(uint index, Equipment equipment)> OnEquipmentChanged { get; } = new();
 
       public void Initialize()
       {
+         Health.Initialize();
          Health.FullyHeal();
 
          foreach (var posture in Postures)
@@ -230,9 +231,9 @@ namespace SDRL26.Battles.Battlers
          return Posture.GetPortrait(BattlerPosture.Portrait.Rest);
       }
 
-      public void AddEquipment(int index, Equipment equipment)
+      public void AddEquipment(uint index, Equipment equipment)
       {
-         if (index < 0 || index >= _equipmentSlots.Length) return;
+         if (index >= _equipmentSlots.Length) return;
          if (equipment == null) return;
          if (_equipmentSlots[index]) return;
 
@@ -242,20 +243,18 @@ namespace SDRL26.Battles.Battlers
          OnEquipmentChanged.Invoke((index, equipment));
       }
 
-      public bool TryRemoveEquipment(int index, out Equipment equipment)
+      public void RemoveEquipment(uint index)
       {
-         equipment = default;
+         if (index >= _equipmentSlots.Length)
+            return;
 
-         if (index < 0 || index >= _equipmentSlots.Length) return false;
-         if (!_equipmentSlots[index]) return false;
+         if (!_equipmentSlots[index])
+            return;
 
-         equipment = _equipmentSlots[index];
-         equipment.Unequip();
+         _equipmentSlots[index].Unequip();
          _equipmentSlots[index] = null;
 
          OnEquipmentChanged.Invoke((index, null));
-
-         return true;
       }
 
       public Equipment GetEquipment(int index) => index < 0 || index >= _equipmentSlots.Length ? null : _equipmentSlots[index];

@@ -1,7 +1,6 @@
 ﻿using SDRL26.Battles.Equipments;
 using SDRL26.GameControllers.GameStates;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -10,8 +9,10 @@ namespace SDRL26.Rendering.Equipments
    public class EquipmentDragAndDrop : MonoBehaviour
    {
       [SerializeField] private Image _draggingEquipmentVisual;
+
       private DraggableEquipmentSlotUi _draggedEquipmentOrigin;
       private Equipment _draggedEquipment;
+      private DraggableEquipmentSlotUi _hoveredSlot;
 
       private void Start()
       {
@@ -33,7 +34,18 @@ namespace SDRL26.Rendering.Equipments
       {
          DraggableEquipmentSlotUi.OnDrag.AddListener(HandleEquipmentDragged);
          DraggableEquipmentSlotUi.OnDrop.AddListener(HandleEquipmentDropped);
+         DraggableEquipmentSlotUi.OnHoverStarted.AddListener(HandleEquipmentHoverStarted);
+         DraggableEquipmentSlotUi.OnHoverStopped.AddListener(HandleEquipmentHoverStopped);
       }
+
+      private void HandleEquipmentHoverStopped(DraggableEquipmentSlotUi slot)
+      {
+         if (_hoveredSlot != slot) return;
+
+         _hoveredSlot = null;
+      }
+
+      private void HandleEquipmentHoverStarted(DraggableEquipmentSlotUi slot) => _hoveredSlot = slot;
 
       private void OnDisable()
       {
@@ -45,19 +57,7 @@ namespace SDRL26.Rendering.Equipments
 
       private void HandleEquipmentDropped(DraggableEquipmentSlotUi droppedSlot)
       {
-         var destination = droppedSlot;
-
-         if (EventSystem.current.currentSelectedGameObject)
-         {
-            var hoveredSlot = EventSystem.current.currentSelectedGameObject.GetComponentInParent<DraggableEquipmentSlotUi>();
-
-            if (hoveredSlot)
-            {
-               destination = hoveredSlot;
-            }
-         }
-
-         Drop(destination);
+         Drop(_hoveredSlot);
       }
 
       private void Drop(DraggableEquipmentSlotUi destination)
@@ -66,7 +66,7 @@ namespace SDRL26.Rendering.Equipments
 
          _draggedEquipmentOrigin.Slot.SetEquipment(_draggedEquipment);
 
-         if (!destination.Slot.Equipment && destination != _draggedEquipmentOrigin)
+         if (destination && !destination.Slot.Equipment && destination != _draggedEquipmentOrigin)
          {
             _draggedEquipmentOrigin.Slot.RequestRemoval();
             destination.Slot.RequestSet(_draggedEquipment);
