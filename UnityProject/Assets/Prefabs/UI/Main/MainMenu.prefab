@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewGameButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3142883044009943741, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_text
+      value: New Game
+      objectReference: {fileID: 0}
     - target: {fileID: 3855518282692787056, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -181,6 +185,10 @@ PrefabInstance:
     - target: {fileID: 2258285075339715396, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_Name
       value: QuitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142883044009943741, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_text
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 3855518282692787056, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_Pivot.x

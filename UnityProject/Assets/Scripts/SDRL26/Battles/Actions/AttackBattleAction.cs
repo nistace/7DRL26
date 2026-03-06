@@ -10,6 +10,7 @@ namespace SDRL26.Battles.Actions
 
       public override RepeatingBehaviour Repetition => RepeatingBehaviour.Repeating;
       public override string DisplayString => _displayName.Replace("[damage]", $"{_damage}");
+      public override int Amount => _damage;
 
       public override void ApplyEffect(BattleActionData data, Battler target)
       {

@@ -1,14 +1,12 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace SDRL26.Battles.Battlers
 {
    [Serializable]
    public class Health
    {
-      [FormerlySerializedAs("_maxHealth")]
       [SerializeField] private int _defaultMaxHealth;
 
       public int MaxHealth { get; set; }
@@ -22,6 +20,7 @@ namespace SDRL26.Battles.Battlers
       public UnityEvent OnChanged { get; } = new();
       public UnityEvent OnDied { get; } = new();
       public UnityEvent OnRevived { get; } = new();
+      public int DefaultMaxHealth => _defaultMaxHealth;
 
       public Health() : this(5) { }
 

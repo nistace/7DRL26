@@ -21,6 +21,9 @@ namespace SDRL26.Battles.Battlers
       [SerializeField] private float _preparationTime = 2f;
       [SerializeField] private float _chargeActionTime = 1;
       [SerializeField] private float _restTime = 2;
+      [SerializeField] private Sprite _mainActionIcon;
+      [SerializeField] private BattleAction _mainActionAmountProvider;
+      [SerializeField] private BattleAction[] _actionsIncludedInIcon;
 
       private bool actionsInitialized;
       private BattleAction[] _actions;
@@ -42,6 +45,9 @@ namespace SDRL26.Battles.Battlers
       public float ChargeActionTime => _chargeActionTime;
       public float RestTime => _restTime;
       public int AdditionalTargets => _additionalTargets;
+      public Sprite MainActionIcon => _mainActionIcon;
+      public int MainActionAmount => _mainActionAmountProvider ? _mainActionAmountProvider.Amount : 0;
+      public bool HasSideEffects => Actions.Count > _actionsIncludedInIcon.Length;
 
       public Sprite GetPortrait(Portrait portrait) => _portraits.GetValueOrDefault(portrait);
 

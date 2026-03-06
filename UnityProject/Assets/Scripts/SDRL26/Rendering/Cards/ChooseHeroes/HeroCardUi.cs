@@ -1,8 +1,11 @@
 ﻿using System.Linq;
 using SDRL26.Battles.Battlers;
-using SDRL26.Rendering.Battleground.Postures;
+using SDRL26.Rendering.Battlers;
+using SDRL26.Rendering.Shared;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using Utilities;
 
 namespace SDRL26.Rendering.Cards.ChooseHeroes
@@ -11,34 +14,30 @@ namespace SDRL26.Rendering.Cards.ChooseHeroes
    public class HeroCardUi : MonoBehaviour
    {
       [SerializeField] private CardUi _card;
-      [SerializeField] private BattlerPostureButton[] _postureButtons;
+      [SerializeField] private Button _swapPostureButton;
+      [SerializeField] private BattlerTargetUi _target;
+      [SerializeField] private TMP_Text _healthText;
+      [SerializeField] private TMP_Text _preparationTime;
+      [SerializeField] private TMP_Text _actionTime;
+      [SerializeField] private TMP_Text _restTime;
+      [SerializeField] private ActionIcon _actionIcon;
 
       public Battler BattlerPrefab { get; private set; }
       private int PostureIndex { get; set; }
 
       public UnityEvent<HeroCardUi> OnClick { get; } = new();
 
-      private void Start()
+      private void Start() => _swapPostureButton.onClick.AddListener(HandleSwapPostureButtonClicked);
+      private void OnDestroy() => _swapPostureButton.onClick.RemoveListener(HandleSwapPostureButtonClicked);
+
+      private void HandleSwapPostureButtonClicked()
       {
-         foreach (var button in _postureButtons)
+         if (!BattlerPrefab)
          {
-            button.OnPostureSelected.AddListener(HandlePostureSelected);
+            return;
          }
-      }
 
-      private void OnDestroy()
-      {
-         foreach (var button in _postureButtons)
-         {
-            if (button) button.OnPostureSelected.RemoveListener(HandlePostureSelected);
-         }
-      }
-
-      private void HandlePostureSelected(BattlerPosture posture)
-      {
-         if (BattlerPrefab == null) return;
-
-         PostureIndex = Mathf.Clamp(BattlerPrefab.Postures.IndexOf(posture), 0, _postureButtons.Length);
+         PostureIndex = Mathf.Clamp((PostureIndex + 1) % BattlerPrefab.Postures.Count, 0, BattlerPrefab.Postures.Count);
          RefreshInfo();
       }
 
@@ -52,6 +51,12 @@ namespace SDRL26.Rendering.Cards.ChooseHeroes
          var posture = BattlerPrefab.Postures[PostureIndex];
          _card.DisplayName = BattlerPrefab.DisplayName;
          _card.Portrait = posture.GetPortrait(BattlerPosture.Portrait.Rest);
+         _target.Set(posture.Target, posture.AdditionalTargets);
+         _healthText.text = $"{BattlerPrefab.Health.DefaultMaxHealth}";
+         _preparationTime.text = posture.PreparationTime.ToStringOptionalDot();
+         _actionTime.text = posture.ChargeActionTime.ToStringOptionalDot();
+         _restTime.text = posture.PreparationTime.ToStringOptionalDot();
+         _actionIcon.Set(posture.MainActionIcon, posture.MainActionAmount, posture.HasSideEffects);
 
          _card.Description = $"Targets {posture.Target}<br>"
             + $"[{posture.ChargeActionTime:0.##}s] Action<br>{string.Join("<br>", posture.Actions.Select(t => $" - {t.DisplayString}"))}<br>"
@@ -63,18 +68,7 @@ namespace SDRL26.Rendering.Cards.ChooseHeroes
          BattlerPrefab = battlerPrefab;
          PostureIndex = 0;
          RefreshInfo();
-
-         for (var postureButtonIndex = 0; postureButtonIndex < _postureButtons.Length; ++postureButtonIndex)
-         {
-            var posture = postureButtonIndex < BattlerPrefab.Postures.Count ? BattlerPrefab.Postures[postureButtonIndex] : null;
-            var button = _postureButtons[postureButtonIndex];
-            button.gameObject.SetActive(posture != null);
-
-            if (posture != null)
-            {
-               button.SetUp(posture);
-            }
-         }
+         _swapPostureButton.gameObject.SetActive(battlerPrefab.Postures.Count > 1);
       }
    }
 }

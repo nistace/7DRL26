@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewGameButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3142883044009943741, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_text
+      value: New game
+      objectReference: {fileID: 0}
     - target: {fileID: 3855518282692787056, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -288,7 +292,8 @@ PrefabInstance:
       propertyPath: _pointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: [{fileID: 4932385212492034686, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}]
+    m_RemovedComponents:
+    - {fileID: 4932385212492034686, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -338,9 +343,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5105677912171802075}
     m_Modifications:
+    - target: {fileID: 607957879217689785, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a05a22c74293be4fad097844bdaffad, type: 3}
+    - target: {fileID: 607957879217689785, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 607957879217689785, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 607957879217689785, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2258285075339715396, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_Name
       value: QuitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142883044009943741, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_text
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142883044009943741, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142883044009943741, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.80759287
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142883044009943741, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.79218584
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142883044009943741, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4291808970
       objectReference: {fileID: 0}
     - target: {fileID: 3855518282692787056, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       propertyPath: m_Pivot.x
@@ -438,10 +479,14 @@ PrefabInstance:
       propertyPath: _pointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: [{fileID: 4932385212492034686, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}]
+    m_RemovedComponents:
+    - {fileID: 4932385212492034686, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: [{targetCorrespondingSourceObject: {fileID: 2258285075339715396, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}, insertIndex: -1, addedObject: {fileID: 7741311166550665219}}]
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2258285075339715396, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7741311166550665219}
   m_SourcePrefab: {fileID: 100100000, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
 --- !u!114 &6376970133159228500 stripped
 MonoBehaviour:

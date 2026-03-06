@@ -10,6 +10,7 @@ namespace SDRL26.Battles.Actions
 
       public override RepeatingBehaviour Repetition => RepeatingBehaviour.Repeating;
       public override string DisplayString => _displayName.Replace("[steps]", _steps.ToString());
+      public override int Amount => _steps;
 
       public override void ApplyEffect(BattleActionData data, Battler target)
       {

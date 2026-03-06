@@ -8,8 +8,9 @@ namespace SDRL26.Battles.Actions
       [SerializeField] private int _steps = 1;
       [SerializeField] private string _displayName = "Push ([steps])";
 
-      public override RepeatingBehaviour Repetition { get; }
+      public override RepeatingBehaviour Repetition => RepeatingBehaviour.RepeatingInReverse;
       public override string DisplayString => _displayName.Replace("[steps]", _steps.ToString());
+      public override int Amount => _steps;
 
       public override void ApplyEffect(BattleActionData data, Battler target)
       {

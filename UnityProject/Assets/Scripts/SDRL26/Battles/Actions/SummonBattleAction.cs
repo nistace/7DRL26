@@ -28,6 +28,7 @@ namespace SDRL26.Battles.Actions
 
       public override RepeatingBehaviour Repetition => _repeatingBehaviour;
       public override string DisplayString => _displayName.Replace("[battler]", _battlerPrefab.DisplayName).Replace("[position]", $"{_position}");
+      public override int Amount => 0;
 
       public override void ApplyEffect(BattleActionData data, Battler target)
       {

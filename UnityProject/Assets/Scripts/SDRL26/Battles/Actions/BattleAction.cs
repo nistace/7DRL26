@@ -14,6 +14,8 @@ namespace SDRL26.Battles.Actions
 
       public abstract RepeatingBehaviour Repetition { get; }
       public abstract string DisplayString { get; }
+      public abstract int Amount { get; }
+
       public abstract void ApplyEffect(BattleActionData data, Battler target);
    }
 }

@@ -9,6 +9,7 @@ namespace SDRL26.Battles.Actions
 
       public override RepeatingBehaviour Repetition => RepeatingBehaviour.Repeating;
       public override string DisplayString => _displayName;
+      public override int Amount => 0;
 
       public override void ApplyEffect(BattleActionData data, Battler target)
       {
