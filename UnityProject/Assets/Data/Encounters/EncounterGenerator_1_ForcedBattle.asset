@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9a01624c875438b95e219de3cc98c6c, type: 3}
-  m_Name: EncounterGenerator_0
+  m_Name: EncounterGenerator_1_ForcedBattle
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.EncounterGenerator
-  _options: 3
+  _options: 1
   _possibleBattles:
-  - {fileID: 11400000, guid: ef9457bca5442934f9138e5f3a5ce9ac, type: 2}
+  - {fileID: 11400000, guid: 8dbbc1b0f60f9ef4794149d93bb4f836, type: 2}
+  - {fileID: 11400000, guid: 4ef582d5a04a3d041bfd91b5c27a6bc7, type: 2}
   _minBattles: 1
   _maxBattles: 1
-  _possibleMerchants:
-  - {fileID: 11400000, guid: f25ee1ab813ccc142b7495cb722586d7, type: 2}
+  _possibleMerchants: []
   _minMerchants: 0
-  _maxMerchants: 1
-  _possibleSorcerers:
-  - {fileID: 11400000, guid: 27471ac0bd907734ea331ee3524e029b, type: 2}
+  _maxMerchants: 0
+  _possibleSorcerers: []
   _minSorcerers: 0
-  _maxSorcerers: 1
+  _maxSorcerers: 0

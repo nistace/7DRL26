@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1427469325673636734, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: m_Name
-      value: ReviveFirstAllyDeadAbilityCard
+      value: ReviveFirstDeadAllyAbilityCard
       objectReference: {fileID: 0}
     - target: {fileID: 5930534170794264108, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,7 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _description
-      value: Damage All 3
+      value: Revive First Dead Ally (50%)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
+      propertyPath: _displayName
+      value: Revive first dead ally with 50% of their max health
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _actionTarget

@@ -58,7 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _description
-      value: Damage All 3
+      value: Push FIrst Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
+      propertyPath: _displayName
+      value: Push the first enemy to last position
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _actionTarget
@@ -89,5 +93,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8b33f9043d45bc8815e2735723dad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.PushBattleAction
-  _steps: 10
+  _steps: 99
   _displayName: Push ([steps])
