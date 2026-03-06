@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 328936763, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _price
-      value: 6
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _description
@@ -93,4 +93,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ddeca143f9447ab0bde8b031a11976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.HealthEquipmentEffect
-  _additionalHealth: 5
+  _additionalHealth: 9
