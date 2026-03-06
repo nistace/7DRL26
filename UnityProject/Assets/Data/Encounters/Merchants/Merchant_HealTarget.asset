@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8964fb56c6e04a9ca4ad9b5fe63ae14e, type: 3}
+  m_Name: Merchant_HealTarget
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.MerchantGenerator
+  _portraits:
+  - {fileID: -7280169748082540770, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+  _displayNames:
+  - Merchant
+  _descriptions:
+  - Prepare your gold, this one wants to sell!
+  _equipments:
+  - {fileID: 5978539611560094270, guid: 0c40ff49d0011d548b185faba1425391, type: 3}
+  - {fileID: 5978539611560094270, guid: 19f4e8596921dba47bf528bb78a1001d, type: 3}
+  - {fileID: 5978539611560094270, guid: 93244b360bb4f73438782dfa8f99eef8, type: 3}
+  _choices: 3

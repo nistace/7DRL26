@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74a4d5556fd4d848101288108f3ca7e, type: 3}
+  m_Name: BountySection3-1
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.BountyGenerator
+  _minGold: 15
+  _maxGold: 20
+  _possibleEquipments:
+  - {fileID: 5978539611560094270, guid: 459e94ccc2aedee4d82c8f95d3d48c4b, type: 3}
+  - {fileID: 5978539611560094270, guid: b51b33364db36c447be1f25a4447a8c6, type: 3}
+  - {fileID: 5978539611560094270, guid: 2f20ee161c230754b8e41b56dd74de3d, type: 3}
+  - {fileID: 5978539611560094270, guid: 1d09d05bc142b3842ae4e50cac09dc3d, type: 3}
+  - {fileID: 5978539611560094270, guid: 19f4e8596921dba47bf528bb78a1001d, type: 3}
+  - {fileID: 5978539611560094270, guid: c91ffc63163de78438df7564b9e1be2d, type: 3}
+  - {fileID: 5978539611560094270, guid: 4ce1ea9bdaad7a141b270e7052ab4ca6, type: 3}
+  - {fileID: 5978539611560094270, guid: b5c1d794e9fb6ac4492da1f7a4c36768, type: 3}
+  - {fileID: 5978539611560094270, guid: a7a7825cd3eb2e54b8dfdb2bd548a480, type: 3}
+  - {fileID: 5978539611560094270, guid: 608d2149597e0da4ab39602c21215b88, type: 3}
+  _minEquipments: 0
+  _maxEquipments: 2
+  _possibleCards:
+  - {fileID: 2530319927965642811, guid: 74424fe5435ae80479d5d5042994c38f, type: 3}
+  - {fileID: 2530319927965642811, guid: 896d694738749e84d95ae79a99c21131, type: 3}
+  - {fileID: 2530319927965642811, guid: 06d1e927d1946f54588614c06d1074a6, type: 3}
+  - {fileID: 2530319927965642811, guid: 10baa19ad0bf5d04d9aa9a6e1131d42b, type: 3}
+  - {fileID: 2530319927965642811, guid: 987710c6c39da5e4b93392161aa8fbfb, type: 3}
+  - {fileID: 2530319927965642811, guid: ac89feff9fe51b6488cb107799abda96, type: 3}
+  - {fileID: 2530319927965642811, guid: 8313f3e777644b94dbc29e0e2f5a934d, type: 3}
+  - {fileID: 2530319927965642811, guid: 672d299162b52b14c8814834b92ce424, type: 3}
+  _minCards: 0
+  _maxCards: 2
+  _minEquipmentPlusCards: 0
+  _maxEquipmentPlusCards: 3
+  _compensateMissingEquipmentsAndCardsWithGold: 5

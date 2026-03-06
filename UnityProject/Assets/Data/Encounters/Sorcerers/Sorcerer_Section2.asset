@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0284bc5a3e14432a8cb9f3e7d99e4273, type: 3}
-  m_Name: Sorcerer_0
+  m_Name: Sorcerer_Section2
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.SorcererGenerator
   _portraits:
   - {fileID: 328936763, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
@@ -21,8 +21,12 @@ MonoBehaviour:
   _abilities:
   - {fileID: 2530319927965642811, guid: 65f076ed0f77750478f303eeff69c5eb, type: 3}
   - {fileID: 2530319927965642811, guid: 71ce3d7152238954cafc0a3c111220b9, type: 3}
+  - {fileID: 2530319927965642811, guid: 896d694738749e84d95ae79a99c21131, type: 3}
   - {fileID: 2530319927965642811, guid: 68ce587420f55b94bb5d81d97a8144c0, type: 3}
-  - {fileID: 2530319927965642811, guid: 10baa19ad0bf5d04d9aa9a6e1131d42b, type: 3}
+  - {fileID: 2530319927965642811, guid: 2cde4644152f82d4a9e2b95fb8d41f02, type: 3}
   - {fileID: 2530319927965642811, guid: 0dcf90b4c3544d449baf958d1d192ffc, type: 3}
-  - {fileID: 2530319927965642811, guid: ac89feff9fe51b6488cb107799abda96, type: 3}
+  - {fileID: 2530319927965642811, guid: 0afd8d30bcaf7aa4d98753ca7cdcd994, type: 3}
+  - {fileID: 2530319927965642811, guid: c596f9af99bdde746bb4c7d06963e349, type: 3}
+  - {fileID: 2530319927965642811, guid: 0d0ff4672345d21498c0cc350b902197, type: 3}
+  - {fileID: 2530319927965642811, guid: 0672669abe661ac4c84b4294c02fa020, type: 3}
   _choices: 3

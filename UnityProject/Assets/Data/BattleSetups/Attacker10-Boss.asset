@@ -20,5 +20,4 @@ MonoBehaviour:
   - {fileID: 2301385055571929859, guid: ec7495616150a9d4785b056e934d1ccb, type: 3}
   - {fileID: 2301385055571929859, guid: 2c1c5c4fa11cde04790be43939328c77, type: 3}
   _bountyGenerators:
-  - {fileID: 11400000, guid: 59eaf1cf06c5e8d4ca1101662c123f86, type: 2}
-  - {fileID: 11400000, guid: 45b3d138ff7f4d240b707f31ac08c5e8, type: 2}
+  - {fileID: 11400000, guid: d6bb48b03d94b5549af661c6ef3cf14c, type: 2}

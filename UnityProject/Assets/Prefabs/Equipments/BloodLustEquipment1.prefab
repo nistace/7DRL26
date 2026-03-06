@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5330932172290206136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: _icon
+      value: 
+      objectReference: {fileID: 9079002682661804598, guid: c2fb13340834d524db968b087008e8e0, type: 3}
+    - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: _price
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: _description
+      value: 'Heal 25% of the damage done '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: _displayName
+      value: Bloodlust Equipment Tier1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_Name
+      value: BloodLustEquipment1-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5011729457904473976}
+    - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1733605769744333581}
+    - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 348804444892855288}
+  m_SourcePrefab: {fileID: 100100000, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+--- !u!1 &1792688237871486859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+  m_PrefabInstance: {fileID: 5330932172290206136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5011729457904473976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792688237871486859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c348cf537f20409794b0875731d9a3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.AddActionEquipmentEffect
+  _action: {fileID: -1733605769744333581}
+--- !u!114 &-1733605769744333581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792688237871486859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db63b1250224cb8806c1ca5de1ad641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.BloodlustBattleAction
+  _displayName: Bloodlust [ratio]%
+  _damageDealtRatio: 0.25
+--- !u!114 &348804444892855288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792688237871486859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df94c10dc0f240febf21450c5c64e81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.EquipmentUpgrade
+  _upgrades:
+  - {fileID: 5978539611560094270, guid: b51b33364db36c447be1f25a4447a8c6, type: 3}

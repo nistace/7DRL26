@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8964fb56c6e04a9ca4ad9b5fe63ae14e, type: 3}
+  m_Name: Merchant_Bloodlust
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.MerchantGenerator
+  _portraits:
+  - {fileID: -7280169748082540770, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+  _displayNames:
+  - Merchant
+  _descriptions:
+  - Prepare your gold, this one wants to sell!
+  _equipments:
+  - {fileID: 5978539611560094270, guid: 85281b045df1d5d4aa853fb35c390d93, type: 3}
+  - {fileID: 5978539611560094270, guid: b51b33364db36c447be1f25a4447a8c6, type: 3}
+  - {fileID: 5978539611560094270, guid: f310e266143f90e4a8a4ce0112ccdb84, type: 3}
+  _choices: 3
