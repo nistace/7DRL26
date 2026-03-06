@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d47a5d03e54a39b90b4f1df55dbc75, type: 3}
+  m_Name: Blacksmith
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.BlacksmithGenerator
+  _portraits:
+  - {fileID: -8345435589167100473, guid: 367ebc7eef1967f439cdf6222b0cd630, type: 3}
+  _displayNames:
+  - Blacksmith
+  _descriptions:
+  - He will offer to kindly upgrade one of your objects.

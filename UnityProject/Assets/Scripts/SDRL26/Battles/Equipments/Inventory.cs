@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine.Events;
 using Utilities;
 
@@ -35,6 +36,8 @@ namespace SDRL26.Battles.Equipments
          }
       }
 
+      public Equipment[] AllEquipments => _equipments.Where(t => t != null).ToArray();
+
       public UnityEvent<uint> OnSlotChanged { get; } = new();
       public UnityEvent<int> OnGoldChanged { get; } = new();
 
@@ -46,6 +49,19 @@ namespace SDRL26.Battles.Equipments
 
             return index >= 0 ? (uint)index : (uint)_equipments.Length;
          }
+      }
+
+      public bool TryGetSlotIndex(Equipment equipment, out uint index)
+      {
+         for (index = 0; index < _equipments.Length; index++)
+         {
+            if (_equipments[index] == equipment)
+            {
+               return true;
+            }
+         }
+
+         return false;
       }
    }
 }

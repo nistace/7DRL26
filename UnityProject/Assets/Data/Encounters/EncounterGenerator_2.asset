@@ -26,3 +26,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 27471ac0bd907734ea331ee3524e029b, type: 2}
   _minSorcerers: 0
   _maxSorcerers: 1
+  _possibleBlacksmiths:
+  - {fileID: 11400000, guid: 3d995667cf7f0ed49b3be58a18f3c97c, type: 2}
+  _minBlacksmiths: 0
+  _maxBlacksmiths: 1

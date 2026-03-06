@@ -231,6 +231,19 @@ namespace SDRL26.Battles.Battlers
          return Posture.GetPortrait(BattlerPosture.Portrait.Rest);
       }
 
+      public bool HasEquipment(Equipment equipment, out uint index)
+      {
+         for (index = 0; index < _equipmentSlots.Length; index++)
+         {
+            if (_equipmentSlots[index] == equipment)
+            {
+               return true;
+            }
+         }
+
+         return false;
+      }
+
       public void AddEquipment(uint index, Equipment equipment)
       {
          if (index >= _equipmentSlots.Length) return;
