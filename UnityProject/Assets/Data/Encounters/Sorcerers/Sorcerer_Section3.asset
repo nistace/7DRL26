@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0284bc5a3e14432a8cb9f3e7d99e4273, type: 3}
+  m_Name: Sorcerer_Section3
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.SorcererGenerator
+  _portraits:
+  - {fileID: 328936763, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+  _displayNames:
+  - Sorcerer
+  _descriptions:
+  - This one might offer powerful abilities.
+  _abilities:
+  - {fileID: 2530319927965642811, guid: 0d0ff4672345d21498c0cc350b902197, type: 3}
+  - {fileID: 2530319927965642811, guid: 13fbde1d879adf640afdad2ab6c4911b, type: 3}
+  - {fileID: 2530319927965642811, guid: d5231a0152471004aa1f04734dc462e0, type: 3}
+  - {fileID: 2530319927965642811, guid: 68ce587420f55b94bb5d81d97a8144c0, type: 3}
+  - {fileID: 2530319927965642811, guid: 63fd62fb42134894bbf7f73707579710, type: 3}
+  - {fileID: 2530319927965642811, guid: 0afd8d30bcaf7aa4d98753ca7cdcd994, type: 3}
+  - {fileID: 2530319927965642811, guid: ac89feff9fe51b6488cb107799abda96, type: 3}
+  - {fileID: 2530319927965642811, guid: c596f9af99bdde746bb4c7d06963e349, type: 3}
+  _choices: 3

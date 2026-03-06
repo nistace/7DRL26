@@ -8,9 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: _icon
+      value: 
+      objectReference: {fileID: 9079002682661804598, guid: c2fb13340834d524db968b087008e8e0, type: 3}
+    - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: _price
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: _description
+      value: Stun the target
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: _displayName
+      value: Stun Target Equipment
+      objectReference: {fileID: 0}
     - target: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: m_Name
-      value: TestEquipment
+      value: StunTargetEquipment
       objectReference: {fileID: 0}
     - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,17 +74,17 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2591516107756245343}
+      addedObject: {fileID: 5011729457904473976}
     - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2569311005117182921}
+      addedObject: {fileID: -7627026336830219000}
   m_SourcePrefab: {fileID: 100100000, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
 --- !u!1 &1792688237871486859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
   m_PrefabInstance: {fileID: 5330932172290206136}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-2591516107756245343
+--- !u!114 &5011729457904473976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,11 +93,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1792688237871486859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ddeca143f9447ab0bde8b031a11976, type: 3}
+  m_Script: {fileID: 11500000, guid: c348cf537f20409794b0875731d9a3be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.HealthEquipmentEffect
-  _additionalHealth: 5
---- !u!114 &2569311005117182921
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.AddActionEquipmentEffect
+  _action: {fileID: -7627026336830219000}
+--- !u!114 &-7627026336830219000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,8 +106,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1792688237871486859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df94c10dc0f240febf21450c5c64e81b, type: 3}
+  m_Script: {fileID: 11500000, guid: 02306d0c966c4e88998c6c07e52f1eb2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.EquipmentUpgrade
-  _upgrades:
-  - {fileID: 5978539611560094270, guid: 0906eda67236b9448931490b5ae62239, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.StunBattleAction

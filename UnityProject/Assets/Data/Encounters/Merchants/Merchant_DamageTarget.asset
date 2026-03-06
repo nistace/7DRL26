@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8964fb56c6e04a9ca4ad9b5fe63ae14e, type: 3}
-  m_Name: Merchant_0
+  m_Name: Merchant_DamageTarget
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.MerchantGenerator
   _portraits:
   - {fileID: -7280169748082540770, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
@@ -19,7 +19,7 @@ MonoBehaviour:
   _descriptions:
   - Prepare your gold, this one wants to sell!
   _equipments:
-  - {fileID: 5978539611560094270, guid: 9352a5ebf197fee478bb7f68f000d29d, type: 3}
-  - {fileID: 5978539611560094270, guid: 0906eda67236b9448931490b5ae62239, type: 3}
-  - {fileID: 5978539611560094270, guid: 1d09d05bc142b3842ae4e50cac09dc3d, type: 3}
+  - {fileID: 5978539611560094270, guid: 78e80418b6fab744aa84996859f3f8cf, type: 3}
+  - {fileID: 5978539611560094270, guid: 2f20ee161c230754b8e41b56dd74de3d, type: 3}
+  - {fileID: 5978539611560094270, guid: f6e633f26a9e8c74baafd3c0e10851ab, type: 3}
   _choices: 3

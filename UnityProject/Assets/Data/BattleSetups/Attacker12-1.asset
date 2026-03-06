@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b12653b8124d0c8c95d9749f1a3429, type: 3}
   m_Name: Attacker12-1
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.BattleSetup
+  _portrait: {fileID: 0}
+  _displayName: A group of foes
+  _description: These... creatures... Looks like they want to fight!
   _opponentsPrefabs:
   - {fileID: 2301385055571929859, guid: 2c1c5c4fa11cde04790be43939328c77, type: 3}
   - {fileID: 2301385055571929859, guid: 2c1c5c4fa11cde04790be43939328c77, type: 3}
   - {fileID: 2301385055571929859, guid: 182f7028f09ba8a4085f29f7ddfd6584, type: 3}
   - {fileID: 2301385055571929859, guid: 182f7028f09ba8a4085f29f7ddfd6584, type: 3}
   _bountyGenerators:
-  - {fileID: 11400000, guid: 59eaf1cf06c5e8d4ca1101662c123f86, type: 2}
-  - {fileID: 11400000, guid: 45b3d138ff7f4d240b707f31ac08c5e8, type: 2}
+  - {fileID: 11400000, guid: 24c92b52b38311840b9dcffd997aed68, type: 2}
+  - {fileID: 11400000, guid: dfebca1abf7cf354ea56b995bcaef1cd, type: 2}
+  - {fileID: 11400000, guid: 904e02d9d1e3a054396094f7e6b051d9, type: 2}
+  - {fileID: 11400000, guid: 14ebe22d45c8bf04aa23c3e5e56c24aa, type: 2}
+  - {fileID: 11400000, guid: d36f814e890859c48a888f3e06b41f7b, type: 2}
+  - {fileID: 11400000, guid: 6141c68ccd4debe41abca9c253addab9, type: 2}

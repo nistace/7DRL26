@@ -24,3 +24,6 @@ MonoBehaviour:
   _possibleSorcerers: []
   _minSorcerers: 0
   _maxSorcerers: 0
+  _possibleBlacksmiths: []
+  _minBlacksmiths: 0
+  _maxBlacksmiths: 0

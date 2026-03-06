@@ -14,15 +14,19 @@ PrefabInstance:
       objectReference: {fileID: 9079002682661804598, guid: c2fb13340834d524db968b087008e8e0, type: 3}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _price
-      value: 4
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      propertyPath: _description
+      value: Pull the target 2 steps forward
       objectReference: {fileID: 0}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _displayName
-      value: Equipment 2
+      value: Pull Target Equipment Tier2
       objectReference: {fileID: 0}
     - target: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: m_Name
-      value: TestEquipment 1
+      value: PullTargetEquipment2
       objectReference: {fileID: 0}
     - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,7 +74,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2591516107756245343}
+      addedObject: {fileID: 5011729457904473976}
+    - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2721567135341949957}
     - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       insertIndex: -1
       addedObject: {fileID: 348804444892855288}
@@ -80,7 +87,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
   m_PrefabInstance: {fileID: 5330932172290206136}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-2591516107756245343
+--- !u!114 &5011729457904473976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,10 +96,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1792688237871486859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ddeca143f9447ab0bde8b031a11976, type: 3}
+  m_Script: {fileID: 11500000, guid: c348cf537f20409794b0875731d9a3be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.HealthEquipmentEffect
-  _additionalHealth: 8
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.AddActionEquipmentEffect
+  _action: {fileID: 2721567135341949957}
+--- !u!114 &2721567135341949957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792688237871486859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a8a11d59094829ab20c0cbbef28126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.PullBattleAction
+  _steps: 2
+  _displayName: Pull ([steps])
 --- !u!114 &348804444892855288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,4 +127,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.EquipmentUpgrade
   _upgrades:
-  - {fileID: 5978539611560094270, guid: 1d09d05bc142b3842ae4e50cac09dc3d, type: 3}
+  - {fileID: 5978539611560094270, guid: 45414b60ef40b2143855d88307de1c0e, type: 3}
