@@ -65,6 +65,7 @@ namespace SDRL26.Rendering.Battleground.HealthBars
             var token = HealthPool.GetToken(HealthTokenType.Shield, transform);
             token.gameObject.SetActive(true);
             token.color = Color.white;
+            token.sprite = _data.ShieldSprite;
             shieldTokens.Add(token);
          }
       }
