@@ -56,9 +56,14 @@ MonoBehaviour:
     - Key: 2
       Value: {fileID: 0}
   _target: 50
+  _additionalTargets: 0
   _preparationTime: 0.5
   _chargeActionTime: 1.5
   _restTime: 2.5
+  _mainActionIcon: {fileID: 21300000, guid: 47e5a578a7336cf43900736a07ba67e1, type: 3}
+  _mainActionAmountProvider: {fileID: 3804615084177762432}
+  _actionsIncludedInIcon:
+  - {fileID: 3804615084177762432}
 --- !u!114 &3804615084177762432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +139,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _mainActionIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 34c7af1472b53cb45b33feac2c1f8aa9, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _preparationTime
       value: 1
       objectReference: {fileID: 0}
@@ -145,6 +154,18 @@ PrefabInstance:
       propertyPath: _actions.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _mainActionAmountProvider
+      value: 
+      objectReference: {fileID: 5427629328471494859}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _actionsIncludedInIcon.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: '_actionsIncludedInIcon.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5427629328471494859}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

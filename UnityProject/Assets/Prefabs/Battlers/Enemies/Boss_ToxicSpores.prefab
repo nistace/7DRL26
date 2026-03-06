@@ -61,6 +61,10 @@ MonoBehaviour:
   _preparationTime: 2
   _chargeActionTime: 1.5
   _restTime: 2
+  _mainActionIcon: {fileID: 21300000, guid: 47e5a578a7336cf43900736a07ba67e1, type: 3}
+  _mainActionAmountProvider: {fileID: 3577490862415416510}
+  _actionsIncludedInIcon:
+  - {fileID: 3577490862415416510}
 --- !u!114 &3577490862415416510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +154,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _mainActionIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 47e5a578a7336cf43900736a07ba67e1, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _preparationTime
       value: 2
       objectReference: {fileID: 0}
@@ -163,6 +171,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: '_actions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2441393529320362138}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _mainActionAmountProvider
+      value: 
+      objectReference: {fileID: 2441393529320362138}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _actionsIncludedInIcon.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: '_actionsIncludedInIcon.Array.data[0]'
       value: 
       objectReference: {fileID: 2441393529320362138}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}

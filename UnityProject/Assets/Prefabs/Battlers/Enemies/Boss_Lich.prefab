@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4484966619794244864}
   - component: {fileID: 5206868975161077674}
-  - component: {fileID: 4070384387870195970}
+  - component: {fileID: 1077941003151322460}
   - component: {fileID: 599451275076628868}
   - component: {fileID: 5375065765488282901}
   m_Layer: 0
@@ -57,10 +57,15 @@ MonoBehaviour:
     - Key: 2
       Value: {fileID: 0}
   _target: 12
+  _additionalTargets: 0
   _preparationTime: 2
   _chargeActionTime: 7
   _restTime: 0
---- !u!114 &4070384387870195970
+  _mainActionIcon: {fileID: 21300000, guid: 4220c1f0128e9be4ca1c30d542dc5469, type: 3}
+  _mainActionAmountProvider: {fileID: 1077941003151322460}
+  _actionsIncludedInIcon:
+  - {fileID: 1077941003151322460}
+--- !u!114 &1077941003151322460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,11 +74,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6645561990141404657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
+  m_Script: {fileID: 11500000, guid: b1139942be944d7f80d3c8ca3fda4989, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
-  _damage: 10
-  _displayName: Attack ([damage])
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
+  _heal: 10
+  _canRevive: 0
+  _displayName: Heal ([heal])
 --- !u!114 &599451275076628868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +155,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _mainActionIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 47e5a578a7336cf43900736a07ba67e1, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
       value: 3.5
       objectReference: {fileID: 0}
@@ -160,6 +170,22 @@ PrefabInstance:
       propertyPath: '_actions.Array.data[0]'
       value: 
       objectReference: {fileID: 2441393529320362138}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _mainActionAmountProvider
+      value: 
+      objectReference: {fileID: 2441393529320362138}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _actionsIncludedInIcon.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: '_actionsIncludedInIcon.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2441393529320362138}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: '_actionsIncludedInIcon.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4705290068169346163}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

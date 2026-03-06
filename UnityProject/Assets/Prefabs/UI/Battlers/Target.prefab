@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battlers.BattlerTargetUi
   _icon: {fileID: 6394903540109981376}
   _text: {fileID: 7074135857490238937}
-  _additionalTargetsText: {fileID: 0}
+  _additionalTargetsText: {fileID: 719232184155020435}
   _style: {fileID: 11400000, guid: 966669c4d105c414e89a5fade1f0125a, type: 2}
 --- !u!1001 &1416408052450664438
 PrefabInstance:
@@ -536,6 +536,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 011a2dc0557b59643840326b3bc2ff25, type: 3}
+--- !u!114 &719232184155020435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8179793160333689391, guid: 011a2dc0557b59643840326b3bc2ff25, type: 3}
+  m_PrefabInstance: {fileID: 8682745838021811900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!224 &7331257126809722003 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2144440017391567407, guid: 011a2dc0557b59643840326b3bc2ff25, type: 3}
