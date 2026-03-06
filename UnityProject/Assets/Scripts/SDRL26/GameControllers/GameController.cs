@@ -1,4 +1,5 @@
-﻿using SDRL26.Battles;
+﻿using System.Linq;
+using SDRL26.Battles;
 using SDRL26.Encounters;
 using SDRL26.GameControllers.GameStates;
 using SDRL26.Libraries;
@@ -46,7 +47,9 @@ namespace SDRL26.GameControllers
 
       private static void ChooseEncounter()
       {
-         var encounterChoice = GameDataLibrary.Instance.RandomEncounterChoice(GameData.Level);
+         var playerEquipments = GameData.Inventory.AllEquipments.Union(GameData.PlayerTeam.Battlers.SelectMany(t => t.Equipments)).Where(t => t).ToArray();
+
+         var encounterChoice = GameDataLibrary.Instance.RandomEncounterChoice(GameData.Level, playerEquipments);
 
          if (encounterChoice.Options.Count > 1)
          {
@@ -71,6 +74,10 @@ namespace SDRL26.GameControllers
          else if (encounter is Sorcerer sorcerer)
          {
             GameState.Change(new SorcererGameState(sorcerer, OnPacificEncounterDone));
+         }
+         else if (encounter is Blacksmith blacksmith)
+         {
+            GameState.Change(new BlacksmithGameState(blacksmith, OnPacificEncounterDone));
          }
          else
          {

@@ -2,6 +2,7 @@
 using System.Linq;
 using SDRL26.Battles.Battlers;
 using SDRL26.Battles.Cards;
+using SDRL26.Battles.Equipments;
 using SDRL26.Encounters;
 using UnityEngine;
 
@@ -42,7 +43,7 @@ namespace SDRL26.Libraries
       public bool CanReorganizeDuringPauses => _canReorganizeDuringPauses;
       public int Levels => _levelEncounters.Length;
 
-      public EncounterChoice RandomEncounterChoice(int level) => _levelEncounters[level].GenerateChoice();
+      public EncounterChoice RandomEncounterChoice(int level, IReadOnlyList<Equipment> playerEquipments) => _levelEncounters[level].GenerateChoice(playerEquipments);
       public bool HasToChooseHero(int level) => level % _chooseHeroOnLevelMultiples == 0;
       public bool IsLastLevelOrBeyond(int level) => level >= Levels - 1;
    }

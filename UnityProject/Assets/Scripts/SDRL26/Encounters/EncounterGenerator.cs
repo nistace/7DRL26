@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using SDRL26.Battles;
+using SDRL26.Battles.Equipments;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,8 +21,11 @@ namespace SDRL26.Encounters
       [SerializeField] private SorcererGenerator[] _possibleSorcerers;
       [SerializeField] private int _minSorcerers;
       [SerializeField] private int _maxSorcerers = 1;
+      [SerializeField] private BlacksmithGenerator[] _possibleBlacksmiths;
+      [SerializeField] private int _minBlacksmiths;
+      [SerializeField] private int _maxBlacksmiths = 1;
 
-      public EncounterChoice GenerateChoice()
+      public EncounterChoice GenerateChoice(IReadOnlyList<Equipment> player_equipments)
       {
          var options = new List<IEncounter>();
          var moreOptions = new List<IEncounter>();
@@ -29,6 +33,24 @@ namespace SDRL26.Encounters
          AddMinAndAppendToMax(_possibleBattles, t => t, _minBattles, _maxBattles, ref options, ref moreOptions);
          AddMinAndAppendToMax(_possibleMerchants, t => t.GenerateMerchant(), _minMerchants, _maxMerchants, ref options, ref moreOptions);
          AddMinAndAppendToMax(_possibleSorcerers, t => t.GenerateSorcerer(), _minSorcerers, _maxSorcerers, ref options, ref moreOptions);
+
+         var upgradableEquipments = player_equipments.Select(t => (origin: t, upgrade: t.GetComponent<EquipmentUpgrade>())).Where(t => t.upgrade && t.upgrade.Count > 0).ToArray();
+
+         if (upgradableEquipments.Length > 0)
+         {
+            AddMinAndAppendToMax(_possibleBlacksmiths,
+               t =>
+               {
+                  var upgrade = upgradableEquipments[Random.Range(0, upgradableEquipments.Length)];
+
+                  return t.GenerateBlacksmith(upgrade.origin, upgrade.upgrade.RandomUpgrade);
+               },
+               _minBlacksmiths,
+               _maxBlacksmiths,
+               ref options,
+               ref moreOptions
+            );
+         }
 
          moreOptions.Sort((_, _) => Mathf.RoundToInt(Random.value * 2 - 1));
 

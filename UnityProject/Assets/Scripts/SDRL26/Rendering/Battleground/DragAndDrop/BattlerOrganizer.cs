@@ -8,6 +8,7 @@ namespace SDRL26.Rendering.Battleground.DragAndDrop
 {
    public class BattlerOrganizer : MonoBehaviour
    {
+      [SerializeField] private GameStateTypes _enabledInStates = GameStateTypes.PrepareBattle | GameStateTypes.PauseBattle;
       [SerializeField] private DraggableTeam _organizingTeam;
       [SerializeField] private Transform _topTransform;
       [SerializeField] private float _changePositionOffset = 15;
@@ -27,16 +28,7 @@ namespace SDRL26.Rendering.Battleground.DragAndDrop
       }
 
       private void HandleStateChanged(GameState arg0) => RefreshEnabled();
-
-      private void RefreshEnabled()
-      {
-         enabled = GameState.CurrentState switch
-         {
-            PauseBattleGameState => GameDataLibrary.Instance.CanReorganizeDuringPauses,
-            PrepareBattleGameState => true,
-            _ => false
-         };
-      }
+      private void RefreshEnabled() => enabled = GameState.CurrentState.Is(_enabledInStates);
 
       private void OnEnable()
       {

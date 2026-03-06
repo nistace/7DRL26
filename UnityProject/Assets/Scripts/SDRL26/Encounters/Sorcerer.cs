@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SDRL26.Battles.Cards;
-using SDRL26.Battles.Equipments;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace SDRL26.Encounters
 {
@@ -17,8 +14,6 @@ namespace SDRL26.Encounters
 
       private AbilityCard[] _abilities;
       public IReadOnlyList<AbilityCard> Abilities => _abilities;
-
-      public UnityEvent OnChanged { get; } = new();
 
       public Sorcerer(AbilityCard[] abilitiesPrefabs, Sprite portrait, string displayName, string description)
       {

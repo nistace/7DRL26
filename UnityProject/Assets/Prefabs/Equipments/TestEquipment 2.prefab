@@ -75,6 +75,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2591516107756245343}
+    - targetCorrespondingSourceObject: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 612673968842405390}
   m_SourcePrefab: {fileID: 100100000, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
 --- !u!1 &1792688237871486859 stripped
 GameObject:
@@ -93,4 +96,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ddeca143f9447ab0bde8b031a11976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.HealthEquipmentEffect
-  _additionalHealth: 5
+  _additionalHealth: 12
+--- !u!114 &612673968842405390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792688237871486859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761a1706002343cab961732b4375d57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.AddTargetEquipmentEffect
+  _additionalTargets: 1
