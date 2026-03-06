@@ -29,9 +29,19 @@ MonoBehaviour:
   _levelEncounters:
   - {fileID: 11400000, guid: 2f419df70d61d5b4c914a124eb0071cf, type: 2}
   - {fileID: 11400000, guid: cbb92ee3af0438a4988dd539804b245b, type: 2}
-  - {fileID: 11400000, guid: cbb92ee3af0438a4988dd539804b245b, type: 2}
-  - {fileID: 11400000, guid: cbb92ee3af0438a4988dd539804b245b, type: 2}
-  - {fileID: 11400000, guid: cbb92ee3af0438a4988dd539804b245b, type: 2}
+  - {fileID: 11400000, guid: 4c7c694b2f6f5a342a09a36c141d1795, type: 2}
+  - {fileID: 11400000, guid: b85d24e8e1dd55743b1562c5ec3aa674, type: 2}
+  - {fileID: 11400000, guid: 643e6610001d8f2418cd5540a228a027, type: 2}
+  - {fileID: 11400000, guid: 51f3b23be6f0be94e87108e210bc882a, type: 2}
+  - {fileID: 11400000, guid: 434f7cbf31eb7f741b57e05a92b12860, type: 2}
+  - {fileID: 11400000, guid: 79ef40bca8b6d2c4bb97ac77bdebea40, type: 2}
+  - {fileID: 11400000, guid: 94228539a0655a142a929b35eb9d7f46, type: 2}
+  - {fileID: 11400000, guid: 66fcc5680d991594595651609683b22c, type: 2}
+  - {fileID: 11400000, guid: bccb726b92e2b3748b7a03a1ab2e70e2, type: 2}
+  - {fileID: 11400000, guid: d5be8e389379238439017936780987fb, type: 2}
+  - {fileID: 11400000, guid: 3b05f9586f8c0e1478a7bdd9f155fbef, type: 2}
+  - {fileID: 11400000, guid: 07a4feb903e26424e9c2c0cbc1960d20, type: 2}
+  - {fileID: 11400000, guid: a116bbf63b77a40419d22fabb333f3a1, type: 2}
   _maxBattlerAdditionalPreparationTime: 1
   _timeBetweenInterruptions: 5
   _canReorganizeDuringPauses: 1

@@ -149,7 +149,7 @@ MonoBehaviour:
       _data:
         _clip: {fileID: 8300000, guid: b7ea79e93b8c8ae4fa9c29ee2d45843a, type: 3}
         _fadeSpeed: 2
-        _volume: 0.383
+        _volume: 0.61
     _default:
       _clip: {fileID: 0}
       _fadeSpeed: 2
@@ -383,7 +383,7 @@ AudioSource:
   m_GameObject: {fileID: 4446457549784569009}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8569486431874800784, guid: a2acfb7daf78d384ba8cda8021303184, type: 2}
+  OutputAudioMixerGroup: {fileID: 366408953053199955, guid: a2acfb7daf78d384ba8cda8021303184, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 71ddf303ab8ef804b8be2a655193cca7, type: 3}
   m_PlayOnAwake: 1

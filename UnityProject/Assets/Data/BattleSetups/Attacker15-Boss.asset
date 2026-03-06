@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b12653b8124d0c8c95d9749f1a3429, type: 3}
   m_Name: Attacker15-Boss
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.BattleSetup
+  _portrait: {fileID: 0}
+  _displayName: A group of foes
+  _description: Watch out guys, that one is bigger!
   _opponentsPrefabs:
   - {fileID: 2301385055571929859, guid: 007205330d17d964e86fbdf7d6f0ab0e, type: 3}
   - {fileID: 2301385055571929859, guid: 182f7028f09ba8a4085f29f7ddfd6584, type: 3}

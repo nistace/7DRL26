@@ -61,6 +61,10 @@ PrefabInstance:
       value: Wake Up All
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
+      propertyPath: _displayName
+      value: Wake up all units
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _actionTarget
       value: 10
       objectReference: {fileID: 0}
