@@ -20,3 +20,6 @@ MonoBehaviour:
   _possibleMerchants: []
   _minMerchants: 0
   _maxMerchants: 0
+  _possibleSorcerers: []
+  _minSorcerers: 0
+  _maxSorcerers: 0

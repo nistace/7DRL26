@@ -17,6 +17,9 @@ namespace SDRL26.Encounters
       [SerializeField] private MerchantGenerator[] _possibleMerchants;
       [SerializeField] private int _minMerchants;
       [SerializeField] private int _maxMerchants = 1;
+      [SerializeField] private SorcererGenerator[] _possibleSorcerers;
+      [SerializeField] private int _minSorcerers;
+      [SerializeField] private int _maxSorcerers = 1;
 
       public EncounterChoice GenerateChoice()
       {
@@ -25,6 +28,7 @@ namespace SDRL26.Encounters
 
          AddMinAndAppendToMax(_possibleBattles, t => t, _minBattles, _maxBattles, ref options, ref moreOptions);
          AddMinAndAppendToMax(_possibleMerchants, t => t.GenerateMerchant(), _minMerchants, _maxMerchants, ref options, ref moreOptions);
+         AddMinAndAppendToMax(_possibleSorcerers, t => t.GenerateSorcerer(), _minSorcerers, _maxSorcerers, ref options, ref moreOptions);
 
          moreOptions.Sort((_, _) => Mathf.RoundToInt(Random.value * 2 - 1));
 

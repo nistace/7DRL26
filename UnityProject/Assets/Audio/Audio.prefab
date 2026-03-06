@@ -302,7 +302,7 @@ MonoBehaviour:
     - _types: 28
       _data:
         _clip: {fileID: 8300000, guid: e4e078f508efbdf4b8c6584d11aa937e, type: 3}
-        _fadeSpeed: 2
+        _fadeSpeed: 100
         _volume: 0.783
     _default:
       _clip: {fileID: 8300000, guid: e9f09446a0cec4743832be6c09d6f88d, type: 3}

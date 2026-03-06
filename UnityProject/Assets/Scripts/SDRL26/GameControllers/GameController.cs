@@ -68,6 +68,10 @@ namespace SDRL26.GameControllers
          {
             GameState.Change(new MerchantGameState(merchant, OnPacificEncounterDone));
          }
+         else if (encounter is Sorcerer sorcerer)
+         {
+            GameState.Change(new SorcererGameState(sorcerer, OnPacificEncounterDone));
+         }
          else
          {
             Debug.LogError("Encounter is not handled");

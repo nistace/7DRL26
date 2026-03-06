@@ -19,6 +19,9 @@ MonoBehaviour:
   _maxBattles: 1
   _possibleMerchants:
   - {fileID: 11400000, guid: f25ee1ab813ccc142b7495cb722586d7, type: 2}
-  - {fileID: 11400000, guid: f25ee1ab813ccc142b7495cb722586d7, type: 2}
   _minMerchants: 0
   _maxMerchants: 1
+  _possibleSorcerers:
+  - {fileID: 11400000, guid: 27471ac0bd907734ea331ee3524e029b, type: 2}
+  _minSorcerers: 0
+  _maxSorcerers: 1

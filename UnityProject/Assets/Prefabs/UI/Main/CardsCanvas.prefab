@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 1898991492585565886}
   - component: {fileID: 5348929156262366996}
   - component: {fileID: 2047563795904316458}
+  - component: {fileID: 440569479856879882}
   m_Layer: 5
   m_Name: CardsCanvas
   m_TagString: Untagged
@@ -272,6 +273,21 @@ MonoBehaviour:
   _slotList: {fileID: 6027458302310023956}
   _spawnDelay: 0.3
   _encounterCardUi: {fileID: 2741983337664616307, guid: 699ed1cf9a0c1a644bf1324add52c16c, type: 3}
+--- !u!114 &440569479856879882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146160659022467030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1e9fc7c72f4dcb8f2128b46e731775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Cards.AbilityCards.SorcererUi
+  _slotList: {fileID: 6027458302310023956}
+  _spawnDelay: 0.3
+  _abilityCardPrefab: {fileID: 4988093295370291916, guid: 71956ae831d54194b8e422125dd2937e, type: 3}
 --- !u!1 &1227119971038234667
 GameObject:
   m_ObjectHideFlags: 0
