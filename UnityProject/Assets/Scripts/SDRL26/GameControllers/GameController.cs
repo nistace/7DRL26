@@ -80,10 +80,9 @@ namespace SDRL26.GameControllers
 
       private static void OnPacificEncounterDone()
       {
-         GameData.NextLevel();
-
-         if (GameDataLibrary.Instance.IsGameWon(GameData.Level))
+         if (GameDataLibrary.Instance.IsLastLevelOrBeyond(GameData.Level))
          {
+            GameData.NextLevel();
             GameOverVictory();
          }
          else
@@ -96,7 +95,7 @@ namespace SDRL26.GameControllers
       {
          GameData.PlayerTeam.ResetAfterBattle();
 
-         if (GameDataLibrary.Instance.IsGameWon(GameData.Level + 1))
+         if (GameDataLibrary.Instance.IsLastLevelOrBeyond(GameData.Level))
          {
             GameData.NextLevel();
             GameOverVictory();

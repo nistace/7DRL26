@@ -40,9 +40,10 @@ namespace SDRL26.Libraries
       public int TimeBetweenInterruptions => _timeBetweenInterruptions;
       public int BattlersToPickOnStart => _battlersToPickOnStart;
       public bool CanReorganizeDuringPauses => _canReorganizeDuringPauses;
+      public int Levels => _levelEncounters.Length;
 
       public EncounterChoice RandomEncounterChoice(int level) => _levelEncounters[level].GenerateChoice();
       public bool HasToChooseHero(int level) => level % _chooseHeroOnLevelMultiples == 0;
-      public bool IsGameWon(int level) => _levelEncounters.Length <= level;
+      public bool IsLastLevelOrBeyond(int level) => level >= Levels - 1;
    }
 }

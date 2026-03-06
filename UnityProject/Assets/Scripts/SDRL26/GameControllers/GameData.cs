@@ -18,16 +18,21 @@ namespace SDRL26.GameControllers
       public static UnityEvent<BattlerTeam> OnPlayerTeamChanged { get; } = new();
       public static UnityEvent<int> OnLevelChanged { get; } = new();
       public static UnityEvent OnInventoryReset { get; } = new();
+      public static UnityEvent<int> OnGoldChanged { get; } = new();
 
       public static void Reset(IReadOnlyList<AbilityCard> starterCards)
       {
+         Inventory?.OnGoldChanged.RemoveListener(OnGoldChanged.Invoke);
+
          PlayerTeam = new BattlerTeam();
          PlayerDeck = new PlayerAbilityCardDeck(starterCards);
          Inventory = new Inventory();
+         Inventory.OnGoldChanged.AddListener(OnGoldChanged.Invoke);
          Level = 0;
          OnPlayerTeamChanged.Invoke(PlayerTeam);
          OnLevelChanged.Invoke(Level);
          OnInventoryReset.Invoke();
+         OnGoldChanged.Invoke(Inventory.Gold);
       }
 
       public static void NextLevel()
