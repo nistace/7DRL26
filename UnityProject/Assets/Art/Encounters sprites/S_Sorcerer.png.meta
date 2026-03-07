@@ -46,11 +46,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 6
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: 0, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -103,12 +103,12 @@ TextureImporter:
       name: S_Attacker_FullBody_Attack_01_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 18
-        width: 579
-        height: 543
+        x: 7
+        y: 0
+        width: 687
+        height: 800
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -136,6 +136,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       S_Attacker_FullBody_Attack_01_0: -4886703583091201821
+      S_Sorcerer_0: 538364629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

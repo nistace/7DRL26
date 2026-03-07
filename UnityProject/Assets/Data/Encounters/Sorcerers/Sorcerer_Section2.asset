@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sorcerer_Section2
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.SorcererGenerator
   _portraits:
-  - {fileID: 21300000, guid: 562de7abf8d277b4d97ec0f87ebbb89c, type: 3}
+  - {fileID: -4886703583091201821, guid: 562de7abf8d277b4d97ec0f87ebbb89c, type: 3}
   _displayNames:
   - Wizard
   _descriptions:
