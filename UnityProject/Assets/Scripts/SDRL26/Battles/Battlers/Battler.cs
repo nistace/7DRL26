@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using SDRL26.Battles.Actions;
 using SDRL26.Battles.Equipments;
+using SDRL26.Libraries;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,11 +20,13 @@ namespace SDRL26.Battles.Battlers
       }
 
       [SerializeField] private string _displayName = "Battler";
+      [SerializeField] private PortraitSize _portraitSize = PortraitSize.Medium;
       [SerializeField] private Health _health = new();
       [SerializeField] private BattlerPosture[] _postures;
       [SerializeField] private Equipment[] _equipmentSlots = new Equipment[DefaultEquipmentSlots];
 
       public string DisplayName => _displayName;
+      public PortraitSize PortraitSize => _portraitSize;
       private BattleAction[] _actions;
       public Health Health => _health;
       public Phase CurrentPhase { get; private set; }

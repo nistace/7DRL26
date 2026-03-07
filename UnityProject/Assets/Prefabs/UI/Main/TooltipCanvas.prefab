@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5f2eb4ff274534812da4865f089641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Tooltips.TooltipItemUi
+  _rectTransform: {fileID: 9074053291631699513}
   _fitter: {fileID: 3303802558366374225}
   _canvasGroup: {fileID: 2474725435365724165}
   _title: {fileID: 6497346441166572618}
@@ -285,7 +286,7 @@ MonoBehaviour:
   _fadeOutTime: 0.5
   _smoothMovementTime: 0.3
   _tooltipItemUi: {fileID: 5898314882906446276}
-  _tooltipOffsetWithPosition: {x: 0, y: 0, z: 0}
+  _tooltipOffsetWithPosition: {x: 0, y: -30, z: 0}
 --- !u!1001 &1321405731372778677
 PrefabInstance:
   m_ObjectHideFlags: 0

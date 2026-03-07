@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!224 &182350942 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9074053291631699513, guid: b8b56353d21ca9542b43f55d8dc8fcfc, type: 3}
-  m_PrefabInstance: {fileID: 4986414830588017310}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &772713041
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,10 +915,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -18
       objectReference: {fileID: 0}
-    - target: {fileID: 5898314882906446276, guid: b8b56353d21ca9542b43f55d8dc8fcfc, type: 3}
-      propertyPath: _rectTransform
-      value: 
-      objectReference: {fileID: 182350942}
     - target: {fileID: 7018616276623951664, guid: b8b56353d21ca9542b43f55d8dc8fcfc, type: 3}
       propertyPath: m_Name
       value: TooltipCanvas

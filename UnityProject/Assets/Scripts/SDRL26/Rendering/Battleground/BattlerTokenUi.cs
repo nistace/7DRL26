@@ -4,6 +4,7 @@ using SDRL26.Battles.Equipments;
 using SDRL26.Rendering.Battleground.HealthBars;
 using SDRL26.Rendering.Equipments;
 using SDRL26.Rendering.Shared;
+using SDRL26.Rendering.Shared.Portraits;
 using SDRL26.Tooltips;
 using TMPro;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace SDRL26.Rendering.Battleground
       [SerializeField] private Transform _linkAnchorDestination;
       [SerializeField] private TMP_Text _actionText;
       [SerializeField] private ActionIcon _actionIcon;
-      [SerializeField] private Image _portrait;
+      [SerializeField] private Portrait _portrait;
       [SerializeField] private HealthBarUi _healthBar;
       [SerializeField] private Image _fillImage;
       [SerializeField] private BattlerTokenStyle _style;
@@ -85,7 +86,7 @@ namespace SDRL26.Rendering.Battleground
 
       private void RefreshBattlerInfo()
       {
-         _portrait.sprite = Battler.GetCurrentPortrait();
+         _portrait.Set(Battler.PortraitSize, Battler.GetCurrentPortrait());
 
          var posture = Battler.Posture;
 
@@ -103,7 +104,7 @@ namespace SDRL26.Rendering.Battleground
 
       private void Update()
       {
-         _portrait.sprite = Battler.GetCurrentPortrait();
+         _portrait.Set(Battler.PortraitSize, Battler.GetCurrentPortrait());
 
          if (Battler.Health.IsDead)
          {

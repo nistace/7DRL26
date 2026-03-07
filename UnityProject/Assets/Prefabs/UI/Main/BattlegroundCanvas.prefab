@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -22
       objectReference: {fileID: 0}
+    - target: {fileID: 4673615473864581984, guid: a61045e19d4748340976f896e629c48f, type: 3}
+      propertyPath: _imagePerSize._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6166034789814935218, guid: a61045e19d4748340976f896e629c48f, type: 3}
       propertyPath: m_Pivot.x
       value: 0

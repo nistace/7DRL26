@@ -61,7 +61,7 @@ MonoBehaviour:
   _preparationTime: 1
   _chargeActionTime: 1.5
   _restTime: 2
-  _mainActionIcon: {fileID: 21300000, guid: 34c7af1472b53cb45b33feac2c1f8aa9, type: 3}
+  _mainActionIcon: {fileID: 21300000, guid: 13325f8140a8a1d439af710cd02ebed4, type: 3}
   _mainActionAmountProvider: {fileID: 2204107975822043683}
   _actionsIncludedInIcon:
   - {fileID: 2204107975822043683}
@@ -112,6 +112,10 @@ PrefabInstance:
       value: Mama Blob
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraitSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
       value: 2
       objectReference: {fileID: 0}
@@ -138,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _mainActionIcon
       value: 
-      objectReference: {fileID: 21300000, guid: 4220c1f0128e9be4ca1c30d542dc5469, type: 3}
+      objectReference: {fileID: 21300000, guid: 0cc32e3ce0d60a446873c4fe9c3661e3, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _preparationTime
       value: 0.5
