@@ -35,6 +35,8 @@ namespace SDRL26.GameControllers.GameStates
                }
             }
 
+            Object.Destroy(Blacksmith.GiveEquipment.gameObject);
+
             GameData.Inventory[GameData.Inventory.FirstEmptySlotIndex] = Object.Instantiate(Blacksmith.ReceiveEquipmentPrefab);
          }
 

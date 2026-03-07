@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
+  _actionDisplayName: Healing
   _icon: {fileID: -205270267638800340, guid: 4a298cd866087c142866981cd42cc691, type: 3}
   _portraits:
     _serializedList:
@@ -141,6 +142,10 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _actionDisplayName
+      value: Reanimating
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actions.Array.size

@@ -1,4 +1,5 @@
 ﻿using SDRL26.Battles.Equipments;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace SDRL26.GameControllers.GameStates
@@ -10,9 +11,15 @@ namespace SDRL26.GameControllers.GameStates
       public Bounty Bounty { get; }
       public UnityAction OnDone { get; }
 
-      public BattleWonGameState(Bounty bounty, UnityAction onDone)
+      public BattleWonGameState(UnityAction onDone)
       {
-         Bounty = bounty;
+         Bounty = GameData.CurrentBattle.Bounty;
+
+         foreach (var battler in GameData.CurrentBattle.OpponentTeam.Battlers)
+         {
+            Object.Destroy(battler.gameObject);
+         }
+
          OnDone = onDone;
       }
 

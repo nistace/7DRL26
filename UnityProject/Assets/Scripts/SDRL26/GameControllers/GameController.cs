@@ -4,6 +4,7 @@ using SDRL26.Encounters;
 using SDRL26.GameControllers.GameStates;
 using SDRL26.Libraries;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SDRL26.GameControllers
 {
@@ -110,16 +111,12 @@ namespace SDRL26.GameControllers
          else
          {
             GameData.EarnCurrentBattleBounty();
-            GameState.Change(new BattleWonGameState(GameData.CurrentBattle.Bounty, StartNextLevel));
+            GameState.Change(new BattleWonGameState(StartNextLevel));
          }
       }
 
-      private static void GameOverVictory()
-      {
-         GameState.Change(new MainMenuGameState());
-      }
-
-      private static void OnBattleLost() => ShowMainMenu();
+      private static void GameOverVictory() => SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+      private static void OnBattleLost() => SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 
       private static void StartNextLevel()
       {

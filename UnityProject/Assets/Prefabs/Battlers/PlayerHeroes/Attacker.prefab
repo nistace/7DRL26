@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
+  _actionDisplayName: Kabooming
   _icon: {fileID: 21300000, guid: 6703d8c129c14ef4299be5af0bbf6979, type: 3}
   _portraits:
     _serializedList:
@@ -55,7 +56,7 @@ MonoBehaviour:
       Value: {fileID: 21300000, guid: 04be457e8ac1e13449c4714dcd48f88c, type: 3}
     - Key: 2
       Value: {fileID: 0}
-  _target: 0
+  _target: 50
   _additionalTargets: 0
   _preparationTime: 0.5
   _chargeActionTime: 2
@@ -149,6 +150,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _actionDisplayName
+      value: Pawslinging
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actionRepetitions
       value: 1
       objectReference: {fileID: 0}
@@ -179,7 +184,7 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portraits._serializedList.Array.data[0].Value
       value: 
-      objectReference: {fileID: 21300000, guid: d3aaeb8885e69164b92d8e4b197c6a54, type: 3}
+      objectReference: {fileID: -2588407131150206381, guid: d3aaeb8885e69164b92d8e4b197c6a54, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portraits._serializedList.Array.data[1].Value
       value: 

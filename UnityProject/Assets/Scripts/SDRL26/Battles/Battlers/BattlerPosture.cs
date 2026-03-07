@@ -14,6 +14,7 @@ namespace SDRL26.Battles.Battlers
          Dead = 2
       }
 
+      [SerializeField] private string _actionDisplayName;
       [SerializeField] private Sprite _icon;
       [SerializeField] private SerializedDictionary<Portrait, Sprite> _portraits = new() { { Portrait.Rest, null }, { Portrait.Action, null }, { Portrait.Dead, null } };
       [SerializeField] private ActionTarget _target = ActionTarget.FirstEnemy;
@@ -41,6 +42,7 @@ namespace SDRL26.Battles.Battlers
          }
       }
 
+      public string ActionDisplayName => _actionDisplayName;
       public float PreparationTime => _preparationTime;
       public float ChargeActionTime => _chargeActionTime;
       public float RestTime => _restTime;

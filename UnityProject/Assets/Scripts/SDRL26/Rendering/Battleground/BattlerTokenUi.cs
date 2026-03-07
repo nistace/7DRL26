@@ -1,9 +1,9 @@
 using System;
-using System.Linq;
 using SDRL26.Battles.Battlers;
 using SDRL26.Battles.Equipments;
 using SDRL26.Rendering.Battleground.HealthBars;
 using SDRL26.Rendering.Equipments;
+using SDRL26.Rendering.Shared;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,10 +15,10 @@ namespace SDRL26.Rendering.Battleground
    {
       [SerializeField] private Transform _linkAnchorOrigin;
       [SerializeField] private Transform _linkAnchorDestination;
-      [SerializeField] private CanvasGroup _canvasGroup;
+      [SerializeField] private TMP_Text _actionText;
+      [SerializeField] private ActionIcon _actionIcon;
       [SerializeField] private Image _portrait;
       [SerializeField] private HealthBarUi _healthBar;
-      [SerializeField] private TMP_Text[] _actionsTexts;
       [SerializeField] private Image _fillImage;
       [SerializeField] private BattlerTokenStyle _style;
       [SerializeField] private EquipmentSlotUi[] _equipmentSlots;
@@ -84,9 +84,7 @@ namespace SDRL26.Rendering.Battleground
       private void RefreshBattlerInfo()
       {
          _portrait.sprite = Battler.GetCurrentPortrait();
-         _actionsTexts[0].text = $"> Targets {Battler.TargetChoice}";
-         _actionsTexts[1].text = $"> [{Battler.Posture.ChargeActionTime:0.0}s] {string.Join(", ", Battler.Posture.Actions.Select(t => t.DisplayString))}";
-         _actionsTexts[2].text = $"> [{Battler.Posture.RestTime:0.0}s] Rest";
+         _actionIcon.Set(Battler.Posture.MainActionIcon, Battler.Posture.MainActionAmount, Battler.Posture.HasSideEffects);
 
          for (var i = 0; i < _equipmentSlots.Length; i++)
          {
@@ -100,52 +98,40 @@ namespace SDRL26.Rendering.Battleground
 
          if (Battler.Health.IsDead)
          {
-            _canvasGroup.alpha = _style.DeadOpacity;
+            _actionText.text = "Deading";
+            _actionIcon.gameObject.SetActive(false);
             _fillImage.fillAmount = 0;
             _fillImage.color = Color.clear;
-            _actionsTexts[0].color = _style.InactiveActionColor;
-            _actionsTexts[1].color = _style.InactiveActionColor;
-            _actionsTexts[2].color = _style.InactiveActionColor;
 
             return;
          }
 
+         _actionIcon.gameObject.SetActive(true);
+
          switch (DisplayMode)
          {
             case BattlerTokenDisplayMode.Battle when Battler.CurrentPhase is Battler.Phase.Action:
-               _canvasGroup.alpha = _style.DefaultOpacity;
+               _actionText.text = Battler.Posture.ActionDisplayName;
                _fillImage.fillAmount = Battler.CurrentLoadRatio;
                _fillImage.color = _style.FillActionColor;
-               _actionsTexts[0].color = _style.InactiveActionColor;
-               _actionsTexts[1].color = _style.DefaultActionColor;
-               _actionsTexts[2].color = _style.InactiveActionColor;
 
                break;
             case BattlerTokenDisplayMode.Battle:
-               _canvasGroup.alpha = _style.RestOpacity;
+               _actionText.text = "Resting";
                _fillImage.fillAmount = 1 - Battler.CurrentLoadRatio;
                _fillImage.color = _style.FillRestColor;
-               _actionsTexts[0].color = _style.InactiveActionColor;
-               _actionsTexts[1].color = _style.InactiveActionColor;
-               _actionsTexts[2].color = _style.DefaultActionColor;
 
                break;
             case BattlerTokenDisplayMode.Prepare:
-               _canvasGroup.alpha = _style.DefaultOpacity;
+               _actionText.text = "Preparing";
                _fillImage.fillAmount = 1 - Battler.CurrentLoadRatio;
                _fillImage.color = _style.FillRestColor;
-               _actionsTexts[0].color = _style.DefaultActionColor;
-               _actionsTexts[1].color = _style.DefaultActionColor;
-               _actionsTexts[2].color = _style.DefaultActionColor;
 
                break;
             case BattlerTokenDisplayMode.Default:
-               _canvasGroup.alpha = 1;
+               _actionText.text = string.Empty;
                _fillImage.fillAmount = 0;
                _fillImage.color = Color.clear;
-               _actionsTexts[0].color = _style.DefaultActionColor;
-               _actionsTexts[1].color = _style.DefaultActionColor;
-               _actionsTexts[2].color = _style.DefaultActionColor;
 
                break;
             default:

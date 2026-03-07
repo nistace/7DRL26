@@ -40,6 +40,8 @@ namespace SDRL26.Battles.Battlers
       public int TotalAdditionalTargets => AdditionalTargets + Posture.AdditionalTargets;
       public IReadOnlyList<Equipment> Equipments => _equipmentSlots;
 
+      private readonly Dictionary<BattlerPosture, (Phase posturePhase, float timeInPosturePhase)> _statesPerPosture = new();
+
       public float CurrentLoadRatio => Mathf.Clamp01(CurrentPhaseLoadUpTime
          / Mathf.Max(.001f,
             CurrentPhaseLoadUpTime,
@@ -94,6 +96,8 @@ namespace SDRL26.Battles.Battlers
 
       public void ContinueBattle(float deltaTime)
       {
+         _statesPerPosture.Clear();
+
          if (_health.IsDead) return;
 
          CurrentPhaseLoadUpTime += deltaTime;
@@ -192,8 +196,20 @@ namespace SDRL26.Battles.Battlers
 
          if (PostureIndex == index) return;
 
+         _statesPerPosture[Posture] = (CurrentPhase, CurrentPhaseLoadUpTime);
+
          PostureIndex = newIndex;
-         ChangePhase(Phase.Prepare);
+
+         if (_statesPerPosture.TryGetValue(Posture, out var postureState))
+         {
+            ChangePhase(postureState.posturePhase);
+            CurrentPhaseLoadUpTime = postureState.timeInPosturePhase;
+         }
+         else
+         {
+            ChangePhase(Phase.Prepare);
+         }
+
          OnPostureChanged.Invoke(Posture);
       }
 
