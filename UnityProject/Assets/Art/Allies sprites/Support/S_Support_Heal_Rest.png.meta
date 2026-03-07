@@ -112,10 +112,10 @@ TextureImporter:
       name: S_Support_Heal_Rest_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 36
-        width: 580
-        height: 509
+        x: 30
+        y: 0
+        width: 542
+        height: 472
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

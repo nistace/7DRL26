@@ -103,12 +103,12 @@ TextureImporter:
       name: S_FlyingSkull_Action_0
       rect:
         serializedVersion: 2
-        x: 67
+        x: 1
         y: 0
-        width: 446
-        height: 580
+        width: 350
+        height: 472
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 793924b6b9f3d7d4f84a75f56c68aacf
     internalID: 0
     vertices: []
     indices: 

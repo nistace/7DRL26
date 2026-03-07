@@ -109,10 +109,10 @@ TextureImporter:
       name: S_Sorcerer_Damage2_Action_2
       rect:
         serializedVersion: 2
-        x: 58
+        x: 0
         y: 0
-        width: 463
-        height: 580
+        width: 360
+        height: 464
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

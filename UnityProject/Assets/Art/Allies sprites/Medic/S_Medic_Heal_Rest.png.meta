@@ -103,12 +103,12 @@ TextureImporter:
       name: S_Medic_Heal_Rest_0
       rect:
         serializedVersion: 2
-        x: 65
+        x: 0
         y: 0
-        width: 449
-        height: 580
+        width: 372
+        height: 488
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e2dfb8073dd7fea4188b23110b5ca75f
     internalID: 0
     vertices: []
     indices: 
