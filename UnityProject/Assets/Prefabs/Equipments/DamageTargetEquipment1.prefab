@@ -18,11 +18,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _description
-      value: Deal 1 damage to the target
+      value: Your actions deal 1 damage to the target
       objectReference: {fileID: 0}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _displayName
-      value: Damage Target Equipment Tier1
+      value: Sharp Acorn
       objectReference: {fileID: 0}
     - target: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: m_Name

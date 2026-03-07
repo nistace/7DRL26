@@ -18,15 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _description
-      value: 'Heal 25% of the damage done '
+      value: Gain Bloodlust equal to 25% of damage dealt
       objectReference: {fileID: 0}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _displayName
-      value: Bloodlust Equipment Tier1
+      value: Bat Tooth
       objectReference: {fileID: 0}
     - target: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: m_Name
-      value: BloodLustEquipment1-1
+      value: BloodLustEquipment1
       objectReference: {fileID: 0}
     - target: {fileID: 6795321028998212481, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: m_LocalPosition.x
