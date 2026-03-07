@@ -43,6 +43,7 @@ namespace SDRL26.Rendering.Battleground
          var token = _tokens[battler];
          _tokenPool.Enqueue(token);
          token.gameObject.SetActive(false);
+         token.transform.localPosition = Vector3.zero;
          _tokens.Remove(battler);
       }
 

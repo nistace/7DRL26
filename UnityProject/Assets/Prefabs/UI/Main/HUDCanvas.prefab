@@ -1409,7 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d24b827c17545aeba5ac49e2b7a24cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Shared.StateVisibleUi
-  _activeForTypes: 1990
+  _activeForTypes: 2022
 --- !u!114 &1689928735623753658
 MonoBehaviour:
   m_ObjectHideFlags: 0
