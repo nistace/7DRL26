@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blacksmith
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.BlacksmithGenerator
   _portraits:
-  - {fileID: -8345435589167100473, guid: 367ebc7eef1967f439cdf6222b0cd630, type: 3}
+  - {fileID: 21300000, guid: f8ae37bafd810a2429183d81adc817e1, type: 3}
   _displayNames:
   - Blacksmith
   _descriptions:

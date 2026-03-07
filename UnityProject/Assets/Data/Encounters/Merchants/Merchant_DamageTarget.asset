@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Merchant_DamageTarget
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.MerchantGenerator
   _portraits:
-  - {fileID: -7280169748082540770, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+  - {fileID: 21300000, guid: ff6fc4e3d0dbb66498134acb6652ff1a, type: 3}
   _displayNames:
   - Merchant
   _descriptions:
