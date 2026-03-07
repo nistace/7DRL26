@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
+  _actionDisplayName: 
   _icon: {fileID: 0}
   _portraits:
     _serializedList:
@@ -146,6 +147,10 @@ PrefabInstance:
       propertyPath: '_postures.Array.data[1]'
       value: 
       objectReference: {fileID: 5206868975161077674}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _health._defaultMaxHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _target
       value: 51
