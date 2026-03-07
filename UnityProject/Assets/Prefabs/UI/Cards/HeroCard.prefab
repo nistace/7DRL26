@@ -827,14 +827,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1648493389728221913, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1648493389728221913, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1648493389728221913, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648493389728221913, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2223265565926879358, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
@@ -949,11 +953,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeroCard
       objectReference: {fileID: 0}
+    - target: {fileID: 5247318958516298059, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8493392625738424080, guid: b6a2ccba56a2570499b071be73a0524c, type: 3}
     - target: {fileID: 5347636084070360808, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -6058969877831227145, guid: 19ae0f38c920e1d43a0bdae0cf79a951, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2867251397800442768, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2223265565926879358, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}

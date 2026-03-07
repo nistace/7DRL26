@@ -155,9 +155,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _mainActionAmountProvider
+      value: 
+      objectReference: {fileID: 1980401964215307557}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actionsIncludedInIcon.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: '_actionsIncludedInIcon.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1980401964215307557}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: '_actionsIncludedInIcon.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5196599751536366857}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portraits._serializedList.Array.data[0].Value
       value: 
