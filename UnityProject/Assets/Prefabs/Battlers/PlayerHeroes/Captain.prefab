@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1139942be944d7f80d3c8ca3fda4989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
-  _heal: 3
+  _heal: 4
   _canRevive: 0
   _displayName: Heal ([heal])
 --- !u!114 &2723596690082478269

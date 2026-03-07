@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1427469325673636734, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: m_Name
-      value: PushFirstOfBothTeamsAbilityCard
+      value: DamageAllEnemies1AbilityCard
       objectReference: {fileID: 0}
     - target: {fileID: 5930534170794264108, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,15 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _targets
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _description
-      value: Push the first ally and the first enemy to the last position
+      value: Deal 1 damage to all enemies
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _displayName
-      value: Woodland Whirlwind
+      value: Weaponized Pinecones
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _actionTarget
@@ -74,14 +74,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1427469325673636734, guid: 604518ac9171731468872c13d535fd75, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2779295269142490490}
+      addedObject: {fileID: 1696754018229027916}
   m_SourcePrefab: {fileID: 100100000, guid: 604518ac9171731468872c13d535fd75, type: 3}
 --- !u!1 &7667688182953439521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1427469325673636734, guid: 604518ac9171731468872c13d535fd75, type: 3}
   m_PrefabInstance: {fileID: 8765827930068439647}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2779295269142490490
+--- !u!114 &1696754018229027916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,8 +90,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7667688182953439521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8b33f9043d45bc8815e2735723dad9, type: 3}
+  m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.PushBattleAction
-  _steps: 99
-  _displayName: Push ([steps])
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AttackBattleAction
+  _damage: 1
+  _displayName: Attack ([damage])

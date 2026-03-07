@@ -103,10 +103,10 @@ TextureImporter:
       name: S_Attacker_FullBody_Attack_01_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 0
         y: 0
-        width: 687
-        height: 800
+        width: 472
+        height: 572
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
