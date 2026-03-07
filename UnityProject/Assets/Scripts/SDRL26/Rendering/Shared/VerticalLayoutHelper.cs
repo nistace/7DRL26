@@ -12,8 +12,9 @@ namespace SDRL26.Rendering.Shared
       [SerializeField] private float _maxSpacing;
 
       private readonly List<Transform> _slots = new();
+      private int _childrenInUse;
 
-      public Transform CreateSlot()
+      private Transform CreateSlot()
       {
          var go = new GameObject("Slot", typeof(RectTransform));
          go.transform.SetParent(_rectTransform);
@@ -29,13 +30,11 @@ namespace SDRL26.Rendering.Shared
 
       private void Update()
       {
-         var childCount = _verticalLayoutGroup.transform.childCount;
-
-         if (childCount <= 1) return;
+         if (_childrenInUse <= 1) return;
 
          var containerHeight = _rectTransform.rect.height;
          var childrenHeight = _verticalLayoutGroup.transform.childCount * _itemHeight;
-         _verticalLayoutGroup.spacing = Mathf.Min((containerHeight - childrenHeight) / (childCount - 1), _maxSpacing);
+         _verticalLayoutGroup.spacing = Mathf.Min((containerHeight - childrenHeight) / (_childrenInUse - 1), _maxSpacing);
       }
 
       public Transform GetChild(int index)
@@ -47,5 +46,7 @@ namespace SDRL26.Rendering.Shared
 
          return _slots[index];
       }
+
+      public void SetChildrenInUse(int childrenInUse) => _childrenInUse = childrenInUse;
    }
 }

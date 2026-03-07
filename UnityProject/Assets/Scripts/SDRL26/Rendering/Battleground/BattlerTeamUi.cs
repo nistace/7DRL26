@@ -75,6 +75,8 @@ namespace SDRL26.Rendering.Battleground
 
             token.GetComponent<SmoothMover>().Target = _verticalLayoutHelper.GetChild(battlerIndex);
          }
+
+         _verticalLayoutHelper.SetChildrenInUse( _team.Battlers.Count);
       }
 
       public void SetVisible(bool visible) => _canvasGroup.alpha = visible ? 1 : 0;
