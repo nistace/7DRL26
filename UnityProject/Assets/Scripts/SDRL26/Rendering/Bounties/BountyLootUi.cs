@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using SDRL26.Tooltips;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ namespace SDRL26.Rendering.Bounties
    {
       [SerializeField] private Image _icon;
       [SerializeField] private TMP_Text _text;
+      [SerializeField] private TooltipHolder _tooltipHolder;
 
       public Sprite Icon
       {
@@ -23,6 +25,12 @@ namespace SDRL26.Rendering.Bounties
       {
          get => _text.text;
          set => _text.text = value;
+      }
+
+      public Tooltip Tooltip
+      {
+         get => _tooltipHolder.Tooltip;
+         set => _tooltipHolder.Tooltip = value;
       }
    }
 }

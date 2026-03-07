@@ -4,6 +4,7 @@ using SDRL26.Battles.Equipments;
 using SDRL26.Rendering.Battleground.HealthBars;
 using SDRL26.Rendering.Equipments;
 using SDRL26.Rendering.Shared;
+using SDRL26.Tooltips;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -22,6 +23,7 @@ namespace SDRL26.Rendering.Battleground
       [SerializeField] private Image _fillImage;
       [SerializeField] private BattlerTokenStyle _style;
       [SerializeField] private EquipmentSlotUi[] _equipmentSlots;
+      [SerializeField] private BattlerDisplayData _displayData;
 
       public BattlerTokenDisplayMode DisplayMode { get; set; }
       public Battler Battler { get; private set; }
@@ -84,7 +86,14 @@ namespace SDRL26.Rendering.Battleground
       private void RefreshBattlerInfo()
       {
          _portrait.sprite = Battler.GetCurrentPortrait();
-         _actionIcon.Set(Battler.Posture.MainActionIcon, Battler.Posture.MainActionAmount, Battler.Posture.HasSideEffects);
+
+         var posture = Battler.Posture;
+
+         _actionIcon.Set(Battler.Posture.MainActionIcon,
+            Battler.Posture.MainActionAmount,
+            Battler.Posture.HasSideEffects,
+            new Tooltip(posture.ActionDisplayName, _displayData.GetActionTooltip(Battler, Battler.Posture))
+         );
 
          for (var i = 0; i < _equipmentSlots.Length; i++)
          {

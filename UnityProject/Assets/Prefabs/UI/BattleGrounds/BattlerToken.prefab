@@ -253,6 +253,7 @@ MonoBehaviour:
   _fillImage: {fileID: 1269133523213546359}
   _style: {fileID: 11400000, guid: 647d8fa5d00280b429c4d8c2d449d727, type: 2}
   _equipmentSlots: []
+  _displayData: {fileID: 11400000, guid: f302a47933763cb459c34a40541afa51, type: 2}
 --- !u!114 &8372725242751040266
 MonoBehaviour:
   m_ObjectHideFlags: 0

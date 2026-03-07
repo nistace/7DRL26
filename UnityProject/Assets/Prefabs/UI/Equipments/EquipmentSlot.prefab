@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2179856489832445316}
   - component: {fileID: 6460537920023250624}
   - component: {fileID: 3045030502770711603}
+  - component: {fileID: 8103878506568959633}
   m_Layer: 5
   m_Name: EquipmentSlot
   m_TagString: Untagged
@@ -91,6 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Equipments.EquipmentSlotUi
   _equipmentImage: {fileID: 7199920182374343977}
+  _equipment: {fileID: 0}
+  _tooltipHolder: {fileID: 8103878506568959633}
 --- !u!114 &3045030502770711603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +107,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Equipments.DraggableEquipmentSlotUi
   _equipmentSlot: {fileID: 6460537920023250624}
+--- !u!114 &8103878506568959633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454507906698878924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4681a616c83544d0bf41703f1806eacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Tooltips.TooltipHolder
+  _tooltip:
+    _anchor: {fileID: 0}
+    _title: 
+    _body: 
+  _defaultAnchor: {fileID: 9160649202281857029}
 --- !u!1 &1764236349589994744
 GameObject:
   m_ObjectHideFlags: 0

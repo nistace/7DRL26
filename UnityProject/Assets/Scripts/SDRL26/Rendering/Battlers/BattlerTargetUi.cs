@@ -1,4 +1,6 @@
 ﻿using SDRL26.Battles.Battlers;
+using SDRL26.Rendering.Shared;
+using SDRL26.Tooltips;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +12,9 @@ namespace SDRL26.Rendering.Battlers
       [SerializeField] private Image _icon;
       [SerializeField] private TMP_Text _text;
       [SerializeField] private TMP_Text _additionalTargetsText;
+      [SerializeField] private TooltipHolder _tooltipHolder;
       [SerializeField] private BattlerTargetStyle _style;
+      [SerializeField] private BattlerDisplayData _displayData;
 
       public void Set(ActionTarget target, int additionalTargets)
       {
@@ -18,6 +22,7 @@ namespace SDRL26.Rendering.Battlers
          _text.text = _style.Text(target);
          _additionalTargetsText.enabled = additionalTargets > 0;
          _additionalTargetsText.text = $"+{additionalTargets}";
+         _tooltipHolder.Tooltip = new Tooltip("Targets", _displayData.GetTargetsTooltip(target, additionalTargets));
       }
    }
 }
