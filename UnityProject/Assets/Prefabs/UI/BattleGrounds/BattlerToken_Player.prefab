@@ -142,7 +142,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 3770845848537951845}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -399,10 +399,10 @@ PrefabInstance:
       addedObject: {fileID: 6627545984060714248}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3455224656452398850, guid: 943eb3304774b2942be871d3130e8156, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 8564516321916469357}
     - targetCorrespondingSourceObject: {fileID: 3455224656452398850, guid: 943eb3304774b2942be871d3130e8156, type: 3}
-      insertIndex: -1
+      insertIndex: 3
       addedObject: {fileID: 3406846197206358512}
   m_SourcePrefab: {fileID: 100100000, guid: 943eb3304774b2942be871d3130e8156, type: 3}
 --- !u!1 &987786831755238940 stripped
@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.BattlerDragAndDrop
   _token: {fileID: 5843194991294791230}
+  _smoothMover: {fileID: 6230689780620806676}
 --- !u!114 &3406846197206358512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,6 +455,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8634554558549258156, guid: 943eb3304774b2942be871d3130e8156, type: 3}
   m_PrefabInstance: {fileID: 2469730059633586462}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6230689780620806676 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8372725242751040266, guid: 943eb3304774b2942be871d3130e8156, type: 3}
+  m_PrefabInstance: {fileID: 2469730059633586462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987786831755238940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea806cd7372749a5ad1c9d13b7c7e631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Shared.SmoothMover
 --- !u!1001 &5028660605461999773
 PrefabInstance:
   m_ObjectHideFlags: 0

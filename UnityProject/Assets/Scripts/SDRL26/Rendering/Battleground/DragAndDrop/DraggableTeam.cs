@@ -5,8 +5,10 @@ namespace SDRL26.Rendering.Battleground.DragAndDrop
    public class DraggableTeam : MonoBehaviour
    {
       [SerializeField] private RectTransform _dropPosition;
+      [SerializeField] private Transform _tokensParent;
 
       public RectTransform DropPosition => _dropPosition;
+      public Transform TokensParent => _tokensParent;
 
       public void ShowDropPosition(int index)
       {

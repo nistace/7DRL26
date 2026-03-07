@@ -1,6 +1,5 @@
 ﻿using SDRL26.GameControllers;
 using SDRL26.GameControllers.GameStates;
-using SDRL26.Libraries;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -48,8 +47,12 @@ namespace SDRL26.Rendering.Battleground.DragAndDrop
 
          var battler = _draggedToken.Token.Battler;
          var dropIndex = _organizingTeam.GetDropSiblingIndex();
-         _draggedToken.transform.SetParent(_organizingTeam.transform);
+         _draggedToken.transform.SetParent(_organizingTeam.TokensParent);
          _draggedToken.transform.SetSiblingIndex(dropIndex);
+
+         _draggedToken.SmoothMover.Target.gameObject.SetActive(true);
+         _draggedToken.SmoothMover.enabled = true;
+
          _organizingTeam.HideDropPosition();
          _draggedToken = null;
 
@@ -59,6 +62,8 @@ namespace SDRL26.Rendering.Battleground.DragAndDrop
       private void HandleTokenDragged(DraggableBattlerToken token)
       {
          _draggedToken = token;
+         _draggedToken.SmoothMover.Target.gameObject.SetActive(false);
+         _draggedToken.SmoothMover.enabled = false;
          localPositionOnStartDrag = _draggedToken.transform.position - (Vector3)Mouse.current.position.ReadValue();
          _organizingTeam.ShowDropPosition(_draggedToken.transform.GetSiblingIndex());
          _draggedToken.transform.SetParent(_topTransform);

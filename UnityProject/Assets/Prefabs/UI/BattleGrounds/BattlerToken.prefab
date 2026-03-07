@@ -199,6 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8634554558549258156}
   - component: {fileID: 8309436556048322336}
+  - component: {fileID: 8372725242751040266}
   m_Layer: 5
   m_Name: BattlerToken
   m_TagString: Untagged
@@ -252,6 +253,19 @@ MonoBehaviour:
   _fillImage: {fileID: 1269133523213546359}
   _style: {fileID: 11400000, guid: 647d8fa5d00280b429c4d8c2d449d727, type: 2}
   _equipmentSlots: []
+--- !u!114 &8372725242751040266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3455224656452398850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea806cd7372749a5ad1c9d13b7c7e631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Shared.SmoothMover
+  _target: {fileID: 0}
 --- !u!1 &7120509465754799522
 GameObject:
   m_ObjectHideFlags: 0

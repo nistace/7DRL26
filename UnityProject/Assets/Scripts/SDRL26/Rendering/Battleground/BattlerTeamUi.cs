@@ -2,6 +2,7 @@
 using System.Linq;
 using SDRL26.Battles;
 using SDRL26.Battles.Battlers;
+using SDRL26.Rendering.Shared;
 using UnityEngine;
 
 namespace SDRL26.Rendering.Battleground
@@ -9,8 +10,9 @@ namespace SDRL26.Rendering.Battleground
    public class BattlerTeamUi : MonoBehaviour
    {
       [SerializeField] private CanvasGroup _canvasGroup;
-      [SerializeField] private Transform _container;
+      [SerializeField] private Transform _tokenActualContainer;
       [SerializeField] private BattlerTokenUi _battlerTokenPrefab;
+      [SerializeField] private VerticalLayoutHelper _verticalLayoutHelper;
 
       private BattlerTeam _team;
       private readonly Dictionary<Battler, BattlerTokenUi> _tokens = new();
@@ -59,7 +61,7 @@ namespace SDRL26.Rendering.Battleground
             {
                if (!_tokenPool.TryDequeue(out token))
                {
-                  token = Instantiate(_battlerTokenPrefab, transform);
+                  token = Instantiate(_battlerTokenPrefab, _tokenActualContainer);
                }
 
                _tokens.Add(battler, token);
@@ -69,6 +71,8 @@ namespace SDRL26.Rendering.Battleground
             token.transform.SetSiblingIndex(battlerIndex);
             token.Setup(battler);
             token.DisplayMode = TokensDisplayMode;
+
+            token.GetComponent<SmoothMover>().Target = _verticalLayoutHelper.GetChild(battlerIndex);
          }
       }
 

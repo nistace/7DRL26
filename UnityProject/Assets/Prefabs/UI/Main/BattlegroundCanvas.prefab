@@ -75,13 +75,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8281088308040869397}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5669361437689847180}
-  m_Father: {fileID: 1620795242664752414}
+  m_Father: {fileID: 4121628516770268331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -780,7 +780,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8169716573892488001, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 6785910973499775732, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3900908434247877507}
     m_AddedComponents:
@@ -788,6 +788,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5931742864808749371}
   m_SourcePrefab: {fileID: 100100000, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
+--- !u!224 &670657724668691597 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7948913791799433938, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
+  m_PrefabInstance: {fileID: 7430536275818929759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1620795242664752414 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8169716573892488001, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
@@ -811,6 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.DragAndDrop.DraggableTeam
   _dropPosition: {fileID: 3900908434247877507}
+  _tokensParent: {fileID: 670657724668691597}
 --- !u!114 &3083240692686953291 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5609037952701547796, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
@@ -822,3 +828,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5156d1d6ce84fa8b2674c3ede495e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.BattlerTeamUi
+--- !u!224 &4121628516770268331 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6785910973499775732, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
+  m_PrefabInstance: {fileID: 7430536275818929759}
+  m_PrefabAsset: {fileID: 0}
