@@ -109,9 +109,9 @@ TextureImporter:
         x: 34
         y: 1
         width: 512
-        height: 568
+        height: 576
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -124,33 +124,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: S_Sorcerer_Damage1_Rest_1
-      rect:
-        serializedVersion: 2
-        x: 279
-        y: 553
-        width: 21
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 82e7736563c5560c0800000000000000
-      internalID: -4583155657335144920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 02f1b05a91f2b414b8bdfc31f2e26723
     internalID: 0
     vertices: []
     indices: 

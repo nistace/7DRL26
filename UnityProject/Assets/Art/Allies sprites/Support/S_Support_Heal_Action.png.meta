@@ -117,7 +117,7 @@ TextureImporter:
         width: 301
         height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -130,77 +130,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: S_Support_Heal_Action_1
-      rect:
-        serializedVersion: 2
-        x: 348
-        y: 547
-        width: 29
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 054630061b9f7ff10800000000000000
-      internalID: 2303584274638660688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_Support_Heal_Action_2
-      rect:
-        serializedVersion: 2
-        x: 414
-        y: 470
-        width: 32
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62175d0b9983e7e40800000000000000
-      internalID: 5656020414771851558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_Support_Heal_Action_3
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 448
-        width: 30
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 531f8face4face9e0800000000000000
-      internalID: -1590703815421005515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ca6dff3d91933404e8fa19b308b823f9
     internalID: 0
     vertices: []
     indices: 

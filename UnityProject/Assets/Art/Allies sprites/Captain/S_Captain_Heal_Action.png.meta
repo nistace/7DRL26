@@ -112,9 +112,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 580
-        height: 575
+        height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -127,55 +127,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: S_Captain_Heal_Action_1
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 457
-        width: 235
-        height: 123
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a1eb9b05866cc5e0800000000000000
-      internalID: -1888021422163631710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_Captain_Heal_Action_2
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 556
-        width: 23
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c819f2dbd2b1c4d0800000000000000
-      internalID: -3116012809956550464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 52aa7feebfd2eec499bc0bc0733fe129
     internalID: 0
     vertices: []
     indices: 

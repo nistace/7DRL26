@@ -46,15 +46,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
   _actionDisplayName: Pyroblasting
-  _icon: {fileID: 1709680392034587706, guid: 9667d31cc74e0764baff28f45ab54957, type: 3}
+  _icon: {fileID: 0}
   _portraits:
     _serializedList:
     - Key: 0
-      Value: {fileID: -7280169748082540770, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+      Value: {fileID: -1313236670483169494, guid: dc3c85954619da9418659e3278197d90, type: 3}
     - Key: 1
-      Value: {fileID: 1178052159, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+      Value: {fileID: 1850170682025905929, guid: 34c093473a895ed40abd211eab15f0d7, type: 3}
     - Key: 2
-      Value: {fileID: 0}
+      Value: {fileID: 2017755370696923663, guid: 332bce290e6695b43b5aacdbc9298ecb, type: 3}
   _target: 55
   _additionalTargets: 0
   _preparationTime: 1.5
@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _icon
       value: 
-      objectReference: {fileID: 1075993247170539406, guid: c4e4bc771cc534942a14ff89caeb49f7, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _target
       value: 54
@@ -173,11 +173,15 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portraits._serializedList.Array.data[0].Value
       value: 
-      objectReference: {fileID: 328936763, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+      objectReference: {fileID: 303878339157658803, guid: 1dda0fb7902b8504894555c89fc9547b, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portraits._serializedList.Array.data[1].Value
       value: 
-      objectReference: {fileID: 1898717118, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
+      objectReference: {fileID: -7435905220927648302, guid: 9459a2bc5deb1fd45956d243c69948d1, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraits._serializedList.Array.data[2].Value
+      value: 
+      objectReference: {fileID: 2017755370696923663, guid: 332bce290e6695b43b5aacdbc9298ecb, type: 3}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

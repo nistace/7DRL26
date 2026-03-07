@@ -52,11 +52,11 @@ MonoBehaviour:
   _portraits:
     _serializedList:
     - Key: 0
-      Value: {fileID: 0}
+      Value: {fileID: 289967405247783508, guid: b79c67c4c99e7a1428c42a433517b447, type: 3}
     - Key: 1
-      Value: {fileID: 0}
+      Value: {fileID: -5316314518669025906, guid: 74e3139ca7039ce4887c95316887fe26, type: 3}
     - Key: 2
-      Value: {fileID: 0}
+      Value: {fileID: 2017755370696923663, guid: 332bce290e6695b43b5aacdbc9298ecb, type: 3}
   _target: 12
   _additionalTargets: 0
   _preparationTime: 2
@@ -195,6 +195,18 @@ PrefabInstance:
       propertyPath: '_actionsIncludedInIcon.Array.data[1]'
       value: 
       objectReference: {fileID: 4705290068169346163}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraits._serializedList.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 289967405247783508, guid: b79c67c4c99e7a1428c42a433517b447, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraits._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: -5316314518669025906, guid: beefdd69042260a4cba0a4ba7174bd2f, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraits._serializedList.Array.data[2].Value
+      value: 
+      objectReference: {fileID: 2017755370696923663, guid: 332bce290e6695b43b5aacdbc9298ecb, type: 3}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

@@ -118,125 +118,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: S_ToxicSpores_Rest_0
-      rect:
-        serializedVersion: 2
-        x: 181
-        y: 617
-        width: 23
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3697d82bb7f16f10800000000000000
-      internalID: 2261360871132862014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_ToxicSpores_Rest_1
-      rect:
-        serializedVersion: 2
-        x: 246
-        y: 665
-        width: 24
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a05ace257ede8d400800000000000000
-      internalID: 349290548905682186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_ToxicSpores_Rest_2
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 653
-        width: 8
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e1924e1553dde6ce0800000000000000
-      internalID: -1409946412243474146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_ToxicSpores_Rest_3
-      rect:
-        serializedVersion: 2
-        x: 437
-        y: 637
-        width: 56
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b73a0eab7d6f2cb40800000000000000
-      internalID: 5459197104740148091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_ToxicSpores_Rest_4
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 616
-        width: 29
-        height: 105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 09ff314ce528bd9c0800000000000000
-      internalID: -3901381308658221168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: S_ToxicSpores_Rest_5
       rect:
         serializedVersion: 2
         x: 0
         y: 85
         width: 800
-        height: 575
+        height: 655
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -249,33 +139,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: S_ToxicSpores_Rest_6
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 536
-        width: 41
-        height: 126
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 695283cead79a1220800000000000000
-      internalID: 2457443513205794198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 30972d62cb95c924c8b28f0ca24ba98f
     internalID: 0
     vertices: []
     indices: 

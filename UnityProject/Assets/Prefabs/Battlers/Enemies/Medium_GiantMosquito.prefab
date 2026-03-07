@@ -76,6 +76,18 @@ PrefabInstance:
       propertyPath: '_actionsIncludedInIcon.Array.data[0]'
       value: 
       objectReference: {fileID: 6351676273457297600}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraits._serializedList.Array.data[0].Value
+      value: 
+      objectReference: {fileID: -424766003510961524, guid: 9a96064e547c652459e32ba9ca7277a5, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraits._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 56198352601939488, guid: 55ae3d290ebe09b4cbf7c02ea91a4eed, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _portraits._serializedList.Array.data[2].Value
+      value: 
+      objectReference: {fileID: 2017755370696923663, guid: 332bce290e6695b43b5aacdbc9298ecb, type: 3}
     - target: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

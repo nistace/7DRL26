@@ -109,37 +109,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: S_Support_Heal_Rest_0
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 132
-        width: 29
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d568b46410857ab20800000000000000
-      internalID: 3145579627239147101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: S_Support_Heal_Rest_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 64
-        width: 529
-        height: 481
+        x: 0
+        y: 36
+        width: 580
+        height: 509
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -152,55 +130,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: S_Support_Heal_Rest_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 65
-        width: 43
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73c2e84cf000a20e0800000000000000
-      internalID: -2294020992469685193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_Support_Heal_Rest_3
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 35
-        width: 68
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 08d04459eb8625590800000000000000
-      internalID: -7686966446210675328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7e88a046ab0fda149b917ad7f2ce60f6
     internalID: 0
     vertices: []
     indices: 

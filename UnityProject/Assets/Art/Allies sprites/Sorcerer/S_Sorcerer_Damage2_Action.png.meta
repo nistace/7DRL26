@@ -106,59 +106,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: S_Sorcerer_Damage2_Action_0
-      rect:
-        serializedVersion: 2
-        x: 219
-        y: 522
-        width: 137
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5de0ff45cb69f6fe0800000000000000
-      internalID: -1193569640605872427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_Sorcerer_Damage2_Action_1
-      rect:
-        serializedVersion: 2
-        x: 433
-        y: 329
-        width: 64
-        height: 196
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 04ded482f7d8fa3c0800000000000000
-      internalID: -4346099538112680640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: S_Sorcerer_Damage2_Action_2
       rect:
         serializedVersion: 2
         x: 58
         y: 0
         width: 463
-        height: 488
+        height: 580
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,7 +131,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5491915ed0d5da348878937dfa79d0ec
     internalID: 0
     vertices: []
     indices: 

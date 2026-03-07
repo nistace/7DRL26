@@ -118,12 +118,12 @@ TextureImporter:
       name: S_GiantWorm_Action_0
       rect:
         serializedVersion: 2
-        x: 56
+        x: 0
         y: 9
-        width: 494
+        width: 580
         height: 562
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -136,121 +136,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: S_GiantWorm_Action_1
-      rect:
-        serializedVersion: 2
-        x: 557
-        y: 382
-        width: 23
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95df690f5f86670c0800000000000000
-      internalID: -4578356565662827175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_GiantWorm_Action_2
-      rect:
-        serializedVersion: 2
-        x: 540
-        y: 333
-        width: 31
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d7e096ae82df89f0800000000000000
-      internalID: -463920726474168365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_GiantWorm_Action_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 244
-        width: 53
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e1ec0ed3f896f44c0800000000000000
-      internalID: -4301103055176151522
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_GiantWorm_Action_4
-      rect:
-        serializedVersion: 2
-        x: 527
-        y: 279
-        width: 27
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b35a489c872c32950800000000000000
-      internalID: 6423191317593236795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S_GiantWorm_Action_5
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 195
-        width: 47
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0534adbdf151de5f0800000000000000
-      internalID: -725900738360097968
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6fff06afed721ce4a85371a6c4115b28
     internalID: 0
     vertices: []
     indices: 
