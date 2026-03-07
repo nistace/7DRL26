@@ -60,7 +60,7 @@ MonoBehaviour:
   _target: 12
   _additionalTargets: 0
   _preparationTime: 2
-  _chargeActionTime: 7.5
+  _chargeActionTime: 4
   _restTime: 0
   _mainActionIcon: {fileID: 21300000, guid: 0cc32e3ce0d60a446873c4fe9c3661e3, type: 3}
   _mainActionAmountProvider: {fileID: 1077941003151322460}
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1139942be944d7f80d3c8ca3fda4989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
-  _heal: 10
+  _heal: 8
   _canRevive: 1
   _displayName: Heal ([heal])
 --- !u!114 &599451275076628868
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
-  _damage: 4
+  _damage: 5
   _displayName: Attack ([damage])
 --- !u!114 &2291396462376818925
 MonoBehaviour:

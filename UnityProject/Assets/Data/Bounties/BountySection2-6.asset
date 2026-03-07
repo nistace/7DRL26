@@ -15,8 +15,6 @@ MonoBehaviour:
   _minGold: 30
   _maxGold: 40
   _possibleEquipments:
-  - {fileID: 5978539611560094270, guid: b85dfc4216beeeb42aedc540fb9814d8, type: 3}
-  - {fileID: 5978539611560094270, guid: 459e94ccc2aedee4d82c8f95d3d48c4b, type: 3}
   - {fileID: 5978539611560094270, guid: 85281b045df1d5d4aa853fb35c390d93, type: 3}
   - {fileID: 5978539611560094270, guid: b51b33364db36c447be1f25a4447a8c6, type: 3}
   - {fileID: 5978539611560094270, guid: 78e80418b6fab744aa84996859f3f8cf, type: 3}
@@ -31,7 +29,6 @@ MonoBehaviour:
   - {fileID: 5978539611560094270, guid: 4ce1ea9bdaad7a141b270e7052ab4ca6, type: 3}
   - {fileID: 5978539611560094270, guid: 354e309fc26b0f941927d0670fc17602, type: 3}
   - {fileID: 5978539611560094270, guid: b5c1d794e9fb6ac4492da1f7a4c36768, type: 3}
-  - {fileID: 5978539611560094270, guid: a7a7825cd3eb2e54b8dfdb2bd548a480, type: 3}
   _minEquipments: 0
   _maxEquipments: 2
   _possibleCards:

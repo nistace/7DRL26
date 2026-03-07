@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
-  _damage: 2
+  _damage: 3
   _displayName: Attack ([damage])
 --- !u!114 &5024461967374700321
 MonoBehaviour:

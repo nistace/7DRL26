@@ -15,7 +15,6 @@ MonoBehaviour:
   _minGold: 20
   _maxGold: 30
   _possibleEquipments:
-  - {fileID: 5978539611560094270, guid: b85dfc4216beeeb42aedc540fb9814d8, type: 3}
   - {fileID: 5978539611560094270, guid: 85281b045df1d5d4aa853fb35c390d93, type: 3}
   - {fileID: 5978539611560094270, guid: 78e80418b6fab744aa84996859f3f8cf, type: 3}
   - {fileID: 5978539611560094270, guid: 0906eda67236b9448931490b5ae62239, type: 3}
