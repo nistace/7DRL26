@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.BloodlustBattleAction
   _displayName: Bloodlust [ratio]%
-  _damageDealtRatio: 0.34
+  _damageDealtRatio: 0.25
