@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using SDRL26.Battles.Battlers;
 using SDRL26.Battles.Cards;
 using SDRL26.Battles.Equipments;
 using SDRL26.Encounters;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace SDRL26.Libraries
 {
@@ -19,7 +21,7 @@ namespace SDRL26.Libraries
       [SerializeField] private int _battlersToPickOnStart = 1;
       [SerializeField] private int _optionsPerBattlerPick = 3;
       [SerializeField] private Battler[] _allPlayerBattlers;
-      [SerializeField] private int _chooseHeroOnLevelMultiples = 4;
+      [SerializeField] private int[] _chooseHeroesInLevels = { 4, 8, 12, 16 };
 
       [Header("Encounters")]
       [SerializeField] private EncounterGenerator[] _levelEncounters;
@@ -44,7 +46,7 @@ namespace SDRL26.Libraries
       public int Levels => _levelEncounters.Length;
 
       public EncounterChoice RandomEncounterChoice(int level, IReadOnlyList<Equipment> playerEquipments) => _levelEncounters[level].GenerateChoice(playerEquipments);
-      public bool HasToChooseHero(int level) => level % _chooseHeroOnLevelMultiples == 0;
+      public bool HasToChooseHero(int level) => Array.IndexOf(_chooseHeroesInLevels, level + 1) >= 0;
       public bool IsLastLevelOrBeyond(int level) => level >= Levels - 1;
    }
 }
