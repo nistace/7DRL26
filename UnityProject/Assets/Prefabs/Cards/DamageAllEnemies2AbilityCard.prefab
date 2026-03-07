@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1427469325673636734, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: m_Name
-      value: DamageAllEnemiesAbilityCard
+      value: DamageAllEnemies2AbilityCard
       objectReference: {fileID: 0}
     - target: {fileID: 5930534170794264108, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _description
-      value: Damage All Enemies 2
+      value: Deal 2 damage to all enemies
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _displayName
-      value: Deal 2 damage point to all enemies
+      value: Weaponized Pinecones
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _actionTarget

@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3674769163383245197}
   - component: {fileID: 3745586027384286888}
+  - component: {fileID: 3799141077196379539}
   m_Layer: 5
   m_Name: Target
   m_TagString: Untagged
@@ -205,7 +206,26 @@ MonoBehaviour:
   _icon: {fileID: 6394903540109981376}
   _text: {fileID: 7074135857490238937}
   _additionalTargetsText: {fileID: 719232184155020435}
+  _tooltipHolder: {fileID: 3799141077196379539}
   _style: {fileID: 11400000, guid: 966669c4d105c414e89a5fade1f0125a, type: 2}
+  _displayData: {fileID: 11400000, guid: f302a47933763cb459c34a40541afa51, type: 2}
+--- !u!114 &3799141077196379539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806226224701033466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4681a616c83544d0bf41703f1806eacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Tooltips.TooltipHolder
+  _tooltip:
+    _anchor: {fileID: 0}
+    _title: 
+    _body: 
+  _defaultAnchor: {fileID: 3308823215520084647}
 --- !u!1001 &1416408052450664438
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 ﻿using System;
 using SDRL26.Battles.Equipments;
+using SDRL26.Tooltips;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ namespace SDRL26.Rendering.Equipments
    {
       [SerializeField] private Image _equipmentImage;
       [SerializeField] private Equipment _equipment;
+      [SerializeField] private TooltipHolder _tooltipHolder;
 
       public Equipment Equipment
       {
@@ -32,6 +34,8 @@ namespace SDRL26.Rendering.Equipments
          Equipment = equipment;
          _equipmentImage.enabled = equipment;
          _equipmentImage.sprite = equipment ? equipment.Icon : null;
+
+         _tooltipHolder.Tooltip = equipment ? new Tooltip($"Equipment: {_equipment.DisplayName}", _equipment.Description, transform) : null;
       }
 
       public void RequestRemoval()

@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using SDRL26.Battles.Battlers;
+﻿using SDRL26.Battles.Battlers;
 using SDRL26.Rendering.Battlers;
 using SDRL26.Rendering.Shared;
+using SDRL26.Tooltips;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,6 +21,7 @@ namespace SDRL26.Rendering.Cards.ChooseHeroes
       [SerializeField] private TMP_Text _actionTime;
       [SerializeField] private TMP_Text _restTime;
       [SerializeField] private ActionIcon _actionIcon;
+      [SerializeField] private BattlerDisplayData _battlerDisplayData;
 
       public Battler BattlerPrefab { get; private set; }
       private int PostureIndex { get; set; }
@@ -56,11 +57,12 @@ namespace SDRL26.Rendering.Cards.ChooseHeroes
          _preparationTime.text = posture.PreparationTime.ToStringOptionalDot();
          _actionTime.text = posture.ChargeActionTime.ToStringOptionalDot();
          _restTime.text = posture.PreparationTime.ToStringOptionalDot();
-         _actionIcon.Set(posture.MainActionIcon, posture.MainActionAmount, posture.HasSideEffects);
 
-         _card.Description = $"Targets {posture.Target}<br>"
-            + $"[{posture.ChargeActionTime:0.##}s] Action<br>{string.Join("<br>", posture.Actions.Select(t => $" - {t.DisplayString}"))}<br>"
-            + $"[{posture.RestTime:0.##}s] Rest";
+         _actionIcon.Set(posture.MainActionIcon,
+            posture.MainActionAmount,
+            posture.HasSideEffects,
+            new Tooltip(posture.ActionDisplayName, _battlerDisplayData.GetActionTooltip(BattlerPrefab, posture))
+         );
       }
 
       public void SetUp(Battler battlerPrefab)

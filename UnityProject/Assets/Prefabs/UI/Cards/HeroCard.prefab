@@ -1017,6 +1017,7 @@ MonoBehaviour:
   _actionTime: {fileID: 8584450042433137833}
   _restTime: {fileID: 2783863349862064306}
   _actionIcon: {fileID: 573785600730084051}
+  _battlerDisplayData: {fileID: 11400000, guid: f302a47933763cb459c34a40541afa51, type: 2}
 --- !u!1001 &2929950991398138827
 PrefabInstance:
   m_ObjectHideFlags: 0

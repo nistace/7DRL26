@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 5664502370368290292}
   - component: {fileID: 4185072655979220048}
   - component: {fileID: 6871858967079095589}
+  - component: {fileID: 5932434661057383833}
   m_Layer: 5
   m_Name: BountyLookSlotUi
   m_TagString: Untagged
@@ -113,7 +114,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 240.23, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5664502370368290292
 CanvasRenderer:
@@ -167,6 +168,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Bounties.BountyLootUi
   _icon: {fileID: 2635117799822303851}
   _text: {fileID: 2767460935615629484}
+  _tooltipHolder: {fileID: 5932434661057383833}
+--- !u!114 &5932434661057383833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210294874071882712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4681a616c83544d0bf41703f1806eacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Tooltips.TooltipHolder
+  _tooltip:
+    _anchor: {fileID: 0}
+    _title: 
+    _body: 
+  _defaultAnchor: {fileID: 904443541385412095}
 --- !u!1001 &6333056703541529219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,6 +289,10 @@ PrefabInstance:
     - target: {fileID: 8179793160333689391, guid: 011a2dc0557b59643840326b3bc2ff25, type: 3}
       propertyPath: m_TextWrappingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179793160333689391, guid: 011a2dc0557b59643840326b3bc2ff25, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4283127129
       objectReference: {fileID: 0}
     - target: {fileID: 8179793160333689391, guid: 011a2dc0557b59643840326b3bc2ff25, type: 3}
       propertyPath: m_HorizontalAlignment

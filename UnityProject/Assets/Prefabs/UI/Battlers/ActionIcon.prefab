@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 5511142984810189027}
   - component: {fileID: 4820138501669553623}
   - component: {fileID: 1968558663453386704}
+  - component: {fileID: 9008165264091902667}
   m_Layer: 5
   m_Name: ActionIcon
   m_TagString: Untagged
@@ -168,6 +169,24 @@ MonoBehaviour:
   _icon: {fileID: 4820138501669553623}
   _moreEffects: {fileID: 9098881393769172297}
   _valueText: {fileID: 528925195017723735}
+  _tooltipHolder: {fileID: 9008165264091902667}
+--- !u!114 &9008165264091902667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327352451854695571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4681a616c83544d0bf41703f1806eacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Tooltips.TooltipHolder
+  _tooltip:
+    _anchor: {fileID: 0}
+    _title: 
+    _body: 
+  _defaultAnchor: {fileID: 211919680396986107}
 --- !u!1001 &5704577497950787496
 PrefabInstance:
   m_ObjectHideFlags: 0

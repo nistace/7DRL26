@@ -1,4 +1,5 @@
 ﻿using SDRL26.GameControllers.GameStates;
+using SDRL26.Tooltips;
 using UnityEngine;
 
 namespace SDRL26.Rendering.Bounties
@@ -42,30 +43,36 @@ namespace SDRL26.Rendering.Bounties
 
          if (bounty.Gold > 0)
          {
-            _lines[lineIndex].Icon = _goldSprite;
-            _lines[lineIndex].Text = _goldPattern.Replace("[gold]", bounty.Gold.ToString());
-            _lines[lineIndex].gameObject.SetActive(true);
-
-            lineIndex++;
+            var line = ActivateNextLine(ref lineIndex);
+            line.Icon = _goldSprite;
+            line.Text = _goldPattern.Replace("[gold]", bounty.Gold.ToString());
+            line.Tooltip = new Tooltip("Gold", string.Empty);
          }
 
          foreach (var equipment in bounty.Equipments)
          {
-            _lines[lineIndex].Icon = equipment.Icon;
-            _lines[lineIndex].Text = _equipmentPattern.Replace("[equipment]", equipment.DisplayName);
-            _lines[lineIndex].gameObject.SetActive(true);
-
-            lineIndex++;
+            var line = ActivateNextLine(ref lineIndex);
+            line.Icon = equipment.Icon;
+            line.Text = _equipmentPattern.Replace("[equipment]", equipment.DisplayName);
+            line.Tooltip = new Tooltip($"Equipment: {equipment.DisplayName}", equipment.Description);
          }
 
          foreach (var card in bounty.Cards)
          {
-            _lines[lineIndex].Icon = card.Icon;
-            _lines[lineIndex].Text = _cardPattern.Replace("[card]", card.DisplayName);
-            _lines[lineIndex].gameObject.SetActive(true);
-
-            lineIndex++;
+            var line = ActivateNextLine(ref lineIndex);
+            line.Icon = card.Icon;
+            line.Text = _cardPattern.Replace("[card]", card.DisplayName);
+            line.Tooltip = new Tooltip($"Card: {card.DisplayName}", card.Description);
          }
+      }
+
+      private BountyLootUi ActivateNextLine(ref int index)
+      {
+         var line = _lines[index];
+         line.gameObject.SetActive(true);
+         index++;
+
+         return line;
       }
    }
 }

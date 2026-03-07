@@ -1,6 +1,6 @@
-﻿using System;
-using SDRL26.GameControllers.GameStates;
+﻿using SDRL26.GameControllers.GameStates;
 using SDRL26.Rendering.Bounties;
+using SDRL26.Tooltips;
 using UnityEngine;
 
 namespace SDRL26.Rendering.Blacksmiths
@@ -25,10 +25,15 @@ namespace SDRL26.Rendering.Blacksmiths
             return;
          }
 
-         _fromEquipmentUi.Icon = blacksmithGameState.Blacksmith.GiveEquipment.Icon;
-         _fromEquipmentUi.Text = blacksmithGameState.Blacksmith.GiveEquipment.DisplayName;
-         _toEquipmentUi.Icon = blacksmithGameState.Blacksmith.ReceiveEquipmentPrefab.Icon;
-         _toEquipmentUi.Text = blacksmithGameState.Blacksmith.ReceiveEquipmentPrefab.DisplayName;
+         var give = blacksmithGameState.Blacksmith.GiveEquipment;
+         _fromEquipmentUi.Icon = give.Icon;
+         _fromEquipmentUi.Text = give.DisplayName;
+         _fromEquipmentUi.Tooltip = new Tooltip($"Equipment: {give.DisplayName}", give.Description);
+
+         var receive = blacksmithGameState.Blacksmith.ReceiveEquipmentPrefab;
+         _toEquipmentUi.Icon = receive.Icon;
+         _toEquipmentUi.Text = receive.DisplayName;
+         _fromEquipmentUi.Tooltip = new Tooltip($"Equipment: {receive.DisplayName}", receive.Description);
       }
    }
 }
