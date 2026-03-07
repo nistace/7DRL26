@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 2301385055571929859, guid: fe7fc29d461ef72458bbadec51f6731c, type: 3}
   - {fileID: 2301385055571929859, guid: 3dd2daedade155a4c9daba33ad9101bd, type: 3}
   - {fileID: 2301385055571929859, guid: 69bdf5683a1d12e448f03dddd7232c90, type: 3}
-  _chooseHeroesInLevels: 04000000080000000c00000010000000
+  _chooseHeroesInLevels: 02000000060000000a0000000e000000
   _levelEncounters:
   - {fileID: 11400000, guid: 2f419df70d61d5b4c914a124eb0071cf, type: 2}
   - {fileID: 11400000, guid: cbb92ee3af0438a4988dd539804b245b, type: 2}
