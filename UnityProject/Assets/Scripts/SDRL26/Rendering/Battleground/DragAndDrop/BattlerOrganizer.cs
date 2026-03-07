@@ -47,6 +47,7 @@ namespace SDRL26.Rendering.Battleground.DragAndDrop
 
          var battler = _draggedToken.Token.Battler;
          var dropIndex = _organizingTeam.GetDropSiblingIndex();
+         if (_draggedToken.SmoothMover.Target.GetSiblingIndex() < dropIndex) dropIndex--;
          _draggedToken.transform.SetParent(_organizingTeam.TokensParent);
          _draggedToken.transform.SetSiblingIndex(dropIndex);
 

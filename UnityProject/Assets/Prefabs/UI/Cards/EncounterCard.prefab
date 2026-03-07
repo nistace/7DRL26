@@ -100,9 +100,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2769851143282419432, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769851143282419432, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769851143282419432, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5156175243447170051, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
       propertyPath: m_Name
-      value: EncounterCard Variant
+      value: EncounterCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497917254733217677, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497917254733217677, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -190
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628929331794363674, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5105f87031782540a4432f7a179550c, type: 3}
+    - target: {fileID: 7996175392005253751, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996175392005253751, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996175392005253751, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996175392005253751, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996175392005253751, guid: a6bc81d8e6136f248bc60893b02b5455, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
