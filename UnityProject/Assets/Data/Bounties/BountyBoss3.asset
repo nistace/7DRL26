@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74a4d5556fd4d848101288108f3ca7e, type: 3}
   m_Name: BountyBoss3
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Equipments.BountyGenerator
-  _minGold: 1000
-  _maxGold: 1000
+  _minGold: 50
+  _maxGold: 50
   _possibleEquipments: []
   _minEquipments: 1
   _maxEquipments: 1

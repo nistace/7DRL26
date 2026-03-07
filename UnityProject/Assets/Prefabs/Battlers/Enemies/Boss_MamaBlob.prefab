@@ -60,7 +60,7 @@ MonoBehaviour:
   _additionalTargets: 1
   _preparationTime: 1
   _chargeActionTime: 1.5
-  _restTime: 2
+  _restTime: 2.5
   _mainActionIcon: {fileID: 21300000, guid: 13325f8140a8a1d439af710cd02ebed4, type: 3}
   _mainActionAmountProvider: {fileID: 2204107975822043683}
   _actionsIncludedInIcon:
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf2f58388d84453948f188925aadf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ShieldBattleAction
-  _shield: 3
+  _shield: 2
   _displayName: Shield ([shield])
 --- !u!114 &7622307754229540077
 MonoBehaviour:
@@ -133,11 +133,11 @@ PrefabInstance:
       objectReference: {fileID: 7013722186151596439}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._defaultMaxHealth
-      value: 40
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _mainActionIcon
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0cc32e3ce0d60a446873c4fe9c3661e3, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _preparationTime
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1139942be944d7f80d3c8ca3fda4989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
-  _heal: 2
+  _heal: 1
   _canRevive: 1
   _displayName: Heal ([heal])
 --- !u!114 &3511658117641248990

@@ -20,12 +20,7 @@ MonoBehaviour:
   _maxBattles: 2
   _possibleMerchants:
   - {fileID: 11400000, guid: f25ee1ab813ccc142b7495cb722586d7, type: 2}
-  - {fileID: 11400000, guid: 931ec64a5ea3cf74eacd7d5b78b69273, type: 2}
-  - {fileID: 11400000, guid: a0f3d8e0685204b42a4df1fe3f28af70, type: 2}
-  - {fileID: 11400000, guid: bd4e526c9eb104a439afff388cc6af6d, type: 2}
-  - {fileID: 11400000, guid: 4831fc0471a81484aafbf92174aedb68, type: 2}
   - {fileID: 11400000, guid: 2b1a8d7b878d46742b4ed017f5158416, type: 2}
-  - {fileID: 11400000, guid: a253f2bda91633c4ab8a931f48ad2b31, type: 2}
   _minMerchants: 0
   _maxMerchants: 1
   _possibleSorcerers:

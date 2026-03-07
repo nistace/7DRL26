@@ -60,7 +60,7 @@ MonoBehaviour:
   _target: 12
   _additionalTargets: 0
   _preparationTime: 2
-  _chargeActionTime: 7
+  _chargeActionTime: 7.5
   _restTime: 0
   _mainActionIcon: {fileID: 21300000, guid: 0cc32e3ce0d60a446873c4fe9c3661e3, type: 3}
   _mainActionAmountProvider: {fileID: 1077941003151322460}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.HealBattleAction
   _heal: 10
-  _canRevive: 0
+  _canRevive: 1
   _displayName: Heal ([heal])
 --- !u!114 &599451275076628868
 MonoBehaviour:
@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 5206868975161077674}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._defaultMaxHealth
-      value: 40
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _target
@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0d6e94de6ade559459f59bb62ca8d8bd, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
-      value: 3.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actions.Array.size
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Actions.AttackBattleAction
-  _damage: 5
+  _damage: 4
   _displayName: Attack ([damage])
 --- !u!114 &2291396462376818925
 MonoBehaviour:

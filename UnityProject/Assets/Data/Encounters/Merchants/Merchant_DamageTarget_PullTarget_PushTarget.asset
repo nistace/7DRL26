@@ -10,15 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8964fb56c6e04a9ca4ad9b5fe63ae14e, type: 3}
-  m_Name: Merchant_PushTarget
+  m_Name: Merchant_DamageTarget_PullTarget_PushTarget
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.MerchantGenerator
   _portraits:
   - {fileID: 21300000, guid: ff6fc4e3d0dbb66498134acb6652ff1a, type: 3}
   _displayNames:
   - Merchant
   _descriptions:
-  - Prepare your gold, this one wants to sell!
+  - Hey stranger, want to buy some offensive equipment?
   _equipments:
+  - {fileID: 5978539611560094270, guid: 78e80418b6fab744aa84996859f3f8cf, type: 3}
+  - {fileID: 5978539611560094270, guid: 2f20ee161c230754b8e41b56dd74de3d, type: 3}
+  - {fileID: 5978539611560094270, guid: f6e633f26a9e8c74baafd3c0e10851ab, type: 3}
+  - {fileID: 5978539611560094270, guid: 09432359877fb2047b50a395989526ec, type: 3}
+  - {fileID: 5978539611560094270, guid: c91ffc63163de78438df7564b9e1be2d, type: 3}
+  - {fileID: 5978539611560094270, guid: 45414b60ef40b2143855d88307de1c0e, type: 3}
   - {fileID: 5978539611560094270, guid: e1827ea90eed062479eaca36f3182174, type: 3}
   - {fileID: 5978539611560094270, guid: 4ce1ea9bdaad7a141b270e7052ab4ca6, type: 3}
   - {fileID: 5978539611560094270, guid: 0823cb9aa8692a9458522ded8ae3ea6e, type: 3}
