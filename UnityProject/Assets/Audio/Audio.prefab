@@ -198,7 +198,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6845634483765825247, guid: a2acfb7daf78d384ba8cda8021303184, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e9f09446a0cec4743832be6c09d6f88d, type: 3}
+  m_Resource: {fileID: 8300000, guid: ee21fc7d02f580d478249ddb5f031cae, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.783
   m_Pitch: 1
@@ -305,7 +305,7 @@ MonoBehaviour:
         _fadeSpeed: 100
         _volume: 0.783
     _default:
-      _clip: {fileID: 8300000, guid: e9f09446a0cec4743832be6c09d6f88d, type: 3}
+      _clip: {fileID: 8300000, guid: ee21fc7d02f580d478249ddb5f031cae, type: 3}
       _fadeSpeed: 2
       _volume: 0.783
 --- !u!1 &2373191554079260982
