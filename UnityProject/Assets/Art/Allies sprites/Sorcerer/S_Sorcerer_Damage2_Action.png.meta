@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 1be7afbf429e8304b963888a42cc94ed
+guid: 34c093473a895ed40abd211eab15f0d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1915522438327418406
-    second: S_Attacker_Portrait_Rest_02_0
+      213: -1193569640605872427
+    second: S_Sorcerer_Damage2_Action_0
+  - first:
+      213: -4346099538112680640
+    second: S_Sorcerer_Damage2_Action_1
+  - first:
+      213: 1850170682025905929
+    second: S_Sorcerer_Damage2_Action_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,10 +52,10 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 6
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: S_Attacker_Portrait_Rest_02_0
+      name: S_Sorcerer_Damage2_Action_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 62
-        width: 200
-        height: 76
+        x: 219
+        y: 522
+        width: 137
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62ebbcf328d459a10800000000000000
-      internalID: 1915522438327418406
+      spriteID: 5de0ff45cb69f6fe0800000000000000
+      internalID: -1193569640605872427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Sorcerer_Damage2_Action_1
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 329
+        width: 64
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ded482f7d8fa3c0800000000000000
+      internalID: -4346099538112680640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Sorcerer_Damage2_Action_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 0
+        width: 463
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f0ff3ce602da910800000000000000
+      internalID: 1850170682025905929
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      S_Attacker_Portrait_Rest_02_0: 1915522438327418406
+      S_Sorcerer_Damage2_Action_0: -1193569640605872427
+      S_Sorcerer_Damage2_Action_1: -4346099538112680640
+      S_Sorcerer_Damage2_Action_2: 1850170682025905929
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

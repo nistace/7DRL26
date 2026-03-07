@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4ef078a7c57e3904aa7889882f74742d
+guid: c7bea46012b495149b0890b9cb56113c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1663385657063518774
-    second: S_Attacker_Portrait_Rest_01_0
+      213: 7583691899167435671
+    second: S_Support_Damage_Rest_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,10 +46,10 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 6
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: S_Attacker_Portrait_Rest_01_0
+      name: S_Support_Damage_Rest_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 57
-        width: 179
-        height: 86
+        x: 96
+        y: 0
+        width: 388
+        height: 580
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acdcf32de877ae8e0800000000000000
-      internalID: -1663385657063518774
+      spriteID: 79be1e72a9fae3960800000000000000
+      internalID: 7583691899167435671
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      S_Attacker_Portrait_Rest_01_0: -1663385657063518774
+      S_Support_Damage_Rest_0: 7583691899167435671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
