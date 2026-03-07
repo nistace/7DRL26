@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _displayName
-      value: Summon Monster Equipment Tier1
+      value: Squishy Book
       objectReference: {fileID: 0}
     - target: {fileID: 5844457238811835955, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: m_Name
