@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _description
-      value: Heal Ally With Most Missing Health 5
+      value: Heal the ally missing the most health by 5
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _displayName
-      value: Heal the ally with the most missing health by 5 health points
+      value: Emergency Herbs
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _actionTarget

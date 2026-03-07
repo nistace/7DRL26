@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _description
-      value: Heal And Motivate Ally With Lowest Health 5
+      value: Heal the ally with the lowest health by 5 and motivate them
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _displayName
-      value: Heal by 5 health points and motivate the ally with the lowest health
+      value: Motivational Squeak
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _actionTarget

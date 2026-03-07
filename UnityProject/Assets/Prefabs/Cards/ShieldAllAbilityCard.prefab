@@ -54,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _description
-      value: Shield All 4
+      value: Give all units 4 shield
       objectReference: {fileID: 0}
     - target: {fileID: 6538094842308108900, guid: 604518ac9171731468872c13d535fd75, type: 3}
       propertyPath: _displayName
-      value: Protects all units by 4 shield points
+      value: Thick Bark
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
