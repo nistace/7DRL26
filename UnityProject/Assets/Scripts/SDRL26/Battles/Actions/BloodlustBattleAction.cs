@@ -19,7 +19,7 @@ namespace SDRL26.Battles.Actions
             return;
          }
 
-         battler.Heal(Mathf.FloorToInt(data[BattleActionData.MeasurableData.DamageDealt] * _damageDealtRatio), false);
+         battler.Heal(Mathf.CeilToInt(data[BattleActionData.MeasurableData.DamageDealt] * _damageDealtRatio), false);
       }
    }
 }
