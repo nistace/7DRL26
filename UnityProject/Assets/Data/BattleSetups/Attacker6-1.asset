@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b12653b8124d0c8c95d9749f1a3429, type: 3}
   m_Name: Attacker6-1
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.BattleSetup
-  _portrait: {fileID: 0}
+  _portrait: {fileID: -4827849677476679224, guid: 0cf908dbdf519dd4a98336061f3a93ff, type: 3}
   _displayName: A group of foes
   _description: These... creatures... Looks like they want to fight!
   _opponentsPrefabs:
