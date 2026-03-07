@@ -33,6 +33,7 @@ MonoBehaviour:
   - {fileID: 2530319927965642811, guid: ac89feff9fe51b6488cb107799abda96, type: 3}
   - {fileID: 2530319927965642811, guid: 8313f3e777644b94dbc29e0e2f5a934d, type: 3}
   - {fileID: 2530319927965642811, guid: 672d299162b52b14c8814834b92ce424, type: 3}
+  - {fileID: 2530319927965642811, guid: 13fbde1d879adf640afdad2ab6c4911b, type: 3}
   _minCards: 0
   _maxCards: 2
   _minEquipmentPlusCards: 0
