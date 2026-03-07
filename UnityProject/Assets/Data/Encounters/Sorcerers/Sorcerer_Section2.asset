@@ -15,7 +15,7 @@ MonoBehaviour:
   _portraits:
   - {fileID: 328936763, guid: 31723bbdb36d890479668d28595e8aca, type: 3}
   _displayNames:
-  - Sorcerer
+  - Wizard
   _descriptions:
   - This one might offer powerful abilities.
   _abilities:
