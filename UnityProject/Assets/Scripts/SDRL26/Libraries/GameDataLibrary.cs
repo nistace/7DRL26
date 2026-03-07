@@ -35,6 +35,7 @@ namespace SDRL26.Libraries
 
       [SerializeField] private int _pauseCardsCount = 3;
 
+      public IReadOnlyList<Battler> AllPlayerBattlers => _allPlayerBattlers;
       public IReadOnlyList<Battler> RandomStartBattlers => _playerStartBattlers.OrderBy(_ => Random.value).Take(_optionsPerBattlerPick).ToArray();
       public IReadOnlyList<Battler> RandomBattlers => _allPlayerBattlers.OrderBy(_ => Random.value).Take(_optionsPerBattlerPick).ToArray();
       public float MaxBattlerAdditionalPreparationTime => _maxBattlerAdditionalPreparationTime;

@@ -15,6 +15,15 @@ namespace SDRL26.GameControllers
       private void Awake()
       {
          GameDataLibrary.Instance = _gameDataLibrary;
+
+         foreach (var battler in _gameDataLibrary.AllPlayerBattlers)
+         {
+            foreach (var posture in battler.Postures)
+            {
+               posture.RefreshActions();
+            }
+         }
+
          GameData.Reset(_gameDataLibrary.StarterCards);
       }
 
