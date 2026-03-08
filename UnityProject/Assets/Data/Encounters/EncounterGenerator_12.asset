@@ -23,7 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b1a8d7b878d46742b4ed017f5158416, type: 2}
   - {fileID: 11400000, guid: ab56ce2626bbd204c9b78c81b5e59a35, type: 2}
   _minMerchants: 0
-  _maxMerchants: 1
+  _maxMerchants: 0
   _possibleSorcerers:
   - {fileID: 11400000, guid: ba328191cccfe5445b3558a73649f83b, type: 2}
   _minSorcerers: 0

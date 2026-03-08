@@ -131,11 +131,11 @@ PrefabInstance:
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: '_postures.Array.data[0]'
       value: 
-      objectReference: {fileID: 8634827911174764194}
+      objectReference: {fileID: 3202868713556493929}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: '_postures.Array.data[1]'
       value: 
-      objectReference: {fileID: 3202868713556493929}
+      objectReference: {fileID: 8634827911174764194}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._defaultMaxHealth
       value: 12

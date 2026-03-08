@@ -26,8 +26,8 @@ MonoBehaviour:
   _possibleSorcerers:
   - {fileID: 11400000, guid: 31dbd662fbc91d64993a8474f3ff8f3f, type: 2}
   _minSorcerers: 0
-  _maxSorcerers: 1
+  _maxSorcerers: 0
   _possibleBlacksmiths:
   - {fileID: 11400000, guid: 3d995667cf7f0ed49b3be58a18f3c97c, type: 2}
   _minBlacksmiths: 0
-  _maxBlacksmiths: 1
+  _maxBlacksmiths: 0

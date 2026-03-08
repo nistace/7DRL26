@@ -21,13 +21,13 @@ MonoBehaviour:
   _possibleMerchants:
   - {fileID: 11400000, guid: f25ee1ab813ccc142b7495cb722586d7, type: 2}
   - {fileID: 11400000, guid: 2b1a8d7b878d46742b4ed017f5158416, type: 2}
-  _minMerchants: 0
+  _minMerchants: 1
   _maxMerchants: 1
   _possibleSorcerers:
   - {fileID: 11400000, guid: 27471ac0bd907734ea331ee3524e029b, type: 2}
   _minSorcerers: 0
-  _maxSorcerers: 1
+  _maxSorcerers: 0
   _possibleBlacksmiths:
   - {fileID: 11400000, guid: 3d995667cf7f0ed49b3be58a18f3c97c, type: 2}
   _minBlacksmiths: 0
-  _maxBlacksmiths: 1
+  _maxBlacksmiths: 0
