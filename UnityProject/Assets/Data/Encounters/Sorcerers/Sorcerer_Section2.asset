@@ -27,6 +27,5 @@ MonoBehaviour:
   - {fileID: 2530319927965642811, guid: 0dcf90b4c3544d449baf958d1d192ffc, type: 3}
   - {fileID: 2530319927965642811, guid: 0afd8d30bcaf7aa4d98753ca7cdcd994, type: 3}
   - {fileID: 2530319927965642811, guid: c596f9af99bdde746bb4c7d06963e349, type: 3}
-  - {fileID: 2530319927965642811, guid: 0d0ff4672345d21498c0cc350b902197, type: 3}
   - {fileID: 2530319927965642811, guid: 0672669abe661ac4c84b4294c02fa020, type: 3}
   _choices: 3
