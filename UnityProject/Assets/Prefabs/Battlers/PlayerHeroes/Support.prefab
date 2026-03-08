@@ -269,5 +269,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf2f58388d84453948f188925aadf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.ShieldBattleAction
-  _shield: 8
+  _shield: 5
   _displayName: Shield ([shield])
