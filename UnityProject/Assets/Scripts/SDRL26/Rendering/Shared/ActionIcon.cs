@@ -16,7 +16,7 @@ namespace SDRL26.Rendering.Shared
       {
          _icon.sprite = icon;
          _valueText.text = value.ToString();
-         _valueText.enabled = true;
+         _valueText.enabled = value > 0;
          _moreEffects.enabled = hasMoreEffects;
          _tooltipHolder.Tooltip = tooltip;
       }
