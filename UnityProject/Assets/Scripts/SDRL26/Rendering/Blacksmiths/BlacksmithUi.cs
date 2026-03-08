@@ -33,7 +33,7 @@ namespace SDRL26.Rendering.Blacksmiths
          var receive = blacksmithGameState.Blacksmith.ReceiveEquipmentPrefab;
          _toEquipmentUi.Icon = receive.Icon;
          _toEquipmentUi.Text = receive.DisplayName;
-         _fromEquipmentUi.Tooltip = new Tooltip($"Equipment: {receive.DisplayName}", receive.Description);
+         _toEquipmentUi.Tooltip = new Tooltip($"Equipment: {receive.DisplayName}", receive.Description);
       }
    }
 }
