@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6d9d3af53247d1acbd95a3660960dd, type: 3}
+  m_Name: AbilityDisplayData
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Cards.AbilityCards.AbilityDisplayData
+  _actionTooltipPatternLines:
+  - 'Targets: [target]'
+  - 'Effects:<br>[actions]'
+  _cardTargetDisplayNames:
+    _serializedList:
+    - Key: 0
+      Value: Everyone
+    - Key: 1
+      Value: All Allies
+    - Key: 2
+      Value: All Enemies
+    - Key: 3
+      Value: <Action Target>
+    - Key: 4
+      Value: Last battler of both teams
+    - Key: 5
+      Value: First battler of both teams
+  _targetDisplayNames:
+    _serializedList:
+    - Key: 0
+      Value: Self
+    - Key: 10
+      Value: First ally
+    - Key: 11
+      Value: Last ally
+    - Key: 12
+      Value: Ally with lowest health
+    - Key: 13
+      Value: Random ally
+    - Key: 14
+      Value: Dead ally
+    - Key: 15
+      Value: Ally who took most damage
+    - Key: 16
+      Value: Ally with lowest health ratio
+    - Key: 50
+      Value: First enemy
+    - Key: 51
+      Value: Last enemy
+    - Key: 52
+      Value: Enemy with lowest health
+    - Key: 53
+      Value: Random enemy
+    - Key: 54
+      Value: Enemy who took most damage
+    - Key: 55
+      Value: Enemy with most health
+    - Key: 56
+      Value: Enemy with lowest health ratio
+  _defaultTargetDisplayName: '?'

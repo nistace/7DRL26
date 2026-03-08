@@ -11,6 +11,7 @@ namespace SDRL26.Rendering.Cards
       [SerializeField] private TMP_Text _displayNameText;
       [SerializeField] private Image _portraitImage;
       [SerializeField] private TMP_Text _descriptionText;
+      [SerializeField] private UnityEvent _oncClick;
 
       public string DisplayName
       {
@@ -30,7 +31,7 @@ namespace SDRL26.Rendering.Cards
          set => _portraitImage.sprite = value;
       }
 
-      public UnityEvent OnClick { get; } = new();
+      public UnityEvent OnClick => _oncClick;
 
       public void OnPointerClick(PointerEventData eventData) => OnClick.Invoke();
    }

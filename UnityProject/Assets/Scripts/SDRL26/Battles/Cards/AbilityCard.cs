@@ -11,15 +11,20 @@ namespace SDRL26.Battles.Cards
    {
       [SerializeField] private string _displayName;
       [SerializeField] private string _description;
-      [SerializeField] private Sprite _portrait;
       [SerializeField] private Sprite _icon;
       [SerializeField] private CardTargets _targets;
       [SerializeField] private ActionTarget _actionTarget;
+      [SerializeField] private BattleAction _valueAction;
+      [SerializeField] private bool _hasMoreEffectsThanOnIcon;
 
+      public CardTargets Targets => _targets;
+      public ActionTarget ActionTarget => _actionTarget;
       public string DisplayName => _displayName;
-      public Sprite Portrait => _portrait;
+      public int ActionAmount => _valueAction ? _valueAction.Amount : 0;
+      public bool HasMoreEffectsThanOnIcon => _hasMoreEffectsThanOnIcon;
       public Sprite Icon => _icon;
       public string Description => _description;
+      public IReadOnlyList<BattleAction> Actions => GetComponents<BattleAction>();
 
       public void Play(Battle battle)
       {
