@@ -27,6 +27,14 @@ namespace SDRL26.Rendering.Shared
                prepareBattleGameState.EndPreparation();
 
                break;
+            case BlacksmithGameState blacksmithGameState:
+               blacksmithGameState.End(true);
+
+               break;
+            case GameOverGameState gameOverGameState:
+               gameOverGameState.Terminate();
+
+               break;
          }
       }
    }

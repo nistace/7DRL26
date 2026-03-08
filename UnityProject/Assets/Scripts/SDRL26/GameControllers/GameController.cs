@@ -40,7 +40,8 @@ namespace SDRL26.GameControllers
       public static void Quit() => Application.Quit();
       private static void ChooseStarterBattler() => GameState.Change(new ChooseHeroState(GameDataLibrary.Instance.RandomStartBattlers, ContinueAfterChoosingStarterBattler));
       private static void PrepareBattle(BattleSetup battleSetup) => GameState.Change(new PrepareBattleGameState(battleSetup, ChangeToContinueBattleState));
-      private static void ChangeToContinueBattleState() => GameState.Change(new ContinueBattleGameState(OnBattleWon, OnBattleLost, PauseBattle));
+      private static void ChangeToContinueBattleState() => GameState.Change(new ContinueBattleGameState(OnBattleWon, GameOverDefeat, PauseBattle));
+
       private static void PauseBattle() => GameState.Change(new PauseBattleGameState(ChangeToContinueBattleState));
 
       private static void ContinueAfterChoosingStarterBattler()
@@ -124,8 +125,10 @@ namespace SDRL26.GameControllers
          }
       }
 
-      private static void GameOverVictory() => SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-      private static void OnBattleLost() => SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+      private static void GameOverVictory() => GameOver(true);
+      private static void GameOverDefeat() => GameOver(false);
+      private static void GameOver(bool win) => GameState.Change(new GameOverGameState(win, GoBackToMenu));
+      private static void GoBackToMenu() => SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 
       private static void StartNextLevel()
       {

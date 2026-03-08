@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d24b827c17545aeba5ac49e2b7a24cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Shared.StateVisibleUi
-  _activeForTypes: 2046
+  _activeForTypes: 4094
 --- !u!1001 &1963492232330969918
 PrefabInstance:
   m_ObjectHideFlags: 0

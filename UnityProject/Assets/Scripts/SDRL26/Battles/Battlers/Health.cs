@@ -130,10 +130,15 @@ namespace SDRL26.Battles.Battlers
          if (additional_health == 0) return;
 
          MaxHealth += additional_health;
+         OnChanged.Invoke();
+
+         if (IsDead)
+         {
+            return;
+         }
+
          var currentHealthChange = Mathf.Clamp(additional_health, -CurrentHealth, MissingHealth);
          CurrentHealth += currentHealthChange;
-
-         OnChanged.Invoke();
 
          if (currentHealthChange == 0)
          {

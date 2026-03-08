@@ -36,7 +36,7 @@ namespace SDRL26.Rendering.Battleground
             _otherTeam.SetVisible(true);
             SetTokensDisplayMode(BattlerTokenDisplayMode.Battle);
          }
-         else if (newState is BattleWonGameState)
+         else if (newState is BattleWonGameState or GameOverGameState)
          {
             _otherTeam.SetVisible(true);
             SetTokensDisplayMode(BattlerTokenDisplayMode.Default);

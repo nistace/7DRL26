@@ -20,8 +20,10 @@ namespace SDRL26.GameControllers.GameStates
       PauseBattle = 1 << 4,
       BattleWon = 1 << 5,
 
+      GameOver = 1 << 11,
+
       NonBattleEncounter = Merchant | Sorcerer | Blacksmith | MiscEvent,
       InBattle = PrepareBattle | ContinueBattle | PauseBattle | BattleWon,
-      InGame = InBattle | NonBattleEncounter | ChooseEncounter | ChooseHero,
+      InGame = InBattle | NonBattleEncounter | ChooseEncounter | ChooseHero | GameOver
    }
 }
