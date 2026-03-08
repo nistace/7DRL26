@@ -33,7 +33,7 @@ namespace SDRL26.Rendering.Shared
          if (_childrenInUse <= 1) return;
 
          var containerHeight = _rectTransform.rect.height;
-         var childrenHeight = _verticalLayoutGroup.transform.childCount * _itemHeight;
+         var childrenHeight = _childrenInUse * _itemHeight;
          _verticalLayoutGroup.spacing = Mathf.Min((containerHeight - childrenHeight) / (_childrenInUse - 1), _maxSpacing);
       }
 
@@ -47,6 +47,14 @@ namespace SDRL26.Rendering.Shared
          return _slots[index];
       }
 
-      public void SetChildrenInUse(int childrenInUse) => _childrenInUse = childrenInUse;
+      public void SetChildrenInUse(int childrenInUse)
+      {
+         _childrenInUse = childrenInUse;
+
+         for (var i = 0; i < transform.childCount; i++)
+         {
+            transform.GetChild(i).gameObject.SetActive(i < childrenInUse);
+         }
+      }
    }
 }
