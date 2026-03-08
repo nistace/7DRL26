@@ -61,10 +61,11 @@ MonoBehaviour:
   _preparationTime: 1.5
   _chargeActionTime: 1.5
   _restTime: 1.5
-  _mainActionIcon: {fileID: 21300000, guid: 47e5a578a7336cf43900736a07ba67e1, type: 3}
+  _mainActionIcon: {fileID: 21300000, guid: ad21187ecbe06224985493403c0648e1, type: 3}
   _mainActionAmountProvider: {fileID: 354119566859008082}
   _actionsIncludedInIcon:
   - {fileID: 354119566859008082}
+  - {fileID: 4855110320404766437}
   _prepareClip: {fileID: 0}
   _performClip: {fileID: 8300000, guid: 4f2c1de55b810b345a3b5d5694d2ac88, type: 3}
 --- !u!114 &354119566859008082

@@ -62,10 +62,11 @@ MonoBehaviour:
   _preparationTime: 2
   _chargeActionTime: 4
   _restTime: 0
-  _mainActionIcon: {fileID: 21300000, guid: 0cc32e3ce0d60a446873c4fe9c3661e3, type: 3}
+  _mainActionIcon: {fileID: 21300000, guid: df680edc5ad00ed44b651179c89f3a35, type: 3}
   _mainActionAmountProvider: {fileID: 1077941003151322460}
   _actionsIncludedInIcon:
   - {fileID: 1077941003151322460}
+  - {fileID: 599451275076628868}
   _prepareClip: {fileID: 0}
   _performClip: {fileID: 8300000, guid: f13499a304404a241a772e363c334abf, type: 3}
 --- !u!114 &1077941003151322460
@@ -188,7 +189,7 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _mainActionIcon
       value: 
-      objectReference: {fileID: 21300000, guid: 0d6e94de6ade559459f59bb62ca8d8bd, type: 3}
+      objectReference: {fileID: 21300000, guid: ee2c4fc061f41364fbc39aa3b8eddb40, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _chargeActionTime
       value: 4
@@ -207,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 2441393529320362138}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _actionsIncludedInIcon.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: '_actionsIncludedInIcon.Array.data[0]'
@@ -216,7 +217,7 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: '_actionsIncludedInIcon.Array.data[1]'
       value: 
-      objectReference: {fileID: 4705290068169346163}
+      objectReference: {fileID: 2291396462376818925}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portraits._serializedList.Array.data[0].Value
       value: 
