@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _description
-      value: Give 2 shields to the target
+      value: 'Action modifier: Give 2 shields to the target'
       objectReference: {fileID: 0}
     - target: {fileID: 1946483616014599046, guid: 3658a3ec573a69e459d228f5b4afea25, type: 3}
       propertyPath: _displayName
