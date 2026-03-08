@@ -66,6 +66,8 @@ MonoBehaviour:
   _mainActionAmountProvider: {fileID: 1077941003151322460}
   _actionsIncludedInIcon:
   - {fileID: 1077941003151322460}
+  _prepareClip: {fileID: 0}
+  _performClip: {fileID: 8300000, guid: f13499a304404a241a772e363c334abf, type: 3}
 --- !u!114 &1077941003151322460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +157,22 @@ PrefabInstance:
       propertyPath: _health._defaultMaxHealth
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _deadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1818e38fafd55d948880d758993ae6cc, type: 3}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _hurtClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c41e018103d1e5944bae40a406565b7d, type: 3}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _defaultClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _prepareActionClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _target
       value: 51
@@ -163,6 +181,10 @@ PrefabInstance:
       propertyPath: _restTime
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _performClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a609c7571480727449b27440ff25074d, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _mainActionIcon
       value: 

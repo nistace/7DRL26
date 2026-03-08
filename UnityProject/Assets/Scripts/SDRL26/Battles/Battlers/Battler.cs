@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SDRL26.Audio;
 using SDRL26.Battles.Actions;
 using SDRL26.Battles.Equipments;
 using SDRL26.Libraries;
@@ -58,11 +59,15 @@ namespace SDRL26.Battles.Battlers
          )
       );
 
-      public static UnityEvent<Battler> OnTargetChanged { get; } = new();
-      public static UnityEvent<Battler> OnTargetsEvaluated { get; } = new();
-      public static UnityEvent<Battler> OnActionsPerformed { get; } = new();
-      public static UnityEvent<Battler> OnPhaseChanged { get; } = new();
-      public static UnityEvent<Battler> OnAliveChanged { get; } = new();
+      public static UnityEvent<Battler> OnBattlerTargetChanged { get; } = new();
+      public static UnityEvent<Battler> OnBattlerTargetsEvaluated { get; } = new();
+      public static UnityEvent<Battler> OnBattlerActionsPerformed { get; } = new();
+      public static UnityEvent<Battler> OnBattlerPhaseChanged { get; } = new();
+      public static UnityEvent<Battler> OnBattlerAliveChanged { get; } = new();
+      public UnityEvent OnTargetChanged { get; } = new();
+      public UnityEvent OnTargetsEvaluated { get; } = new();
+      public UnityEvent OnActionsPerformed { get; } = new();
+      public UnityEvent<Phase> OnPhaseChanged { get; } = new();
       public UnityEvent<BattlerPosture> OnPostureChanged { get; } = new();
       public UnityEvent<(uint index, Equipment equipment)> OnEquipmentChanged { get; } = new();
 
@@ -95,7 +100,10 @@ namespace SDRL26.Battles.Battlers
          Health.OnDied.RemoveListener(HandleDied);
       }
 
-      private void HandleDied() => OnAliveChanged.Invoke(this);
+      private void HandleDied()
+      {
+         OnBattlerAliveChanged.Invoke(this);
+      }
 
       public void ContinueBattle(float deltaTime)
       {
@@ -131,20 +139,23 @@ namespace SDRL26.Battles.Battlers
       {
          ActionResolver.Resolve(Posture.Actions, this, Target, TotalAdditionalTargets);
 
-         OnActionsPerformed.Invoke(this);
+         OnActionsPerformed.Invoke();
+         OnBattlerActionsPerformed.Invoke(this);
       }
 
       private void ChangePhase(Phase newPhase)
       {
          CurrentPhase = newPhase;
          CurrentPhaseLoadUpTime = 0;
-         OnPhaseChanged.Invoke(this);
+         OnPhaseChanged.Invoke(CurrentPhase);
+         OnBattlerPhaseChanged.Invoke(this);
       }
 
       private void RefreshTargets()
       {
          SetTarget(EvaluateTarget());
-         OnTargetsEvaluated.Invoke(this);
+         OnTargetsEvaluated.Invoke();
+         OnBattlerTargetsEvaluated.Invoke(this);
       }
 
       private Battler EvaluateTarget() => EvaluateTarget(TargetChoice);
@@ -173,7 +184,8 @@ namespace SDRL26.Battles.Battlers
       {
          Target = battler;
 
-         OnTargetChanged.Invoke(this);
+         OnTargetChanged.Invoke();
+         OnBattlerTargetChanged.Invoke(this);
       }
 
       public int Damage(int damage) => _health.Damage(damage);

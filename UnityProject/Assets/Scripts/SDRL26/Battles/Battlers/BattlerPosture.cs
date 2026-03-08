@@ -26,11 +26,16 @@ namespace SDRL26.Battles.Battlers
       [SerializeField] private BattleAction _mainActionAmountProvider;
       [SerializeField] private BattleAction[] _actionsIncludedInIcon;
 
+      [SerializeField] private AudioClip _prepareClip;
+      [SerializeField] private AudioClip _performClip;
+
       private bool actionsInitialized;
       private BattleAction[] _actions;
 
       public Sprite Icon => _icon;
       public ActionTarget Target => _target;
+      public AudioClip PrepareClip => _prepareClip;
+      public AudioClip PerformClip => _performClip;
 
       public IReadOnlyList<BattleAction> Actions
       {

@@ -32,6 +32,14 @@ PrefabInstance:
       propertyPath: _health._maxHealth
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _deadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 53c9d321897e7434d9204079414639a0, type: 3}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _hurtClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ff08f72e125d74540a504de767845587, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _target
       value: 13
@@ -40,6 +48,10 @@ PrefabInstance:
       propertyPath: _restTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _performClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 378080e83339d4e4289e9a4f25901bde, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _mainActionIcon
       value: 

@@ -17,6 +17,7 @@ namespace SDRL26.Battles.Battlers
       public int MissingHealth => MaxHealth - CurrentHealth;
       public float Ratio => (float)CurrentHealth / MaxHealth;
 
+      public UnityEvent<(bool health, bool shields)> OnDamaged { get; } = new();
       public UnityEvent OnChanged { get; } = new();
       public UnityEvent OnDied { get; } = new();
       public UnityEvent OnRevived { get; } = new();
@@ -47,6 +48,7 @@ namespace SDRL26.Battles.Battlers
 
          if (damageToShield > 0 || damageToHealth > 0)
          {
+            OnDamaged.Invoke((damageToHealth > 0, damageToShield > 0));
             OnChanged.Invoke();
 
             if (IsDead)

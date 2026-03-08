@@ -44,11 +44,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
+  _actionDisplayName: 
+  _icon: {fileID: 0}
+  _portraits:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 0}
+    - Key: 1
+      Value: {fileID: 0}
+    - Key: 2
+      Value: {fileID: 0}
   _target: 50
+  _additionalTargets: 0
   _preparationTime: 2
   _chargeActionTime: 1
-  _actions: []
   _restTime: 2
+  _mainActionIcon: {fileID: 0}
+  _mainActionAmountProvider: {fileID: 0}
+  _actionsIncludedInIcon: []
+  _prepareClip: {fileID: 0}
+  _performClip: {fileID: 0}
 --- !u!1 &8632150954890334127
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +74,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3728919720660223897}
   - component: {fileID: 1908006528618842563}
+  - component: {fileID: 5431562932607393350}
+  - component: {fileID: 2613161257405699442}
   m_Layer: 0
   m_Name: BaseBattler
   m_TagString: Untagged
@@ -95,8 +112,127 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _displayName: Battler
-  _portrait: {fileID: 0}
+  _portraitSize: 1
   _health:
-    _maxHealth: 5
+    _defaultMaxHealth: 5
   _postures:
   - {fileID: 3024255625871582377}
+  _equipmentSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!82 &5431562932607393350
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632150954890334127}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 3723108864051403232, guid: a2acfb7daf78d384ba8cda8021303184, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2613161257405699442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632150954890334127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 878390a991894af98e7ca5233ca84b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Audio.BattlerAudio
+  _genericClips: {fileID: 11400000, guid: 32d679d09cff53648a23a7b5212533f7, type: 2}
+  _battler: {fileID: 1908006528618842563}
+  _defaultClip: {fileID: 0}
+  _prepareActionClip: {fileID: 0}
+  _hurtClip: {fileID: 0}
+  _deadClip: {fileID: 0}
+  _audioSource: {fileID: 5431562932607393350}

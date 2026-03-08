@@ -41,14 +41,14 @@ namespace SDRL26.Test
             _battleTester.Battle.OnStarted.RemoveListener(HandleBattleStarted);
          }
 
-         Battler.OnTargetsEvaluated.RemoveListener(HandleBattlerTargetsEvaluated);
+         Battler.OnBattlerTargetsEvaluated.RemoveListener(HandleBattlerTargetsEvaluated);
       }
 
       private void ObserveBattle()
       {
          _battleTester.Battle.OnStarted.AddListener(HandleBattleStarted);
-         Battler.OnTargetChanged.AddListener(HandleBattlerTargetsEvaluated);
-         Battler.OnActionsPerformed.AddListener(HandleActionPerformed);
+         Battler.OnBattlerTargetChanged.AddListener(HandleBattlerTargetsEvaluated);
+         Battler.OnBattlerActionsPerformed.AddListener(HandleActionPerformed);
       }
 
       private void HandleActionPerformed(Battler battler)

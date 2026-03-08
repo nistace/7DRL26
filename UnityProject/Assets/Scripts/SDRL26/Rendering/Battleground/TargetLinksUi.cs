@@ -23,14 +23,17 @@ namespace SDRL26.Rendering.Battleground
 
       private void HandleGameStateChanged(GameState newState)
       {
-         Battler.OnTargetChanged.RemoveListener(HandleBattlerTargetsChanged);
+         Battler.OnBattlerTargetChanged.RemoveListener(HandleBattlerTargetsChanged);
+         Battler.OnBattlerActionsPerformed.RemoveListener(HandleBattlerActionPerformed);
+         Battler.OnBattlerPhaseChanged.RemoveListener(HandleBattlerPhaseChanged);
+         Battler.OnBattlerAliveChanged.RemoveListener(HandleBattlerAliveChanged);
 
          if (newState is ContinueBattleGameState)
          {
-            Battler.OnTargetChanged.AddListener(HandleBattlerTargetsChanged);
-            Battler.OnActionsPerformed.AddListener(HandleBattlerActionPerformed);
-            Battler.OnPhaseChanged.AddListener(HandleBattlerPhaseChanged);
-            Battler.OnAliveChanged.AddListener(HandleBattlerAliveChanged);
+            Battler.OnBattlerTargetChanged.AddListener(HandleBattlerTargetsChanged);
+            Battler.OnBattlerActionsPerformed.AddListener(HandleBattlerActionPerformed);
+            Battler.OnBattlerPhaseChanged.AddListener(HandleBattlerPhaseChanged);
+            Battler.OnBattlerAliveChanged.AddListener(HandleBattlerAliveChanged);
          }
          else
          {
