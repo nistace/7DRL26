@@ -511,6 +511,7 @@ MonoBehaviour:
   - {fileID: 4566076521413735725}
   - {fileID: 647334491867272094}
   _goldSprite: {fileID: 21300000, guid: 9000a1e341f71b24887e1e76ac6cc550, type: 3}
+  _cardSprite: {fileID: 21300000, guid: d09e159633bab1749b45f63e534b285b, type: 3}
   _goldPattern: <b>[gold]</b> coins of gold
   _equipmentPattern: a nice <b>[equipment]</b>
   _cardPattern: a card of <b>[card]</b>

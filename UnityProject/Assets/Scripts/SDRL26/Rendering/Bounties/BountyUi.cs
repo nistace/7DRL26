@@ -9,6 +9,7 @@ namespace SDRL26.Rendering.Bounties
       [SerializeField] private BountyLootUi[] _lines;
 
       [SerializeField] private Sprite _goldSprite;
+      [SerializeField] private Sprite _cardSprite;
       [SerializeField] private string _goldPattern = "<b>[gold]</b> coins of gold";
       [SerializeField] private string _equipmentPattern = "a nice <b>[equipment]</b>";
       [SerializeField] private string _cardPattern = "a card of <b>[card]</b>";
@@ -60,7 +61,7 @@ namespace SDRL26.Rendering.Bounties
          foreach (var card in bounty.Cards)
          {
             var line = ActivateNextLine(ref lineIndex);
-            line.Icon = card.Icon;
+            line.Icon = _cardSprite;
             line.Text = _cardPattern.Replace("[card]", card.DisplayName);
             line.Tooltip = new Tooltip($"Card: {card.DisplayName}", card.Description);
          }
