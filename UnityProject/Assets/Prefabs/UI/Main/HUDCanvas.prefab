@@ -2622,9 +2622,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2258285075339715396, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7544264804348888144}
-    - targetCorrespondingSourceObject: {fileID: 2258285075339715396, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4522945684254324591}
   m_SourcePrefab: {fileID: 100100000, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}
 --- !u!1 &956255366400057170 stripped
 GameObject:
@@ -2677,20 +2674,6 @@ MonoBehaviour:
     - _types: 2048
       _data: Back to the menu
     _default: Continue
---- !u!114 &4522945684254324591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956255366400057170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808765a8e44444a2b94cfc6e7d605a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Blacksmiths.BlacksmithButtonUi
-  _button: {fileID: 2656284423106899417}
-  _acceptTransaction: 1
 --- !u!114 &2656284423106899417 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3949450045368439247, guid: 0efe31a17e78a0549ad3810c72c24a86, type: 3}

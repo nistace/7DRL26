@@ -9,6 +9,8 @@ namespace SDRL26.Rendering.Cards.Merchants
    public class MerchantUi : CardPickerUi<MerchantGameState, (int index, Equipment equipment)>
    {
       [SerializeField] private EquipmentCardUi _equipmentCardPrefab;
+      [SerializeField] private AudioSource _source;
+      [SerializeField] private AudioClip _clipOnPurchase;
 
       protected override IReadOnlyList<(int index, Equipment equipment)> GetOptions(MerchantGameState state) => state.Merchant.EquipmentPrefabs.Select((t, i) => (i, t)).ToArray();
 
@@ -21,7 +23,7 @@ namespace SDRL26.Rendering.Cards.Merchants
          return newCard.transform;
       }
 
-      private static void HandleCardClicked(EquipmentCardUi card)
+      private void HandleCardClicked(EquipmentCardUi card)
       {
          if (GameState.CurrentState is not MerchantGameState merchantState)
          {
@@ -35,6 +37,7 @@ namespace SDRL26.Rendering.Cards.Merchants
 
          CardMovementHandler.HideCard(card.transform);
          card.SetSold(true);
+         _source.PlayOneShot(_clipOnPurchase);
       }
    }
 }
