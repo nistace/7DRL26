@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169e8998fbb34441b9f0f0ca8de11cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.DragAndDrop.BattlerOrganizer
-  _enabledInStates: 2038
+  _enabledInStates: 2022
   _organizingTeam: {fileID: 5931742864808749371}
   _topTransform: {fileID: 7169347346279217601}
   _changePositionOffset: 30
