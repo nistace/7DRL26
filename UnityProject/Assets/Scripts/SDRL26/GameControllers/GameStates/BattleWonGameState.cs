@@ -15,17 +15,18 @@ namespace SDRL26.GameControllers.GameStates
       {
          Bounty = GameData.CurrentBattle.Bounty;
 
-         foreach (var battler in GameData.CurrentBattle.OpponentTeam.Battlers)
-         {
-            Object.Destroy(battler.gameObject);
-         }
-
          OnDone = onDone;
       }
 
       public void Terminate() => OnDone?.Invoke();
 
-      protected override void EndState() { }
+      protected override void EndState()
+      {
+         foreach (var battler in GameData.CurrentBattle.OpponentTeam.Battlers)
+         {
+            Object.Destroy(battler.gameObject);
+         }
+      }
 
       protected override void StartState() { }
    }

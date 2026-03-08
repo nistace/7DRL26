@@ -81,7 +81,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5669361437689847180}
-  m_Father: {fileID: 4121628516770268331}
+  m_Father: {fileID: 1620795242664752414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -789,7 +789,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6785910973499775732, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 8169716573892488001, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3900908434247877507}
     m_AddedComponents:
@@ -826,6 +826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Rendering.Battleground.DragAndDrop.DraggableTeam
   _dropPosition: {fileID: 3900908434247877507}
   _tokensParent: {fileID: 670657724668691597}
+  _layoutTransform: {fileID: 4121628516770268331}
 --- !u!114 &3083240692686953291 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5609037952701547796, guid: 71460f2b52945e747972dc2ed3c43f09, type: 3}

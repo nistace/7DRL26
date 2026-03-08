@@ -65,6 +65,8 @@ MonoBehaviour:
   _mainActionAmountProvider: {fileID: 354119566859008082}
   _actionsIncludedInIcon:
   - {fileID: 354119566859008082}
+  _prepareClip: {fileID: 0}
+  _performClip: {fileID: 8300000, guid: 4f2c1de55b810b345a3b5d5694d2ac88, type: 3}
 --- !u!114 &354119566859008082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +135,18 @@ PrefabInstance:
       propertyPath: _health._defaultMaxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _deadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f60934d6da34bb499bef41448cefa3c, type: 3}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _hurtClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f60934d6da34bb499bef41448cefa3c, type: 3}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _defaultClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a9fdcbc2a1a3dc4499a26ff0eec629c, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _icon
       value: 
@@ -144,6 +158,14 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _performClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cba0376965105de4d98dd60c6ef0fae5, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _prepareClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _mainActionIcon

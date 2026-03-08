@@ -65,6 +65,8 @@ MonoBehaviour:
   _mainActionAmountProvider: {fileID: 11290050155658871}
   _actionsIncludedInIcon:
   - {fileID: 11290050155658871}
+  _prepareClip: {fileID: 0}
+  _performClip: {fileID: 8300000, guid: 8e881ddb40191ad4b8ebb3f0739989ef, type: 3}
 --- !u!114 &11290050155658871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,13 +129,29 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
-      propertyPath: '_postures.Array.data[1]'
+      propertyPath: '_postures.Array.data[0]'
       value: 
       objectReference: {fileID: 8634827911174764194}
+    - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: '_postures.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3202868713556493929}
     - target: {fileID: 1908006528618842563, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _health._defaultMaxHealth
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _deadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b2fd40a54a5e3943b414147bdb06b8f, type: 3}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _hurtClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b2fd40a54a5e3943b414147bdb06b8f, type: 3}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _defaultClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8834f0241e3d5c443a53735e2978de47, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _icon
       value: 
@@ -146,6 +164,10 @@ PrefabInstance:
       propertyPath: _restTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _performClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d995de8bd2d8bcf4394509210f97b19a, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _mainActionIcon
       value: 
@@ -224,6 +246,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6963097579002054727}
   m_SourcePrefab: {fileID: 100100000, guid: 473d949d496db734b83f526920d90c67, type: 3}
+--- !u!114 &3202868713556493929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+  m_PrefabInstance: {fileID: 399325408705782464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234510613630717437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4979278075447abd2fb7d28109d778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Battlers.BattlerPosture
 --- !u!4 &3906161212698977625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3728919720660223897, guid: 473d949d496db734b83f526920d90c67, type: 3}

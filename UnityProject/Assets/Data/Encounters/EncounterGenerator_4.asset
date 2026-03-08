@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a01624c875438b95e219de3cc98c6c, type: 3}
   m_Name: EncounterGenerator_4
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Encounters.EncounterGenerator
-  _options: 3
+  _options: 2
   _possibleBattles:
   - {fileID: 11400000, guid: b960102b20afc4a40a231f8346e6ec42, type: 2}
   - {fileID: 11400000, guid: 3af7baadf32c4a54bb382fcfeebf58aa, type: 2}
   _minBattles: 1
-  _maxBattles: 2
+  _maxBattles: 1
   _possibleMerchants:
   - {fileID: 11400000, guid: f25ee1ab813ccc142b7495cb722586d7, type: 2}
   - {fileID: 11400000, guid: 2b1a8d7b878d46742b4ed017f5158416, type: 2}

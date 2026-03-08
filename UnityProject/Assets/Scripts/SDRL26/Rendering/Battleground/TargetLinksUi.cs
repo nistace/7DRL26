@@ -28,7 +28,7 @@ namespace SDRL26.Rendering.Battleground
          Battler.OnBattlerPhaseChanged.RemoveListener(HandleBattlerPhaseChanged);
          Battler.OnBattlerAliveChanged.RemoveListener(HandleBattlerAliveChanged);
 
-         if (newState is ContinueBattleGameState)
+         if (newState is ContinueBattleGameState or PauseBattleGameState)
          {
             Battler.OnBattlerTargetChanged.AddListener(HandleBattlerTargetsChanged);
             Battler.OnBattlerActionsPerformed.AddListener(HandleBattlerActionPerformed);

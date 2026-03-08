@@ -64,6 +64,8 @@ MonoBehaviour:
   _mainActionAmountProvider: {fileID: 6832219506108321641}
   _actionsIncludedInIcon:
   - {fileID: 6832219506108321641}
+  _prepareClip: {fileID: 0}
+  _performClip: {fileID: 8300000, guid: 837e8e12e442371419af7dc6dbff0d14, type: 3}
 --- !u!114 &6832219506108321641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +124,18 @@ PrefabInstance:
       propertyPath: _health._defaultMaxHealth
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _deadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c3ea713b921d60b48bb4a4c25a0231bb, type: 3}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _hurtClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c3ea713b921d60b48bb4a4c25a0231bb, type: 3}
+    - target: {fileID: 2613161257405699442, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _defaultClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a2950180226fdc2449d068cb7906ae8d, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _icon
       value: 
@@ -133,6 +147,14 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _performClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a339e65f25b0138438eb6bc686899ab7, type: 3}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _prepareClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _mainActionIcon

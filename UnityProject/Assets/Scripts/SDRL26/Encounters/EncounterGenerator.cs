@@ -52,7 +52,7 @@ namespace SDRL26.Encounters
             );
          }
 
-         moreOptions.Sort((_, _) => Mathf.RoundToInt(Random.value * 2 - 1));
+         moreOptions = moreOptions.OrderBy(_ => Random.value).ToList();
 
          while (moreOptions.Count > 0 && options.Count < _options)
          {
