@@ -58,8 +58,8 @@ MonoBehaviour:
   _target: 55
   _additionalTargets: 0
   _preparationTime: 1.5
-  _chargeActionTime: 0.5
-  _restTime: 1.5
+  _chargeActionTime: 2
+  _restTime: 2
   _mainActionIcon: {fileID: 21300000, guid: 47e5a578a7336cf43900736a07ba67e1, type: 3}
   _mainActionAmountProvider: {fileID: 1595981201226051759}
   _actionsIncludedInIcon:
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AttackBattleAction
-  _damage: 3
+  _damage: 5
   _displayName: Attack ([damage])
 --- !u!1001 &399325408705782464
 PrefabInstance:
@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _performClip

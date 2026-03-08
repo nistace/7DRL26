@@ -60,7 +60,7 @@ MonoBehaviour:
   _additionalTargets: 0
   _preparationTime: 0.5
   _chargeActionTime: 2
-  _restTime: 1.5
+  _restTime: 2
   _mainActionIcon: {fileID: 21300000, guid: 998b40d5495e2c9418530ef1420a4cab, type: 3}
   _mainActionAmountProvider: {fileID: 11290050155658871}
   _actionsIncludedInIcon:

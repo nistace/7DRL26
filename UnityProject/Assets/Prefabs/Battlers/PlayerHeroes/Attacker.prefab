@@ -51,14 +51,14 @@ MonoBehaviour:
   _portraits:
     _serializedList:
     - Key: 0
-      Value: {fileID: -2588407131150206381, guid: d3aaeb8885e69164b92d8e4b197c6a54, type: 3}
+      Value: {fileID: 5413475741887724435, guid: 6d8a52f485916f2498132f031732a497, type: 3}
     - Key: 1
-      Value: {fileID: -4438501669314417343, guid: 91581a4ccf5a18747a5ef579464bf277, type: 3}
+      Value: {fileID: -4886703583091201821, guid: 04be457e8ac1e13449c4714dcd48f88c, type: 3}
     - Key: 2
       Value: {fileID: 2017755370696923663, guid: 332bce290e6695b43b5aacdbc9298ecb, type: 3}
   _target: 50
   _additionalTargets: 0
-  _preparationTime: 0.5
+  _preparationTime: 1
   _chargeActionTime: 2
   _restTime: 2
   _mainActionIcon: {fileID: 21300000, guid: c7a63103de57c4b4bb4010d9d1085656, type: 3}
@@ -67,7 +67,7 @@ MonoBehaviour:
   - {fileID: 5052484461818792135}
   - {fileID: 7730606900958819947}
   _prepareClip: {fileID: 0}
-  _performClip: {fileID: 8300000, guid: 7d598251199c25247bdd07cbffcc0754, type: 3}
+  _performClip: {fileID: 8300000, guid: a4bfd374384a0a74c8cc4123eb7e7f51, type: 3}
 --- !u!114 &5052484461818792135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,13 +157,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
+      propertyPath: _target
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _restTime
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _performClip
       value: 
-      objectReference: {fileID: 8300000, guid: a4bfd374384a0a74c8cc4123eb7e7f51, type: 3}
+      objectReference: {fileID: 8300000, guid: 7d598251199c25247bdd07cbffcc0754, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _mainActionIcon
       value: 
@@ -211,11 +215,11 @@ PrefabInstance:
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portraits._serializedList.Array.data[0].Value
       value: 
-      objectReference: {fileID: 5413475741887724435, guid: 6d8a52f485916f2498132f031732a497, type: 3}
+      objectReference: {fileID: -2588407131150206381, guid: d3aaeb8885e69164b92d8e4b197c6a54, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portraits._serializedList.Array.data[1].Value
       value: 
-      objectReference: {fileID: -4886703583091201821, guid: 04be457e8ac1e13449c4714dcd48f88c, type: 3}
+      objectReference: {fileID: -4438501669314417343, guid: 91581a4ccf5a18747a5ef579464bf277, type: 3}
     - target: {fileID: 3024255625871582377, guid: 473d949d496db734b83f526920d90c67, type: 3}
       propertyPath: _portraits._serializedList.Array.data[2].Value
       value: 
@@ -284,5 +288,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd97b6b5b9554d0cab62de5aaae6c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Battles.Actions.AttackBattleAction
-  _damage: 2
+  _damage: 1
   _displayName: Attack ([damage])

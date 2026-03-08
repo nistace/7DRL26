@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3637625740035987705}
   - component: {fileID: 5496366194982115683}
   - component: {fileID: 5562113879736610493}
+  - component: {fileID: 3531312402053807295}
   m_Layer: 5
   m_Name: SwapPostureButton
   m_TagString: Untagged
@@ -267,3 +268,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3531312402053807295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3848933958572801722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4681a616c83544d0bf41703f1806eacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SDRL26.Tooltips.TooltipHolder
+  _tooltip:
+    _anchor: {fileID: 8057662360097006998}
+    _title: Change posture
+    _body: 
+  _defaultAnchor: {fileID: 8057662360097006998}
